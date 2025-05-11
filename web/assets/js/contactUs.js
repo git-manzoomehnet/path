@@ -1,0 +1,39 @@
+const lat = document.querySelector("#map").getAttribute("data-y");
+const lng = document.querySelector("#map").getAttribute("data-x");
+
+const map = L.map('map').setView([lat, lng], 14);
+
+// تایل تیره
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+}).addTo(map);
+
+// ساخت مارکر سفارشی با HTML
+const customIcon = L.divIcon({
+    className: '', // بدون کلاس پیش‌فرض leaflet
+    html: `
+    <div class="absolute">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}" target="_blank"
+        class="flex items-center justify-center bg-main2 w-[61.84px] h-[61.84px] after:absolute after:w-[22px] after:h-[22px] after:bg-white after:rounded-full rounded-full">
+        <svg width="68" height="70" viewBox="0 0 68 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_356_4597)">
+<path d="M33.7449 66.8889C50.9209 66.8889 64.6635 52.5101 64.6635 35C64.6635 17.4899 50.9209 3.11108 33.7449 3.11108C16.5688 3.11108 2.82617 17.4899 2.82617 35C2.82617 52.5101 16.5688 66.8889 33.7449 66.8889Z" fill="#807F63" stroke="#807F63" stroke-width="7"/>
+<path d="M33.3096 34.044C32.0356 34.044 30.8138 33.5403 29.9129 32.6439C29.0121 31.7475 28.5059 30.5316 28.5059 29.2639C28.5059 27.9961 29.0121 26.7803 29.9129 25.8839C30.8138 24.9874 32.0356 24.4838 33.3096 24.4838C34.5836 24.4838 35.8055 24.9874 36.7063 25.8839C37.6071 26.7803 38.1132 27.9961 38.1132 29.2639C38.1132 29.8916 37.989 30.5132 37.7476 31.0931C37.5062 31.6731 37.1523 32.2001 36.7063 32.6439C36.2602 33.0878 35.7307 33.4399 35.1479 33.6801C34.565 33.9203 33.9405 34.044 33.3096 34.044ZM33.3096 15.8796C29.7424 15.8796 26.3212 17.2897 23.7989 19.7998C21.2765 22.3098 19.8594 25.7142 19.8594 29.2639C19.8594 39.3021 33.3096 54.1204 33.3096 54.1204C33.3096 54.1204 46.7598 39.3021 46.7598 29.2639C46.7598 25.7142 45.3427 22.3098 42.8203 19.7998C40.2979 17.2897 36.8768 15.8796 33.3096 15.8796Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_356_4597">
+<rect width="68" height="70" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
+      </a>
+    </div>
+  `,
+    iconSize: [61.48, 61.48],
+    iconAnchor: [24, 24] // نقطه وسط مارکر روی مختصات باشه
+});
+
+L.marker([lat, lng], { icon: customIcon }).addTo(map);

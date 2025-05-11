@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.6",
+    "tailwindcss": "^4.1.6"
+  },
+    "scripts": {
+    
+
+    "watch:web": "npx tailwindcss -i ./web/assets/css/input.css -o ./web/assets/css/outputDesk.css --watch",
+    "watch:mobile":"npx @tailwindcss/cli -i ./mobile/assets/css/input.css -o ./mobile/assets/css/outputMobile.css --watch"
+
+  }
+}

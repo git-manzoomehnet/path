@@ -1,0 +1,435 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "OctinStencilRg400";
+  src: url("../fonts/OctinStencilRg.eot");
+  src: url("../fonts/OctinStencilRg.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/OctinStencilRg.woff") format("woff"),
+    url("../fonts/OctinStencilRg.woff2") format("woff2"),
+    url("../fonts/OctinStencilRg.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blinker300";
+  src: url("../fonts/Blinker-ExtraLight.eot");
+  src: url("../fonts/Blinker-ExtraLight.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Blinker-ExtraLight.woff") format("woff"),
+    url("../fonts/Blinker-ExtraLight.woff2") format("woff2"),
+    url("../fonts/Blinker-ExtraLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blinker400";
+  src: url("../fonts/Blinker-Regular.eot");
+  src: url("../fonts/Blinker-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Blinker-Regular.woff") format("woff"),
+    url("../fonts/Blinker-Regular.woff2") format("woff2"),
+    url("../fonts/Blinker-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "interBold";
+  src: url("../../_fonts/Inter-Bold.eot");
+  src: url("../../_fonts/Inter-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../../_fonts/Inter-Bold.woff") format("woff"),
+    url("../../_fonts/Inter-Bold.woff2") format("woff2"),
+    url("../../_fonts/Inter-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSansWeb300";
+  src: url("../../_fonts/IRANSansWeb(FaNum)_UltraLight.eot");
+  src: url("../../_fonts/IRANSansWeb(FaNum)_UltraLight.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../_fonts/IRANSansWeb(FaNum)_UltraLight.woff") format("woff"),
+    url("../../_fonts/IRANSansWeb(FaNum)_UltraLight.woff2") format("woff2"),
+    url("../../_fonts/IRANSansWeb(FaNum)_UltraLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSansWeb400";
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Light.eot");
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Light.woff") format("woff"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Light.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSansWeb500";
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot");
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Medium.woff2") format("woff2"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSansWeb600";
+  src: url("../../_fonts/IRANSansWeb_Bold.eot");
+  src: url("../../_fonts/IRANSansWeb_Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../_fonts/IRANSansWeb_Bold.woff") format("woff"),
+    url("../../_fonts/IRANSansWeb_Bold.woff2") format("woff2"),
+    url("../../_fonts/IRANSansWeb_Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSansWeb700";
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot");
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSansWeb800";
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot");
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSansWeb900";
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot");
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
+    url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter400";
+  /* src: url("../fonts/inter.ttf")  format("truetype"); */
+  src: url("../fonts/Inter-Regular.eot");
+  src: url("../fonts/Inter-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Inter-Regular.woff") format("woff"),
+    url("../fonts/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/Inter-Regular.ttf") format("truetype");
+
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSans400";
+  src: url("../fonts/noto.ttf") format("truetype");
+
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ABeeZee400";
+  src: url("../fonts/ABeeZee-Regular.ttf") format("truetype");
+
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-OctinStencilRg400: "OctinStencilRg400" !important;
+  --font-Blinker300: "Blinker300" !important;
+  --font-Blinker400: "Blinker400" !important;
+  --font-YekanBakh400: "YekanBakh400" !important;
+
+  --color-main1: #231f20;
+  --color-main2: #807f63;
+  --color-grayTxt: #c8c9cb;
+  --color-grayTxt2: #929497;
+  --color-grayLine: #d9d9d9;
+  --color-overlay: #ffffff1a;
+
+  --spacing-96p: 96%;
+  --spacing-90p: 90%;
+  --spacing-80p: 80%;
+}
+
+@media (min-width: 1600px) {
+  .eventsShow .lSide,
+  .awardsShow .lSide,
+  .contactUs .lSection ,
+  .contactUs .breadCrumb {
+    padding-left: calc(((100vw - 1540px) / 2));
+  }
+  
+  .contactUs .mapS {
+    padding-right: calc(((100vw - 1540px) / 2));
+
+  }
+}
+@media (max-width: 1599px) {
+  .eventsShow .lSide,
+    .contactUs .breadCrumb ,
+    .contactUs .lSection ,
+  .awardsShow .lSide {
+    padding-left: 2vw;
+  }
+  .contactUs .mapS{
+    padding-right: 2vw;
+  }
+}
+.slider_home .swiper-container.nav-slider .swiper-slide {
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 300ms ease;
+  border-radius: 0.14rem;
+}
+
+.slider_home .swiper-container.nav-slider .swiper-slide.swiper-slide-active {
+  opacity: 1;
+}
+
+.slider_home .swiper-container.nav-slider .swiper-slide .content {
+  width: 100%;
+}
+
+.slider_home .swiper-container.nav-slider {
+  max-height: 91px;
+}
+
+.slider_home .swiper-container {
+  width: 100%;
+  height: 560px;
+
+  transition: all 300ms ease;
+}
+
+.slider_home .swiper-container .prevMain,
+.slider_home .swiper-container .nextMain {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.slider_home .swiper-container:hover .prevMain,
+.slider_home .swiper-container:hover .nextMain {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider_home .swiper-container .prevMain {
+  left: 32px;
+}
+
+.slider_home .swiper-container .nextMain {
+  right: 32px;
+}
+
+.slider_home .swiper-container.loading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slider_home .swiper-slide {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.slider_home .swiper-slide .slide-bgimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.slider_home .prevMain {
+  transform: translateX(50px);
+}
+
+.slider_home .nextMain {
+  transform: translateX(-50px);
+}
+
+.slider_home [class^="swiper-button-"] {
+  width: 44px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease;
+}
+
+.swiper-button-disabled {
+  opacity: 0 !important;
+}
+
+.scrollTop {
+  opacity: 0;
+  transform: translateY(150px);
+  transition: all 0.8s ease;
+}
+
+.scrollTop.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.w-90p {
+  max-width: 1400px;
+}
+.w-96p {
+  max-width: 1540px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+.slider_home .swiper-container.nav-slider .swiper-slide {
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 300ms ease;
+  border-radius: 0.14rem;
+}
+
+.slider_home .swiper-container.nav-slider .swiper-slide.swiper-slide-active {
+  opacity: 1;
+}
+
+.slider_home .swiper-container.nav-slider .swiper-slide .content {
+  width: 100%;
+}
+
+.slider_home .swiper-container:hover .swiper-button-prev,
+.slider_home .swiper-container:hover .swiper-button-next {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider_home .swiper-container.loading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slider_home .swiper-slide {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.slider_home .swiper-slide .slide-bgimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.slider_home .swiper-slide .entity-img {
+  display: none;
+}
+
+.slider_home .swiper-slide .content {
+  position: absolute;
+  top: 52%;
+  left: 0;
+  width: 70%;
+  padding-left: 5%;
+  color: #fff;
+  text-shadow: 0 0 4px rgb(0 0 0 / 40%);
+}
+
+.slider_home .swiper-slide .content .caption {
+  display: block;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  transform: translateX(50px);
+  opacity: 0;
+  transition: all 300ms ease;
+}
+
+.slider_home .swiper-slide .content .caption.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slider_home .swiper-button-prev {
+  transform: translateX(50px);
+}
+
+.slider_home .swiper-button-next {
+  transform: translateX(-50px);
+}
+
+.slider_home [class^="swiper-button-"] {
+  width: 44px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease;
+}
+
+.contactUs .mapSectoin .leaflet-zoom-animated {
+  width: 100%;
+  filter: invert(0.05) saturate(0);
+}
+
+.scrollBtm .line {
+  animation: animTraitlinear infinite 3s;
+}
+
+@keyframes animTraitlinear {
+  0% {
+    transform: translate(0, -100%);
+  }
+
+  50% {
+    height: 180px;
+  }
+
+  100% {
+    transform: translate(0, 150px);
+  }
+}

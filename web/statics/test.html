@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <style>
+        
+ .slider_home {
+ width: 80vw;
+ }
+
+ .slider_home .swiper-container {
+ width: 100%;
+ height: 100vh;
+ float: left;
+ transition: all 300ms ease;
+ }
+
+ @media screen and (max-width: 600px) {
+ .slider_home .swiper-container {
+ width: 100%;
+ }
+ }
+
+ .slider_home .swiper-container.nav-slider {
+ position: absolute;
+ bottom: 5vh;
+ padding-left: 0;
+ left: 0;
+ right: 0;
+ height: 15vh;
+ width: 70%;
+ margin: 0 auto;
+ }
+
+ @media screen and (max-width: 600px) {
+ .slider_home .swiper-container.nav-slider {
+ width: 0;
+ display: none;
+ }
+ }
+
+ .slider_home .swiper-container.nav-slider .swiper-slide {
+ cursor: pointer;
+ opacity: 0.4;
+ transition: all 300ms ease;
+ border-radius: 0.14rem;
+ }
+
+ .slider_home .swiper-container.nav-slider .swiper-slide.swiper-slide-active {
+ opacity: 1;
+ }
+
+ .slider_home .swiper-container.nav-slider .swiper-slide .content {
+ width: 100%;
+ }
+
+ .slider_home .swiper-container:hover .swiper-button-prev,
+ .slider_home .swiper-container:hover .swiper-button-next {
+ transform: translateX(0);
+ opacity: 1;
+ visibility: visible;
+ }
+
+ .slider_home .swiper-container.loading {
+ opacity: 0;
+ visibility: hidden;
+ }
+
+ .slider_home .swiper-slide {
+ overflow: hidden;
+ -webkit-backface-visibility: hidden;
+ backface-visibility: hidden;
+ }
+
+ .slider_home .swiper-slide .slide-bgimg {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-position: center;
+ background-size: cover;
+ }
+
+ .slider_home .swiper-slide .entity-img {
+ display: none;
+ }
+
+ .slider_home .swiper-slide .content {
+ position: absolute;
+ top: 52%;
+ left: 0;
+ width: 70%;
+ padding-left: 5%;
+ color: #fff;
+ text-shadow: 0 0 4px rgb(0 0 0 / 40%);
+ }
+
+ @media screen and (max-width: 600px) {
+ .slider_home .swiper-slide .content {
+ top: 28%;
+ width: 100%;
+ padding-left: 12%;
+ padding-right: 12%;
+ }
+ }
+
+
+
+ .slider_home .swiper-slide .content .caption {
+ display: block;
+ font-size: 1.1rem;
+ line-height: 1.5;
+ transform: translateX(50px);
+ opacity: 0;
+ transition: all 300ms ease;
+ }
+
+ .slider_home .swiper-slide .content .caption.show {
+ transform: translateX(0);
+ opacity: 1;
+ }
+
+ .slider_home .swiper-button-prev {
+ transform: translateX(50px);
+ }
+
+ .slider_home .swiper-button-next {
+ transform: translateX(-50px);
+ }
+
+ .slider_home [class^='swiper-button-'] {
+ width: 44px;
+ opacity: 0;
+ visibility: hidden;
+ transition: all 300ms ease;
+ }
+
+ .slider_home .main-slider .content .title {
+ font-family: 'Aileron-Regular';
+ font-size: 4rem;
+ color: #fff;
+ }
+
+ .intro-page__title span {
+ color: #1b1b1b;
+ }
+
+ @media screen and (max-width: 980px) {
+ .white_back {
+ background-color: transparent;
+ }
+ .home_page .intro-page__title {
+ font-size: 2rem;
+ }
+ .slider_home {
+ width: 100%;
+ height: 50vh;
+ }
+ .slider_home .swiper-container {
+ width: 100%;
+ height: 100%;
+ }
+ .white_back {
+ background-color: transparent;
+ }
+
+.intro-page__title span {
+color: #fff;
+}
+
+.menu_hover {
+ transform: rotate(90deg);
+ position: absolute;
+ z-index: 8888;
+ top: 1em;
+ left: unset;
+ right: 2em;
+}
+ }
+    </style>
+</head>
+<body>
+    <!-- slides-->
+ <div class="slider_home">
+ <div class="swiper-container main-slider loading">
+ <div class="swiper-wrapper">
+ <div class="swiper-slide">
+ <figure class="slide-bgimg" style="background-image:url('http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider1.jpg')"><img class="entity-img" src="http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider1.jpg" /></figure>
+ <div class="content">
+ <p class="title"> </p><span class="caption"></span>
+ </div>
+ </div>
+ <div class="swiper-slide">
+ <figure class="slide-bgimg" style="background-image:url('http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider2.jpg')"><img class="entity-img" src="http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider2.jpg" /></figure>
+ <div class="content">
+ <p class="title"> </p><span class="caption"></span>
+ </div>
+ </div>
+ <div class="swiper-slide">
+ <figure class="slide-bgimg" style="background-image:url('http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider5.JPG')"><img class="entity-img" src="http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider5.JPG" /></figure>
+ <div class="content">
+ <p class="title"> </p><span class="caption"></span>
+ </div>
+ </div>
+ <div class="swiper-slide">
+ <figure class="slide-bgimg" style="background-image:url('http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider4.jpg')"><img class="entity-img" src="http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider4.jpg" /></figure>
+ <div class="content">
+ <p class="title"> </p><span class="caption"></span>
+ </div>
+ </div>
+ 
+ </div>
+ <div class="swiper-button-prev swiper-button-white"></div>
+ <div class="swiper-button-next swiper-button-white"></div>
+ </div>
+
+ <!-- thumbnails-->
+ <div class="swiper-container nav-slider loading">
+ <div class="swiper-wrapper">
+ <div class="swiper-slide">
+ <figure class="slide-bgimg" style="background-image:url('http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider1.jpg')"><img class="entity-img" src="http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider1.jpg" /></figure>
+ <div class="content">
+ <p class="title"> </p>
+ </div>
+ </div>
+ <div class="swiper-slide">
+ <figure class="slide-bgimg" style="background-image:url('http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider2.jpg')"><img class="entity-img" src="http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider2.jpg" /></figure>
+ <div class="content">
+ <p class="title"> </p>
+ </div>
+ </div>
+ <div class="swiper-slide">
+ <figure class="slide-bgimg" style="background-image:url('http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider5.JPG')"><img class="entity-img" src="http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider5.JPG" /></figure>
+ <div class="content">
+ <p class="title"> </p>
+ </div>
+ </div>
+ <div class="swiper-slide">
+ <figure class="slide-bgimg" style="background-image:url('http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider4.jpg')"><img class="entity-img" src="http://bocaveli.manzoomehnet.ir/bocaveri-item/images/defult_slider4.jpg" /></figure>
+ <div class="content">
+ <p class="title"> </p>
+ </div>
+ </div>
+ 
+
+ </div>
+ </div>
+
+ </div>
+
+ </div>
+
+
+
+<script src="../assets/js/swiper.min.js"></script>
+ <script>
+    var interleaveOffset, mainSlider, mainSliderOptions, mainSliderSelector, navSlider, navSliderOptions, navSliderSelector;
+
+mainSliderSelector = '.main-slider';
+mainSliderSelector = '.main-slider';
+
+navSliderSelector = '.nav-slider';
+
+interleaveOffset = 0.5;
+
+
+mainSliderOptions = {
+    //  loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 3000
+    },
+    //  loopAdditionalSlides: 10,
+    grabCursor: true,
+    watchSlidesProgress: true,
+    navigation: {
+        nextEl: '.nextMain',
+        prevEl: '.prevMain'
+    },
+    on: {
+        init: function () {
+            this.autoplay.stop();
+        },
+        imagesReady: function () {
+            this.el.classList.remove('loading');
+            this.autoplay.start();
+        },
+        slideChangeTransitionEnd: function () {
+            var captions, i, swiper;
+            swiper = this;
+            captions = swiper.el.querySelectorAll('.caption');
+            i = 0;
+            while (i < captions.length) {
+                captions[i].classList.remove('show');
+                ++i;
+            }
+            swiper.slides[swiper.activeIndex].querySelector('.caption').classList.add('show');
+        },
+        progress: function () {
+            var i, innerOffset, innerTranslate, slideProgress, swiper;
+            swiper = this;
+            i = 0;
+            while (i < swiper.slides.length) {
+                slideProgress = swiper.slides[i].progress;
+                innerOffset = swiper.width * interleaveOffset;
+                innerTranslate = slideProgress * innerOffset;
+                swiper.slides[i].querySelector('.slide-bgimg').style.transform = 'translate3d(' + innerTranslate + 'px, 0, 0)';
+                i++;
+            }
+        },
+        touchStart: function () {
+            var i, swiper;
+            swiper = this;
+            i = 0;
+            while (i < swiper.slides.length) {
+                swiper.slides[i].style.transition = '';
+                i++;
+            }
+        },
+        setTransition: function (speed) {
+            var i, swiper;
+            swiper = this;
+            i = 0;
+            while (i < swiper.slides.length) {
+                swiper.slides[i].style.transition = speed + 'ms';
+                swiper.slides[i].querySelector('.slide-bgimg').style.transition = speed + 'ms';
+                i++;
+            }
+        }
+    }
+};
+
+mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
+
+navSliderOptions = {
+    //  loop: true,
+    //  loopAdditionalSlides: 10,
+    speed: 1000,
+    spaceBetween: 15,
+    slidesPerView: 5,
+    centeredSlides: true,
+    touchRatio: 0.2,
+    slideToClickedSlide: true,
+    // direction: 'vertical',
+    on: {
+        imagesReady: function () {
+            this.el.classList.remove('loading');
+        },
+        click: function () {
+            mainSlider.autoplay.stop();
+        }
+    }
+};
+
+navSlider = new Swiper(navSliderSelector, navSliderOptions);
+
+// matching sliders
+mainSlider.controller.control = navSlider;
+
+navSlider.controller.control = mainSlider;
+
+
+ </script>
+</body>
+</html>

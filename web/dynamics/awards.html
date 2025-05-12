@@ -1,0 +1,235 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+  <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]">
+  <member request="json-ld" type="scalar" name="fq" />
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" usedforid="[##cms.query.id##]"> <member name="awards" type="view"/> </basis>
+  <basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="1"usedforid="[##cms.query.id##]"> <member type="list" name="related-project" blgid="1611" /> </basis>
+  <basis core="dbsource" name="db" source="media" lid="2" sourcemid="1" usedforid="[##cms.query.id##]"> <member name="image-Event" type="list" format="4"/> </basis>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <basis core="print" datamembername="db.seolist">
+    <face>
+        <title>[##cms.seo.title|db.seolist.title##]</title>
+        <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+    </face>
+</basis>
+  <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper.min.css">
+  <basis core="call" file="styles2.inc" />
+</head>
+
+
+
+
+<body class="bg-main1 ">
+  <basis core="call" file="header-1.inc" />
+
+  <main class="flex awardsShow  flex-row justify-center w-full h-svh">
+    <div class="gap-x-7 overflow-hidden flex relative">
+         <!-- Main Content -->
+      <div class="lSide flex gap-y-5 flex-col justify-between w-[26%] ">
+
+
+        <!-- Header -->
+        <div class=" top-[115px] z-[2121025882] shrink-0 flex items-end relative left-0">
+
+          <a href="/" 
+            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+            home
+          </a>
+          <p
+            class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+             . 
+          </p>
+          <a href="/awards-list.bc"
+            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+            awards
+        </a>
+
+
+        <basis core="print" datamembername="db.awards">
+         
+            <face filter="TypeID=150">
+              <p
+                class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                 .
+              </p>
+              <p
+                class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+           @Answer
+              </p>
+                
+            </face>
+        </basis>
+        </div>
+
+        <div class="end pb-[131px]">
+
+          <!-- Info Section -->
+          <div class="flex flex-col max-h-[365px] items-start gap-[24px] overflow-y-auto">
+            <div class="flex flex-col items-start gap-[4px] w-full">
+              <div class="lineeee w-[63px] flex gap-x-px">
+                <span class="bg-main2 h-2 w-1.5">
+  
+                </span>
+                <span class="bg-main2 h-2 w-14">
+  
+                </span>
+              </div>
+              <basis core="print" datamembername="db.awards">
+              
+                  <face filter="TypeID=150">
+                      
+                    <h1 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                     @Answer
+                    </h1>
+                  </face>
+              </basis>
+            </div>
+            <div class=" text-[16px] leading-[25px]">
+              <basis core="print" datamembername="db.awards">
+             
+                  <face filter="prpID not in (54539,7246)">
+                      
+                    <span class="text-grayTxt font-Blinker300">@Question:</span>&nbsp;
+                    <span class="text-white font-Blinker400">@Answer</span><br />
+                  </face>
+              </basis>
+              <basis core="print" datamembername="db.awards">
+             
+                <face filter="prpID in (7246)">
+              <div class="para text-white font-Blinker300">
+  
+               @largetext
+              </div>
+                </face>
+              </basis>
+            </div>
+          </div>
+  
+          <!-- Vertical Line -->
+  
+          <!-- Button -->
+          <a href="/project-list.bc" class="mt-8 cursor-pointer relative flex items-center justify-center  h-[50px]  bg-overlay overflow-hidden border border-main2">
+            <p class=" font-Blinker400 text-main2  text-sm text-center">
+              VIEW IRAN TABLO FACTORY PROJRCT
+            </p>
+            <div class="flex items-center gap-[4px] absolute bottom-0 left-0 right-0">
+              <div class="w-[7px] h-[3px] bg-main2"></div>
+              <div class="w-[96px] h-[3px] bg-main2"></div>
+              <div class="w-[58px] h-[3px] bg-main2"></div>
+              <div class="w-[171px] h-[3px] bg-main2"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+      <div class="rSide w-[73.5%]">
+
+        <!-- Awards Gallery -->
+
+       
+           <div class="slider_home h-svh">
+            <basis core="print" datamembername="db.image-Event">
+                <layout>
+                 
+                    <div class="swiper-container !h-[calc(100%-115px)] main-slider loading">
+                        <div class="swiper-wrapper">
+                           
+                             @child
+    
+                        </div>
+                        <div class="prevMain cursor-pointer swiper-button-white">
+                            <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="3.33239" height="12.4065"
+                                    transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.1484 2.76123)"
+                                    fill="white" />
+                                <rect width="3.24401" height="7.42337"
+                                    transform="matrix(-0.707107 0.707107 0.707107 0.707107 5.96484 10.2769)"
+                                    fill="white" />
+                            </svg>
+    
+                        </div>
+                        <div class="nextMain !right-12 cursor-pointer swiper-button-white">
+                            <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.289062" y="2.76123" width="3.33239" height="12.4065"
+                                    transform="rotate(-45 0.289062 2.76123)" fill="white" />
+                                <rect x="5.47266" y="10.2769" width="3.24401" height="7.42337"
+                                    transform="rotate(45 5.47266 10.2769)" fill="white" />
+                            </svg>
+    
+                        </div>
+                    </div>
+                </layout>
+            
+                <face filter="ord=1000">
+                  <div class="swiper-slide">
+                    <figure class="slide-bgimg"
+                        style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
+                        <img class="entity-img"
+                            src="[##cms.cms.cdn##]/@largeIMG" />
+                    </figure>
+                    <div class="content">
+                        <p class="title"> </p><span class="caption"></span>
+                    </div>
+                </div>
+                </face>
+            </basis>
+
+
+            <basis core="print" datamembername="db.image-Event">
+                <layout>
+                  <!-- thumbnails-->
+                  <div class="swiper-container !max-h-[115px] !py-3 nav-slider loading">
+                      <div class="swiper-wrapper">
+                         
+                         
+   @child
+  
+                      </div>
+                  </div>
+                   
+                </layout>
+             
+                <face filter="ord=1000">
+                  <div class="swiper-slide">
+                    <figure class="slide-bgimg"
+                        style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
+                        <img class="entity-img"
+                            src="[##cms.cms.cdn##]/@largeIMG" />
+                    </figure>
+                    <div class="content">
+                        <p class="title"> </p>
+                    </div>
+                </div>
+                </face>
+            </basis>
+
+                </div>
+      </div>
+
+   
+    </div>
+
+
+  </main>
+
+  <basis core="call" file="scripts2.inc" />
+
+  <script src="[##cms.cms.cdn##]/js/swiper.min.js"></script>
+  <script src="[##cms.cms.cdn##]/js/award.js"></script>
+
+  <script type="application/ld+json">
+    [##json.fq.column1##] 
+    </script>
+</body>
+
+</html>

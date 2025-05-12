@@ -103,8 +103,3 @@ mainSlider.controller.control = navSlider;
 
 navSlider.controller.control = mainSlider;
 
-let scrollBtm = document.querySelector(".scrollBtm")
-scrollBtm.addEventListener("click" , function (params) {
-
-document.querySelector(".section2").scrollIntoView({ behavior: "smooth" });
-})

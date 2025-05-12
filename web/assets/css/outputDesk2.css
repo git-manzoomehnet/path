@@ -259,6 +259,9 @@
   .top-\[97px\] {
     top: 97px;
   }
+  .top-\[115px\] {
+    top: 115px;
+  }
   .top-\[129px\] {
     top: 129px;
   }
@@ -483,6 +486,9 @@
   }
   .z-\[2121025881\] {
     z-index: 2121025881;
+  }
+  .z-\[2121025882\] {
+    z-index: 2121025882;
   }
   .container {
     width: 100%;
@@ -1129,9 +1135,6 @@
   .resize {
     resize: both;
   }
-  .break-after-all {
-    break-after: all;
-  }
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1768,12 +1771,6 @@
     &::after {
       content: var(--tw-content);
       border-radius: calc(infinity * 1px);
-    }
-  }
-  .after\:bg-black {
-    &::after {
-      content: var(--tw-content);
-      background-color: var(--color-black);
     }
   }
   .after\:bg-black\/\[0\.2\] {

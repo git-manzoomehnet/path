@@ -1,0 +1,94 @@
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" catid="214648"> <member name="list-awards" size="400x400" propertyid="3087746,3087745" type="list"/> </basis>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awards List</title>
+  <meta name="description" content="Awards List arch path">
+  <basis core="call" file="styles2.inc" />
+</head>
+
+<body>
+  <main class="awardList bg-main1">
+
+    <basis core="call" file="header-1.inc" />
+    <div class=" min-h-svh flex flex-col justify-between mb-16">
+    <div class="grid w-full grid-cols-4">
+      <div class="firsBox h-[450px] items-start pb-7 pl-2 aspect-square flex flex-col justify-between">
+
+        <div class=" h-[115px] shrink-0 flex items-end relative z-10 top-0 left-0">
+
+          <a href="/"
+            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+            home
+          </a>
+          <p
+            class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+            .
+          </p>
+          <p
+            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+            awards
+          </p>
+
+        </div>
+        <div class="btm flex items-end gap-5">
+          <div class="overflow-hidden  flex flex-col items-center h-fit">
+
+            <span class="font-Blinker300 mb-6 text-sm text-white  lowercase" style="writing-mode: sideways-lr;">
+              scroll
+            </span>
+            <div class="scrollBtm overflow-hidden  h-[58px] w-px bg-white">
+              <div class="line h-[58px] w-px bg-main2">
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="title">
+            <div class="w-[63px] flex gap-x-px">
+              <span class="w-1.5 h-2 bg-white">
+
+              </span>
+              <span class="w-14 h-2 bg-white">
+
+              </span>
+            </div>
+            <h1 class="font-OctinStencilRg400 text-[36px] text-white">
+              PATH AWARDS
+            </h1>
+          </div>
+        </div>
+
+
+
+      </div>
+<basis core="print" datamembername="db.list-awards" >
+   
+    <face>
+      <div data-id="@id" data-img="@image" data-imgList="@00400X00400prp" class=" h-[450px] group/awardBox awardBox border-r relative border-b-[6px] border-white">
+      
+      </div>
+     
+    </face>
+</basis>
+
+
+
+
+    </div>
+  </div>
+
+
+  <basis core="call" file="footer-1.inc" />
+  </main>
+
+  <basis core="call" file="scripts2.inc" />
+<script src="[##cms.cms.cdn##]/js/awardsList.js"></script>
+ 
+</body>
+
+</html>

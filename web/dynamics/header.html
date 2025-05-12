@@ -1,0 +1,225 @@
+   
+   <basis core="dbsource" name="db" source="basiscore" lid="2" mid="5" usedforid="9653"> <member name="contactus" type="view"/> </basis>
+   <basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="19" > <member request="cat" type="tree" name="ProjectCat" parentid="214455"  /> </basis>
+   <basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="20" > <member request="cat" type="tree" name="productCat" parentid="214465" /> </basis>	
+   
+   <header class="flex z-[2121025880] left-0 right-0 w-full fixed top-0 items-center justify-center h-[115px]" dir="rtl">
+        <div class="w-96p flex items-center justify-between">
+            <div class="rside flex items-center gap-x-11">
+                <div class="menuBar cursor-pointer">
+                    <svg width="51" height="22" viewBox="0 0 51 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M47 0H51V4H47V0Z" fill="white" />
+                        <path d="M27 6H51V10H27V6Z" fill="white" />
+                        <path d="M34 12H51V16H34V12Z" fill="white" />
+                        <path d="M0 18H51V22H0V18Z" fill="white" />
+                    </svg>
+
+                </div>
+
+                <div class="search">
+                    <a href="/search.bc">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.90643 0C4.44498 0 0 4.39804 0 9.80182C0 15.2056 4.44498 19.6036 9.90643 19.6036C15.3679 19.6036 19.8129 15.2056 19.8129 9.80182C19.8129 4.39472 15.3679 0 9.90643 0ZM9.90643 18.2726C5.18301 18.2726 1.34188 14.472 1.34188 9.7985C1.34188 5.12496 5.18301 1.32439 9.90643 1.32439C14.6298 1.32439 18.471 5.12496 18.471 9.7985C18.471 14.472 14.6265 18.2726 9.90643 18.2726Z"
+                                fill="white" />
+                            <path
+                                d="M19.0804 18.1098C18.8221 17.8476 18.396 17.8443 18.131 18.0999C17.866 18.3555 17.8626 18.777 18.1209 19.0392L20.8483 21.8009C20.9791 21.9336 21.1536 22 21.328 22C21.4958 22 21.6669 21.937 21.7977 21.8108C22.0627 21.5552 22.0661 21.1337 21.8078 20.8715L19.0804 18.1098Z"
+                                fill="white" />
+                        </svg>
+
+                    </a>
+                </div>
+
+                <a href="/" class="text-white text-lg  tracking-[7px]">
+                    FA
+                </a>
+            </div>
+            <div class="logo">
+                <a href="/" title="home">
+                    <img src="[##cms.cms.cdn##]/images/logo-header-light.png" alt="home">
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="megaMenu  z-[2121025881] translate-x-[100%] duration-1000 overflow-y-auto flex flex-col justify-between right-0 fixed top-0 bottom-0 w-[392px] bg-main1" dir="rtl">
+        <div class="closeMega cursor-pointer mt-[30px] mr-[30px]">
+            <svg width="49" height="3" viewBox="0 0 49 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="white" />
+                <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="white" />
+            </svg>
+            <span class="font-Blinker300 mt-2 text-white text-xs tracking-[3.5px]">
+                CLOSE
+            </span>
+        </div>
+        <div class="links">
+            <ul>
+                <li class="text-center mb-6">
+                    <a href="/" title="home"
+                        class="font-Blinker300 text-white tracking-[2px] text-center capitalize hover:font-OctinStencilRg400 duration-500">
+                        home
+                    </a>
+                </li>
+                <li class="text-center w-fit mx-auto mb-6 cursor-pointer group/megaArch">
+                    <div class=" flex items-center justify-center gap-x-2">
+                        <svg class="rotate-180 duration-500 group-hover/megaArch:rotate-0" width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="3.629" height="13.5107"
+                                transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 16.4336 12.1196)"
+                                fill="white" />
+                            <rect width="3.53275" height="8.08412"
+                                transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 8.25 6.47461)" fill="white" />
+                        </svg>
+
+                        <span
+                            class="font-Blinker300 text-white tracking-[2px] text-center capitalize hover:font-OctinStencilRg400 duration-500">
+                            architecture
+                        </span>
+                    </div>
+                    <div class="megaArch pl-3 border-l border-l-white h-0 opacity-0 duration-500 scale-y-0 origin-top group-hover/megaArch:scale-y-100 group-hover/megaArch:opacity-100 group-hover/megaArch:h-fit group-hover/megaArch:mt-4">
+                        <ul class="">
+
+                            <basis core="print" datamembername="basisName.ProjectCat">
+                                
+                                <face filter="parentid=214455">
+                                    
+                                    <li class="mb-3 text-left">
+                                        <a href="/project-list.bc?catid=@catid" title="@title"
+                                            class="font-Blinker300 text-lg text-left text-grayTxt hover:text-white hover:font-OctinStencilRg400 duration-500 capitalize">
+                                            @title
+                                        </a>
+                                    </li>
+                                </face>
+                            </basis>
+                         
+                        </ul>
+                    </div>
+                </li>
+                <li class="text-center mb-6">
+                    <a href="/about-us.bc"
+                        class="font-Blinker300 text-white tracking-[2px] text-center capitalize hover:font-OctinStencilRg400 duration-500">
+                        about
+                    </a>
+                </li>
+                <li class="text-center w-fit mx-auto mb-6 cursor-pointer group/products">
+                    <div class=" flex items-center justify-center gap-x-2">
+                         <svg class="rotate-180 duration-500 group-hover/products:rotate-0" width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="3.629" height="13.5107"
+                                transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 16.4336 12.1196)"
+                                fill="white" />
+                            <rect width="3.53275" height="8.08412"
+                                transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 8.25 6.47461)" fill="white" />
+                        </svg>
+
+                        <a href="/product-cat.bc" title="products"
+                            class="font-Blinker300 text-white tracking-[2px] text-center capitalize hover:font-OctinStencilRg400 duration-500">
+                            product
+                        </a>
+                    </div>
+                      <div class="megaArch pl-3 border-l border-l-white h-0 opacity-0 duration-500 scale-y-0 origin-top group-hover/products:scale-y-100 group-hover/products:opacity-100 group-hover/products:h-fit group-hover/products:mt-4">
+                        <ul class="">
+                       <basis core="print" datamembername="basisName.productCat">
+                          
+                           <face filter="parentid=214465">
+                               <li class="mb-3 text-left">
+                                   <a href="/product-list.bc?catid=@catid"
+                                       class="font-Blinker300 text-lg text-left text-grayTxt hover:text-white hover:font-OctinStencilRg400 duration-500 capitalize">
+                                     @title
+                                   </a>
+                               </li>
+                               
+                           </face>
+                       </basis>
+                       
+                        </ul>
+                    </div>
+                </li>
+                <li class="text-center mb-6">
+                    <a href="/events-list.bc"
+                        class="font-Blinker300 text-white tracking-[2px] text-center capitalize hover:font-OctinStencilRg400 duration-500">
+                        events
+                    </a>
+                </li>
+                </li>
+                <li class="text-center mb-6">
+                    <a href="/contact-us.bc"
+                        class="font-Blinker300 text-white tracking-[2px] text-center capitalize hover:font-OctinStencilRg400 duration-500">
+                        contact us
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="social h-[57px] ">
+            <ul class="flex items-center justify-center gap-x-4">
+
+                <basis core="print" datamembername="db.contactus">
+              
+                    <face filter="text='Telegram'">
+                        <li>
+                            <a href="https://t.me/@largetext" title="telegram" aria-label="telegram" target="_blank">
+                                <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.7303 4.65156C13.6392 4.6878 13.5529 4.73523 13.4734 4.79275C12.8911 5.33181 12.3152 5.87944 11.735 6.42278L5.89048 11.9054L0.769531 10.0187L16.826 0.98291C15.9889 5.68905 15.1604 10.3246 14.3255 15.0115C13.0988 14.5837 11.902 14.113 10.6668 13.6767L7.78729 17.0394C7.78729 15.9313 7.78729 14.9003 7.78729 13.8713C7.78729 13.4435 7.80228 13.0157 7.8087 12.6049C8.05276 12.2734 8.29254 11.9418 8.53659 11.6124C10.2493 9.33061 11.957 7.04028 13.6597 4.74141C13.6811 4.71146 13.6982 4.67509 13.7196 4.643L13.7346 4.62803C13.7368 4.60664 13.7346 4.63231 13.7303 4.65156Z"
+                                        fill="white" />
+                                </svg>
+        
+        
+                            </a>
+                        </li>
+                        
+                    </face>
+                </basis>
+                <basis core="print" datamembername="db.contactus">
+              
+                    <face filter="text='WhatsApp'">
+                <li>
+                    <a href="https://wa.me/@largetext" title="whatsapp" aria-label="whatsapp" target="_blank">
+                        <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14.5543 3.2532C11.3831 0.0830121 6.24156 0.0828269 3.07056 3.2532C0.333494 5.98956 -0.0889733 10.2777 2.04777 13.4865L2.04721 13.4868C2.1073 13.5778 2.12468 13.6953 2.08382 13.8053L0.940108 16.8639L3.97946 15.7278C4.08614 15.6807 4.21372 15.6874 4.31818 15.7565C9.6714 19.3097 16.9325 15.4972 16.9325 8.99357C16.9326 6.75184 16.0237 4.7223 14.5543 3.2532ZM7.63228 8.79284C8.21744 9.59449 8.95976 10.2218 9.83465 10.6861C10.0937 10.4046 10.302 10.1009 10.626 10.0224V10.022C10.7737 9.98635 10.9297 9.99355 11.0788 10.0414L12.6124 10.534C12.9544 10.6438 13.2148 10.9614 13.1781 11.3375C13.1491 11.6353 13.0811 12.6275 12.9949 12.8491C12.8657 13.182 12.5364 13.3859 12.1799 13.3595C8.05105 13.0539 4.75118 9.75493 4.44556 5.62709C4.41044 5.15279 4.74656 4.79661 5.24132 4.74855C7.30373 4.54763 7.00126 4.35225 7.76484 6.72781C7.81273 6.87679 7.81994 7.03298 7.78425 7.18067H7.78388C7.70531 7.5045 7.40135 7.71282 7.11995 7.97159C7.27156 8.25828 7.44258 8.53295 7.63228 8.79284ZM7.7678 10.0366C8.28641 10.5551 8.89099 10.9902 9.54197 11.3309C10.2196 11.6856 10.6454 10.7266 10.7909 10.7094L12.4667 11.2543L12.3541 12.4974C12.3458 12.5819 12.3288 12.6597 12.2295 12.6523C8.45299 12.373 5.43212 9.35309 5.15239 5.57737L5.1816 5.4916C5.23928 5.42931 6.37431 5.34891 6.53442 5.33338C6.613 5.3258 7.02622 6.74408 7.09056 6.94426C7.1732 7.20174 6.09013 7.53001 6.47451 8.26438C6.81471 8.91391 7.25012 9.51889 7.7678 10.0366Z"
+                                fill="white" />
+                        </svg>
+
+
+                    </a>
+                </li>
+                    </face>
+                </basis>
+
+                <basis core="print" datamembername="db.contactus">
+              
+                    <face filter="text='Instagram'">
+                <li>
+                    <a href="https://instagram.com/@largetext" title="instagram" aria-label="instagram" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.0012 0.0927734H4.00029C2.96451 0.0937563 1.97144 0.506281 1.23903 1.23981C0.506627 1.97333 0.0947313 2.96792 0.09375 4.00528V12.0184C0.0947313 13.0557 0.506627 14.0503 1.23903 14.7838C1.97144 15.5174 2.96451 15.9299 4.00029 15.9309H12.0012C13.0368 15.9295 14.0297 15.5168 14.762 14.7834C15.4943 14.05 15.9063 13.0556 15.9077 12.0184V4.00528C15.9063 2.96804 15.4943 1.97368 14.762 1.24024C14.0297 0.506799 13.0368 0.0941484 12.0012 0.0927734ZM11.9196 5.09167C11.721 5.09143 11.5268 5.03219 11.3618 4.92145C11.1968 4.81071 11.0682 4.65344 10.9924 4.46953C10.9166 4.28562 10.897 4.08333 10.936 3.88824C10.975 3.69315 11.0708 3.51402 11.2115 3.37351C11.3521 3.23299 11.5312 3.1374 11.7261 3.09883C11.921 3.06025 12.1229 3.08042 12.3064 3.15679C12.4898 3.23315 12.6465 3.36229 12.7567 3.52785C12.8669 3.69342 12.9255 3.88798 12.9253 4.08694C12.9251 4.21905 12.899 4.34983 12.8484 4.47182C12.7977 4.5938 12.7236 4.70461 12.6302 4.79791C12.5368 4.89121 12.426 4.96517 12.3041 5.01557C12.1822 5.06598 12.0515 5.09184 11.9196 5.09167ZM8.00073 4.24038C8.74551 4.24038 9.47357 4.46157 10.0928 4.87598C10.7121 5.29039 11.1948 5.87941 11.4798 6.56855C11.7648 7.25769 11.8394 8.01601 11.6941 8.7476C11.5488 9.47919 11.1901 10.1512 10.6635 10.6786C10.1368 11.2061 9.46585 11.5653 8.73538 11.7108C8.0049 11.8563 7.24775 11.7816 6.55966 11.4962C5.87156 11.2107 5.28344 10.7273 4.86966 10.1071C4.45588 9.48692 4.23503 8.75774 4.23503 8.01182C4.23647 7.01202 4.63367 6.05357 5.33956 5.3466C6.04546 4.63963 7.00244 4.24182 8.00073 4.24038Z"
+                                fill="white" />
+                        </svg>
+
+                    </a>
+                </li>
+
+                    </face>
+                </basis>
+
+                <basis core="print" datamembername="db.contactus">
+              
+                    <face filter="text='Linkdin'">
+                <li>
+                    <a href="https://linkdin.com/@largetext" title="facebook" aria-label="facebook" target="_blank">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.59026 14.1779H0.819334C0.388276 14.1779 0.0390625 13.8284 0.0390625 13.3975V0.820793C0.0390625 0.389793 0.388331 0.0405273 0.819334 0.0405273H13.3962C13.8271 0.0405273 14.1764 0.389793 14.1764 0.820793V13.3975C14.1764 13.8285 13.827 14.1779 13.3962 14.1779H9.79361V8.7031H11.6312L11.9064 6.56949H9.79361V5.20732C9.79361 4.58959 9.96515 4.16863 10.851 4.16863L11.9808 4.16813V2.25982C11.7854 2.23382 11.1147 2.17573 10.3344 2.17573C8.70549 2.17573 7.59026 3.17004 7.59026 4.99602V6.56949H5.74793V8.7031H7.59026V14.1779Z"
+                                fill="white" />
+                        </svg>
+
+                    </a>
+                </li>
+                    </face>
+                </basis>
+            </ul>
+        </div>
+    </div>
+

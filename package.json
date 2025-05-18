@@ -7,7 +7,7 @@
     
 
     "watch:web": "npx tailwindcss -i ./web/assets/css/input.css -o ./web/assets/css/outputDesk2.css --watch",
-    "watch:mobile":"npx @tailwindcss/cli -i ./mobile/assets/css/input.css -o ./mobile/assets/css/outputMobile2.css --watch"
+    "watch:mobile":"npx tailwindcss -i ./mobile/assets/css/input.css -o ./mobile/assets/css/outputMobile2.css --watch"
 
   }
 }

@@ -5,17 +5,17 @@ const map = L.map('map').setView([lat, lng], 14);
 
 // تایل تیره
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
+  attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+  subdomains: 'abcd',
+  maxZoom: 19
 }).addTo(map);
 
 // ساخت مارکر سفارشی با HTML
 const customIcon = L.divIcon({
-    className: '', // بدون کلاس پیش‌فرض leaflet
-    html: `
+  className: '', // بدون کلاس پیش‌فرض leaflet
+  html: `
     <div class="absolute">
-      <a href="https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}" target="_blank"
+      <div
         class="flex items-center justify-center bg-main2 w-[61.84px] h-[61.84px] after:absolute after:w-[22px] after:h-[22px] after:bg-white after:rounded-full rounded-full">
         <svg width="68" height="70" viewBox="0 0 68 70" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_356_4597)">
@@ -29,11 +29,221 @@ const customIcon = L.divIcon({
 </defs>
 </svg>
 
-      </a>
+      </div>
     </div>
   `,
-    iconSize: [61.48, 61.48],
-    iconAnchor: [24, 24] // نقطه وسط مارکر روی مختصات باشه
+  iconSize: [61.48, 61.48],
+  iconAnchor: [24, 24] // نقطه وسط مارکر روی مختصات باشه
 });
 
 L.marker([lat, lng], { icon: customIcon }).addTo(map);
+
+
+let openFormBtn = document.querySelector(".openFormBtn")
+let popForm = document.querySelector(".popForm")
+let bgClose = document.querySelector(".bgClose")
+let closeFormPop = document.querySelector(".closeFormPop")
+openFormBtn.addEventListener("click", function (params) {
+  popForm.classList.remove("-translate-y-[100%]")
+})
+bgClose.addEventListener("click", function (params) {
+  popForm.classList.add("-translate-y-[100%]")
+})
+closeFormPop.addEventListener("click", function (params) {
+  popForm.classList.add("-translate-y-[100%]")
+})
+
+
+
+const host = {
+  debug: !1,
+  settings: {
+    "connection.web.callcommand": "/",
+    "connection.web.trust_login": "https://basispanel.ir/apicms",
+    "connection.web.basiscore": "https://basispanel.ir/apicms",
+    "connection.web.media": "https://basispanel.ir/apicms",
+    "connection.web.userbehavior": "https://basispanel.ir/apicms",
+    "default.dbsource.verb": "post",
+    "default.call.verb": "get",
+    "default.viewCommand.groupColumn": "prpid",
+    "default.dmnid": "4892",
+    "default.binding.regex": "\\{##([^#]*)##\\}",
+  },
+};
+
+
+
+
+
+let captchaInput;
+let captchaContainerclass;
+
+let loaderContainer = document.querySelector(".loaderContainer");
+let formBtn = document.querySelector(".formBtn");
+let loaderForm = document.querySelector(".loaderForm");
+formBtn.addEventListener("click", function (params) {
+  // formBtn.querySelector("span").style.display = "none";
+  loaderForm.style.display = "block";
+  formBtn.querySelector("span").style.display = "none";
+
+  setTimeout(() => {
+    let allertData = document.querySelectorAll("[data-bc-validation-part] li")
+
+
+    allertData.forEach(element => {
+      let prevInput = element.parentElement.previousElementSibling
+      console.log("prevInput", prevInput);
+
+      if (prevInput?.value == "") {
+
+        let newAllert = document.createElement("div")
+        newAllert.className = "flex newAllert items-center bg-[#C07F5D80] px-3 gap-x-3 absolute inset-0 w-full h-full "
+
+        newAllert.innerHTML = `
+     <svg width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_705_7340)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M27.8263 0.0244141V30C18.6086 30 9.36614 30 0.148438 30V0.0244141C9.26702 0.0244141 18.7077 0.0244141 27.8263 0.0244141ZM2.10596 1.75612V28.2195H25.844V1.75612H2.10596Z" fill="#FF0000"/>
+<path d="M13.9757 26.5607C15.0431 26.5607 15.9085 25.709 15.9085 24.6583C15.9085 23.6076 15.0431 22.7559 13.9757 22.7559C12.9083 22.7559 12.043 23.6076 12.043 24.6583C12.043 25.709 12.9083 26.5607 13.9757 26.5607Z" fill="#FF0000"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.3625 3.48779V20.6341H12.5625C12.5625 14.9268 12.5625 9.19511 12.5625 3.48779H15.3625Z" fill="#FF0000"/>
+</g>
+<defs>
+<clipPath id="clip0_705_7340">
+<rect width="28" height="30" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+<span class=" font-Blinker300 capitalize text-base text-[#FF0000]">
+Please Enter the code
+</span>
+`
+        element.parentElement.parentElement.insertAdjacentElement("beforeend", newAllert)
+      }
+
+      setTimeout(() => {
+          formBtn.querySelector("span").style.display = "block";
+
+          loaderForm.style.display = "none";
+
+  document.querySelectorAll(".newAllert").forEach(al => {
+        al.remove()
+      });
+      }, 3000);
+    })
+  }, 100);
+  if (captchaInput.value == "") {
+    let newAllert = document.createElement("div")
+    newAllert.className = "flex newAllert items-center bg-[#C07F5D80] px-3 gap-x-3 absolute inset-0 w-full h-full "
+
+    newAllert.innerHTML = `
+     <svg width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_705_7340)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M27.8263 0.0244141V30C18.6086 30 9.36614 30 0.148438 30V0.0244141C9.26702 0.0244141 18.7077 0.0244141 27.8263 0.0244141ZM2.10596 1.75612V28.2195H25.844V1.75612H2.10596Z" fill="#FF0000"/>
+<path d="M13.9757 26.5607C15.0431 26.5607 15.9085 25.709 15.9085 24.6583C15.9085 23.6076 15.0431 22.7559 13.9757 22.7559C12.9083 22.7559 12.043 23.6076 12.043 24.6583C12.043 25.709 12.9083 26.5607 13.9757 26.5607Z" fill="#FF0000"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.3625 3.48779V20.6341H12.5625C12.5625 14.9268 12.5625 9.19511 12.5625 3.48779H15.3625Z" fill="#FF0000"/>
+</g>
+<defs>
+<clipPath id="clip0_705_7340">
+<rect width="28" height="30" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+<span class=" font-Blinker300 capitalize text-base text-[#FF0000]">
+Please Enter the code
+</span>
+`
+    captchaContainerclass.insertAdjacentElement("beforeend", newAllert)
+    setTimeout(() => {
+      document.querySelectorAll(".newAllert").forEach(al => {
+        al.remove()
+      });
+    }, 3000);
+  }
+});
+function onSource1(args) {
+
+  const captcha = document.querySelector(
+    ".homeForm1 #requestBox input[name='captcha']"
+  ).value;
+  const captchaid = document.querySelector(
+    ".homeForm1 #requestBox input[name='captchaid']"
+  ).value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+
+  $bc.setSource("edit.object1", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+  });
+}
+
+let responsMsg = document.querySelector(".responsMsg1");
+let responsMsgIn = document.querySelector(".responsMsg1 span");
+async function OnProcessedEditObject1(args) {
+
+  const response = args.response;
+  const json = await response.json();
+
+
+  if (json.errorid == 6) {
+
+    responsMsg.style.display = "block";
+    responsMsgIn.innerHTML = "Your request has been successfully registered";
+    responsMsgIn.style.color = "#807F63";
+    document.querySelector("form").reset();
+    let questions = document.querySelectorAll(
+      ".homeForm1 div[data-bc-question]"
+    );
+    setTimeout(() => {
+      responsMsg.style.display = "none";
+      formBtn.querySelector("span").style.display = "flex";
+      loaderForm.style.display = "none";
+    }, 2000);
+  }
+  if (json.errorid == 4) {
+
+
+    responsMsgIn.innerHTML = "Something went wrong, please try again";
+
+    responsMsg.style.display = "block";
+    responsMsgIn.style.color = "#FF0000";
+    document.querySelector("form").reset();
+
+    setTimeout(() => {
+      formBtn.querySelector("span").style.display = "flex";
+      loaderForm.style.display = "none";
+      responsMsg.style.display = "block";
+    }, 2000);
+  }
+  if (json.errorid == 15 && captchaInput.value != "") {
+
+
+    responsMsgIn.innerHTML = "captcha is wrong";
+    responsMsgIn.style.color = "#FF0000";
+
+    setTimeout(() => {
+      formBtn.querySelector("span").style.display = "flex";
+      loaderForm.style.display = "none";
+      responsMsg.style.display = "block";
+    }, 2000);
+  }
+}
+
+function renderFn1(params) {
+
+
+  document.querySelector(".qclass8").style.display = "flex";
+  captchaInput = document.querySelector(".captchaContainerclass .codeinputm");
+  captchaContainerclass = document.querySelector(".captchaContainerclass");
+  loaderContainer.style.display = "none";
+
+  let questions = document.querySelectorAll(".homeForm1 div[data-bc-question]");
+  questions.forEach((element) => {
+    element.classList.add("afterStar");
+
+
+  });
+}
+
+function renderEditobject(params) {
+  loaderContainer.style.display = "none";
+}

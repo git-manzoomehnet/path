@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "OctinStencilRg400";
+  src: url("../fonts/OctinStencilRg.eot");
+  src: url("../fonts/OctinStencilRg.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/OctinStencilRg.woff") format("woff"),
+    url("../fonts/OctinStencilRg.woff2") format("woff2"),
+    url("../fonts/OctinStencilRg.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blinker300";
+  src: url("../fonts/Blinker-ExtraLight.eot");
+  src: url("../fonts/Blinker-ExtraLight.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Blinker-ExtraLight.woff") format("woff"),
+    url("../fonts/Blinker-ExtraLight.woff2") format("woff2"),
+    url("../fonts/Blinker-ExtraLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blinker400";
+  src: url("../fonts/Blinker-Regular.eot");
+  src: url("../fonts/Blinker-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Blinker-Regular.woff") format("woff"),
+    url("../fonts/Blinker-Regular.woff2") format("woff2"),
+    url("../fonts/Blinker-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blinker600";
+  src: url("../fonts/Blinker-Bold.eot");
+  src: url("../fonts/Blinker-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Blinker-Bold.woff") format("woff"),
+    url("../fonts/Blinker-Bold.woff2") format("woff2"),
+    url("../fonts/Blinker-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YekanBakh400";
+  /* src: url("../fonts/inter.ttf")  format("truetype"); */
+  src: url("../_fonts/YekanBakh-Regular.eot");
+  src: url("../_fonts/YekanBakh-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../_fonts/YekanBakh-Regular.woff") format("woff"),
+    url("../_fonts/YekanBakh-Regular.woff2") format("woff2"),
+    url("../_fonts/YekanBakh-Regular.ttf") format("truetype");
+
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@theme {
+  --font-OctinStencilRg400: "OctinStencilRg400" !important;
+  --font-Blinker300: "Blinker300" !important;
+  --font-Blinker400: "Blinker400" !important;
+  --font-Blinker600: "Blinker600" !important;
+  --font-YekanBakh400: "YekanBakh400" !important;
+
+  --color-main1: #231f20;
+  --color-main2: #807f63;
+  --color-grayTxt: #c8c9cb;
+  --color-grayTxt2: #929497;
+  --color-grayTxt3: #6d6e71;
+  --color-grayLine: #d9d9d9;
+  --color-overlay: #ffffff1a;
+
+  --spacing-96p: 96%;
+  --spacing-90p: 90%;
+  --spacing-80p: 80%;
+}

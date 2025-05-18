@@ -1,0 +1,61 @@
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="20" catid="211422">
+    <member name="product-list" size="500x900" type="list" postsql=" select * from [db.product-list] where title like '%[##cms.query.q##]%'" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" catid="211421">
+    <member name="list-Project" postsql=" select * from [db.list-Project] where title like '%[##cms.query.q##]%'" size="500x900" type="list" link="project.bc" propertyid="90618" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" catid="211421">
+    <member name="list2-Project" postsql=" select * from [db.list2-Project] where title like '%[##cms.query.q##]%'" size="200x200" type="list" link="project.bc" />
+</basis>
+<basis core="inlinesource" name="list">
+    <member name="star" lefttblcol="db.list2-Project.id" righttblcol="db.list-Project.id" format="join"
+        jointype="leftjoin" />
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" catid="214687">
+    <member name="list-events" postsql=" select * from [db.list-events] where title like '%[##cms.query.q##]%'" size="500x900" propertyid="3087761" type="list" link="event.bc" />
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" catid="214648">
+    <member name="list-awards" postsql=" select * from [db.list-awards] where title like '%[##cms.query.q##]%'" size="400x400" propertyid="3087746,3087745" type="list" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نتیجه جستجو برای [##cms.query.q##]</title>
+    <meta name="description" content="نتیجه جستجو برای [##cms.query.q##]" />
+
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper.min.css" />
+    <basis core="call" file="styles2.inc" />
+</head>
+
+<body>
+    <main>
+        <basis core="group" if="'[##cms.query.q##]'=''">
+           empty
+        </basis>
+
+        <basis core="group"
+            if="'[##db.product-list.RowNumber##]' = '' and '[##list.star.RowNumber##]' = '' and '[##db.list-events.RowNumber##]' = '' and '[##db.list-awards.RowNumber##]' = ''">
+          not found
+        </basis>
+        <basis core="group" if="'[##cms.query.q##]'<>''">
+
+        <basis core="group"
+            if="'[##db.product-list.RowNumber##]' <> '' or '[##list.star.RowNumber##]' <> '' or '[##db.list-events.RowNumber##]' <> '' or '[##db.list-awards.RowNumber##]' <> ''">
+           found
+        </basis>
+        </basis>
+    </main>
+
+    <basis core="call" file="scripts2.inc" />
+
+    <script src="[##cms.cms.cdn##]/js/swiper.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/search.js"></script>
+</body>
+
+</html>

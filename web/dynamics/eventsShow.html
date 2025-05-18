@@ -6,8 +6,8 @@
 </basis>
 
 
-<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" usedforid="2377574"> <member name="event" type="view"/ > </basis>
-  <basis core="dbsource" name="db" source="media" lid="2" sourcemid="1" usedforid="2377574"> <member name="image-event" type="list" format="4"/> </basis>	
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" usedforid="[##cms.query.id##]"> <member name="event" type="view"/> </basis>
+  <basis core="dbsource" name="db" source="media" lid="2" sourcemid="1" usedforid="[##cms.query.id##]"> <member name="image-event" type="list" format="4"/> </basis>	
   
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +91,7 @@
 <basis core="print" datamembername="db.event">
 
     <face filter="TypeID not in (150,159)">
-      <span class="text-grayTxt font-Blinker300">@Question:</span>&nbsp;
+      <span class="text-grayTxt font-Blinker300">@Question:</span> 
       <span class="text-white font-Blinker400">@Answer</span><br />
         
     </face>
@@ -157,7 +157,7 @@
                 </layout>
         
                 <face filter="ord=1000">
-                  <div class="swiper-slide">
+                  <div class="swiper-slide cursor-pointer">
                     <figure class="slide-bgimg"
                         style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
                         <img class="entity-img"
@@ -205,6 +205,64 @@
     </div>
   </main>
 
+
+
+  <div class="galleryPop -translate-y-[100%] duration-1000 fixed inset-0 z-[2121025885] flex items-center justify-center h-svh w-svw bg-main1/[0.85]">
+    <div class="w-96p mx-auto h-[72vh] max-h-[648px] relative">
+      <div
+        class="closeSearchPop absolute top-0 right-0 z-10  self-end flex flex-col text-right mb-10 items-end cursor-pointer">
+        <svg width="49" height="3" viewBox="0 0 49 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="white" />
+          <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="white" />
+        </svg>
+
+        <span class="font-Blinker300 text-right  block mt-2 tracking-[5px] text-white text-xs">
+          CLOSE
+        </span>
+      </div>
+      <div class="swiper popGallery h-full">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+
+          <basis core="print" datamembername="db.image-event">
+              
+            <face filter="ord=1000">
+                <div class="swiper-slide">
+                  <div class="imgS h-full flex items-center justify-center">
+                    <img class="h-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                  </div>
+                </div>
+                  
+              </face>
+          </basis>
+        
+
+        </div>
+
+      </div>
+
+      <div class="nextPopGallery z-10 cursor-pointer absolute right-0 top-[50%]">
+        <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.0722656" y="2.76123" width="3.33239" height="12.4065" transform="rotate(-45 0.0722656 2.76123)"
+            fill="white" />
+          <rect x="5.25586" y="10.2771" width="3.24401" height="7.42337" transform="rotate(45 5.25586 10.2771)"
+            fill="white" />
+        </svg>
+
+      </div>
+      <div class="prevPopGallery z-10 cursor-pointer absolute left-0 top-[50%]">
+        <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="3.33239" height="12.4065"
+            transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.1465 2.76123)" fill="white" />
+          <rect width="3.24401" height="7.42337"
+            transform="matrix(-0.707107 0.707107 0.707107 0.707107 5.96289 10.2771)" fill="white" />
+        </svg>
+
+
+      </div>
+    </div>
+  </div>
 
 
 

@@ -1,0 +1,389 @@
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" usedforid="2376944"> 
+<member name="About-us" type="view"/> 
+
+<member name="About-us250" postsql="select * from [db.About-us250] where TypeID=250" type="view"/> 
+
+</basis>	
+ <basis core="dbsource" name="db" source="media" lid="2" sourcemid="1" usedforid="2376944"> <member name="image" type="list" format="4"/> </basis>	
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="11" catid="214479"> <member name="list-personel" size="400x500" propertyid="2732" type="list"/> </basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="11" catid="214478"> <member name="list-Past-colleagues" propertyid="2732" type="list"/> </basis>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <meta name="description" content="about architect path">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/locomotive.css">
+    <basis core="call" file="styles2.inc" />
+</head>
+
+<body>
+
+
+    <main class="aboutUs overflow-x-hidden bg-main1">
+        <basis core="call" file="header-1.inc" />
+
+        <div class="containerHorizontal">
+            <section id="PinSection">
+                <div class="Pin-Wrapp">
+                    <basis core="print" datamembername="db.image">
+                        <layout>
+                            <section class="section1 shrink-0 relative">
+                                <div class="absolute top-[115px] z-[2121025882] shrink-0 flex items-end  left-7">
+
+                                    <a href="/"
+                                        class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                                        home
+                                    </a>
+
+
+                                    <p
+                                        class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                                        .
+                                    </p>
+                                    <p
+                                        class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                                        about us
+                                    </p>
+
+                                </div>
+
+
+                                <div class="imgS h-full">
+                                    @child
+
+
+                                </div>
+                            </section>
+                        </layout>
+
+                        <face filter="ord=1">
+                            <img src="[##cms.cms.cdn##]/@largeIMG"
+                                class="h-full grayscale-100 hover:grayscale-0 duration-500" alt="aboutUs">
+                        </face>
+                    </basis>
+
+                    <section
+                    class="section2 wipeScroll relative shrink-0 w-[477px] flex flex-col justify-center items-center">
+                    <div class="w-[380px]">
+                            <basis core="print" datamembername="db.About-us">
+                            
+                                <face filter="TypeID=150">
+                                    
+                                    <div class="flex flex-col items-start gap-1 w-full mb-2">
+                                        <div class="lineeee w-[63px] flex gap-x-px">
+                                            <span class="bg-main2 h-2 w-1.5">
+        
+                                            </span>
+                                            <span class="bg-main2 h-2 w-14">
+        
+                                            </span>
+                                        </div>
+        
+        
+        
+                                        <h1 class="w-full uppercase font-OctinStencilRg400 font-normal text-main2 text-2xl">
+                                          @Answer
+        
+        
+        
+                                        </h1>
+        
+        
+        
+                                    </div>
+                                </face>
+                            </basis>
+
+                            <basis core="print" datamembername="db.About-us250">
+                               
+                                <face filter="RowNumber=1">
+                                    
+                                    <div class="para leading-[22px] text-justify text-white font-Blinker300 text-sm">
+                                        @largetext
+                                    </div>
+                                </face>
+                            </basis>
+
+
+
+                        </div>
+                        <div
+                            class="overflow-hidden w-[380px] absolute bottom-11 shrink-0  flex gap-x-2 items-center h-fit">
+                            <span class="font-Blinker300 text-sm text-white capitalize">
+                                scroll
+                            </span>
+
+                            <div class="scrollBtmHorizontal overflow-hidden w-[172px] h-px bg-white">
+                                <div class="line w-[50%] h-px bg-main2"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section3 shrink-0 relative">
+                        <div class="imgS h-full">
+                            <basis core="print" datamembername="db.image">
+                               
+                                <face filter="ord=2">
+                                    <img src="[##cms.cms.cdn##]/@largeIMG"
+                                        class="h-full grayscale-100 hover:grayscale-0 duration-500" alt="aboutUs">
+                                    
+                                </face>
+                            </basis>
+                        </div>
+
+                    </section>
+
+                    <section
+                        class="section4 wipeScroll relative shrink-0 w-[572px] flex flex-col justify-center items-center">
+                        <div class="w-[444px]">
+
+
+                            <basis core="print" datamembername="db.About-us250">
+                                
+                                <face filter="RowNumber=2">
+                                    <div class="mb-16">
+        
+                                        <div class="flex flex-col items-start gap-1 w-full mb-2">
+                                            <div class="lineeee w-[63px] flex gap-x-px">
+                                                <span class="bg-main2 h-2 w-1.5">
+        
+                                                </span>
+                                                <span class="bg-main2 h-2 w-14">
+        
+                                                </span>
+                                            </div>
+        
+        
+        
+                                            <h2 class="w-full font-OctinStencilRg400 uppercase font-normal text-main2 text-2xl">
+                                               @text
+        
+        
+        
+                                            </h2>
+        
+        
+        
+                                        </div>
+                                        <div class="para leading-[22px] text-justify text-white font-Blinker300 text-sm">
+                                            @largetext
+                                        </div>
+                                    </div>
+                                    
+                                </face>
+                            </basis>
+
+
+                            <basis core="print" datamembername="db.About-us250">
+                               
+                                <face filter="RowNumber=3">
+                                    <div class="">
+                                        <div class="flex flex-col items-start gap-1 w-full mb-2">
+                                            <div class="lineeee w-[63px] flex gap-x-px">
+                                                <span class="bg-main2 h-2 w-1.5">
+        
+                                                </span>
+                                                <span class="bg-main2 h-2 w-14">
+        
+                                                </span>
+                                            </div>
+        
+        
+        
+                                            <h3 class="w-full font-OctinStencilRg400 uppercase font-normal text-main2 text-2xl">
+                                               @text
+        
+        
+        
+                                            </h3>
+        
+        
+        
+                                        </div>
+                                        <div class="para leading-[22px] text-justify text-white font-Blinker300 text-sm">
+                                           @largetext
+                                        </div>
+                                    </div>
+                                    
+                                </face>
+                            </basis>
+
+
+                        </div>
+
+                    </section>
+
+
+                    <section class="section5 shrink-0 pr-20 flex flex-col  max-2xl:pt-10 min-2xl:pt-[120px] gap-y-3">
+                        <div class="imgS">
+                            <basis core="print" datamembername="db.image">
+                               
+                                <face filter="ord=3">
+                                    <img class="h-[58.5vh] max-h-[526px]" id="myImage"
+                                        src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                    
+                                </face>
+                            </basis>
+                        </div>
+
+                        <basis core="print" datamembername="db.About-us250">
+                           
+                            <face filter="RowNumber=4">
+                                <div class="wipeScroll" id="myText">
+                                    <div class="flex flex-col items-start gap-1 w-full mb-2">
+                                        <div class="lineeee w-[63px] flex gap-x-px">
+                                            <span class="bg-main2 h-2 w-1.5">
+        
+                                            </span>
+                                            <span class="bg-main2 h-2 w-14">
+        
+                                            </span>
+                                        </div>
+        
+        
+        
+                                        <h1 class="w-full font-OctinStencilRg400 uppercase font-normal text-main2 text-2xl">
+                                          @text
+        
+        
+        
+                                        </h1>
+        
+        
+        
+                                    </div>
+                                    <div class="para leading-[22px] text-justify text-white font-Blinker300 text-sm">
+                                        @largetext
+                                    </div>
+                                </div>
+                                
+                            </face>
+                        </basis>
+                    </section>
+                    <section class="section6  pr-11 shrink-0 gap-y-11 flex flex-col max-2xl:pt-10 min-2xl:pt-[120px]">
+                        <div class="flex flex-col items-start gap-1 w-full mb-2">
+                            <div class="lineeee w-[63px] flex gap-x-px">
+                                <span class="bg-main2 h-2 w-1.5">
+
+                                </span>
+                                <span class="bg-main2 h-2 w-14">
+
+                                </span>
+                            </div>
+
+
+
+                            <h3 class="w-full font-OctinStencilRg400 uppercase font-normal text-main2 text-2xl">
+                              our team
+
+
+
+                            </h3>
+
+
+
+                        </div>
+
+                        <div class="flex gap-x-7">
+
+                            <basis core="print" datamembername="db.list-personel">
+                              
+                                <face>
+                                    <div class="member group/member">
+                                        <div
+                                            class="imgS overflow-hidden relative grayscale-100 after:duration-1000 group-hover/member:grayscale-0 group-[&.activeMemebr]/member:after:scale-x-0 after:origin-right duration-500 after:bg-main1 after:absolute after:inset-0">
+                                            <img class="h-[52vh] max-h-[469px] -translate-x-20 duration-[2000ms] group-[&.activeMemebr]/member:translate-x-0"
+                                                src="[##cms.cms.cdn##]/@00400X00500prp" alt="@title">
+                                        </div>
+                                        <p class="font-Blinker400 text-xl tracking-wider capitalize text-white block my-1.5">
+                                           @title
+                                        </p>
+                                        <span class="capitalize block mb-3 font-Blinker300 text-base text-white">
+                                           @prp_2732
+                                        </span>
+        
+                                    </div>
+                                    
+                                </face>
+                            </basis>
+
+                        </div>
+                    </section>
+
+
+                    <basis core="print" datamembername="db.list-Past-colleagues">
+                        <layout>
+                            <section class="section7 pr-11 shrink-0 flex flex-col max-2xl:pt-10 min-2xl:pt-[120px]">
+                                <div class="flex wipeScroll flex-col items-start gap-1 w-full mb-2">
+                                    <div class="lineeee w-[63px] flex gap-x-px">
+                                        <span class="bg-main2 h-2 w-1.5">
+        
+                                        </span>
+                                        <span class="bg-main2 h-2 w-14">
+        
+                                        </span>
+                                    </div>
+                                    <h3 class="w-full font-OctinStencilRg400 uppercase font-normal text-main2 text-2xl">
+                                        Past colleagues
+        
+        
+        
+        
+                                    </h3>
+        
+        
+        
+                                </div>
+                                <div class="para wipeScroll text-white font-Blinker300 text-base mb-6 leading-[22px]">
+                                    <p>
+                                        Colleagues who have worked with us before.
+                                    </p>
+                                </div>
+        
+        
+                                <div class="grid grid-rows-6 grid-flow-col grid-cols-auto gap-x-10">
+                                    @child
+                                    
+                                </div>
+                            </section>
+                        </layout>
+                        
+                        <face>
+                            <div class="customer">
+                                <div class="flex gap-x-2 mb-1 items-center">
+                                    <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                    <p class="font-Blinker400 capitalize text-white text-xl tracking-wider">
+                                       @title
+                                    </p>
+                                </div>
+                                <span class="font-Blinker300 capitalize pl-5 text-base text-white">
+                                    @prp_2732
+                                </span>
+                            </div>
+                            
+                        </face>
+                    </basis>
+                    <basis core="call" file="footer-2.inc" />
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <basis core="call" file="scripts2.inc" />
+
+    <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/imageLoaded.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/gsap.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/ScrollTrigger.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/locoScroll.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <script src="[##cms.cms.cdn##]/js/aboutUs.js"></script>
+
+
+</body>
+
+</html>

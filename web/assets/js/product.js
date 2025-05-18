@@ -108,3 +108,68 @@ scrollBtm.addEventListener("click" , function (params) {
 
 document.querySelector(".section2").scrollIntoView({ behavior: "smooth" });
 })
+
+
+
+
+let lastScrollY = window.scrollY;
+let isInitialLoad = true;
+
+const elements = document.querySelectorAll('.wipeScroll');
+
+const observer = new IntersectionObserver((entries) => {
+  const currentScrollY = window.scrollY;
+  const isScrollingDown = currentScrollY > lastScrollY;
+
+  entries.forEach(entry => {
+    const el = entry.target;
+
+    if (entry.isIntersecting) {
+      if (isInitialLoad || isScrollingDown) {
+        el.classList.add('activeScroll', 'animate');
+        observer.unobserve(el); // ✅ فقط یکبار اجرا شود
+      }
+    }
+
+    // نیازی به حذف کلاس نیست چون فقط یکبار اضافه میشه
+  });
+
+  lastScrollY = currentScrollY;
+  isInitialLoad = false;
+}, {
+  threshold: 0.01
+});
+
+elements.forEach(el => observer.observe(el));
+
+
+
+
+
+
+let galleryPop = document.querySelector(".galleryPop")
+let closeSearchPop = document.querySelector(".closeSearchPop")
+  const popGallery = new Swiper('.popGallery', {
+ speed:1000,
+   slidesPerView: 1,
+
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.nextPopGallery',
+    prevEl: '.prevPopGallery',
+  },
+
+});
+let mainSliders = document.querySelectorAll(".main-slider .swiper-slide")
+mainSliders.forEach((element,i) => {
+    element.addEventListener("click" , function (params) {
+        popGallery.slideTo(i,10)
+        galleryPop.classList.remove("-translate-y-[100%]")
+    })
+});
+
+closeSearchPop.addEventListener("click" , function (params) {
+            galleryPop.classList.add("-translate-y-[100%]")
+
+})

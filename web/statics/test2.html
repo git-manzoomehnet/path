@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabs Scroll & Click</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.tab-buttons {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+
+.tab-buttons button {
+  display: block;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+}
+
+.tab-buttons button:hover {
+  background: #ccc;
+}
+
+.tabs-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.tabs {
+  width: 100%;
+}
+
+.tabs_content {
+  height: 60vh;
+  padding: 40px;
+  box-sizing: border-box;
+  opacity: 0.3;
+  transform: translateX(50px);
+  transition: all 0.5s ease;
+}
+
+.tabs_content.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tabs_content.activeDisplay {
+  background-color: #f0f0f0;
+}
+
+.tabs_content.newActive {
+  border-left: 5px solid #333;
+}
+
+.titleContaner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab-holder {
+  margin-top: 20px;
+}
+
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <div class="tab-buttons">
+    <button data-tab="0">Tab 1</button>
+    <button data-tab="1">Tab 2</button>
+    <button data-tab="2">Tab 3</button>
+    <button data-tab="3">Tab 4</button>
+  </div>
+
+  <div class="tabs-wrapper">
+    <div class="tabs">
+      <div class="tabs_content is-1">
+        <div class="titleContaner">
+          <h2>Title 1</h2>
+          <span>01</span>
+        </div>
+        <div class="tab-holder">
+          <h3>Subtitle 1</h3>
+          <div class="inter-content-holder">
+            <p>Content for tab 1...</p>
+          </div>
+        </div>
+      </div>
+      <div class="tabs_content is-2">
+        <div class="titleContaner">
+          <h2>Title 2</h2>
+          <span>02</span>
+        </div>
+        <div class="tab-holder">
+          <h3>Subtitle 2</h3>
+          <div class="inter-content-holder">
+            <p>Content for tab 2...</p>
+          </div>
+        </div>
+      </div>
+      <div class="tabs_content is-3">
+        <div class="titleContaner">
+          <h2>Title 3</h2>
+          <span>03</span>
+        </div>
+        <div class="tab-holder">
+          <h3>Subtitle 3</h3>
+          <div class="inter-content-holder">
+            <p>Content for tab 3...</p>
+          </div>
+        </div>
+      </div>
+      <div class="tabs_content is-4">
+        <div class="titleContaner">
+          <h2>Title 4</h2>
+          <span>04</span>
+        </div>
+        <div class="tab-holder">
+          <h3>Subtitle 4</h3>
+          <div class="inter-content-holder">
+            <p>Content for tab 4...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+gsap.registerPlugin(ScrollTrigger);
+
+let tabsContent = document.querySelectorAll(".tabs_content");
+let tabWrapper = document.querySelector(".tabs-wrapper");
+
+if (tabsContent.length <= 1) {
+  tabWrapper.style.height = "100vh";
+} else {
+  tabWrapper.style.height = `${tabsContent.length * 60}vh`;
+}
+
+// تابع مشترک برای فعال‌سازی تب
+function activateTab(index) {
+  if (!$(".tabs_content").eq(index).hasClass("active")) {
+    $(".tabs_content.active").removeClass("active");
+    $(".tabs_content").eq(index).addClass("active");
+
+    setTimeout(() => {
+      $(".tabs_content").eq(index).removeClass("activeDisplay");
+    }, 400);
+    setTimeout(() => {
+      $(".tabs_content").eq(index).addClass("activeDisplay");
+    }, 1000);
+    setTimeout(() => {
+      $(".tabs_content").removeClass("newActive");
+      $(".tabs_content").eq(index).addClass("newActive");
+    }, 1200);
+  }
+}
+
+// اسکرول کنترل با ScrollTrigger
+ScrollTrigger.create({
+  trigger: ".tabs",
+  start: "top top",
+  pin: true,
+  endTrigger: ".tabs-wrapper",
+  end: "max",
+  onUpdate: (self) => {
+    let nb = Math.round(
+      gsap.utils.mapRange(0, 1, 0, tabsContent.length - 1, self.progress)
+    );
+    activateTab(nb);
+  },
+});
+
+// کلیک روی دکمه‌ها
+document.querySelectorAll(".tab-buttons button").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    let index = +e.currentTarget.dataset.tab;
+    activateTab(index);
+
+    // اسکرول به موقعیت مناسب
+    let sectionTop = document.querySelector(".tabs-wrapper").offsetTop;
+    let sectionHeight = document.querySelector(".tabs-wrapper").offsetHeight;
+
+    let targetScroll = sectionTop + (index / tabsContent.length) * sectionHeight;
+
+    window.scrollTo({
+      top: targetScroll,
+      behavior: "smooth",
+    });
+  });
+});
+
+  </script>
+</body>
+</html>

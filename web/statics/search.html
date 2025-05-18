@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/outputDesk2.css">
+</head>
+
+<body>
+    <main>
+        <!-- <div class="searchFormContainer  h-svh overflow-hidden relative">
+            <div class="flex items-center justify-center h-full w-full">
+                <div class="imgS absolute inset-0 w-full h-full">
+                    <img src="../assets/images/bg-ErrorPage.png" class="w-full h-full object-cover" alt="search">
+                </div>
+                <div class=" h-[115px]  w-90p mx-auto shrink-0 flex items-end absolute right-0 z-10 top-0 left-0">
+
+                    <a href="/"
+                        class=" whitespace-nowrap inline text-main1 top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                        home
+                    </a>
+
+                    <p
+                        class=" whitespace-nowrap mx-2 inline text-main1 top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                        .
+                    </p>
+                    <p
+                        class=" whitespace-nowrap inline text-main1 top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                        search
+                    </p>
+                </div>
+
+
+                <div class="formPage flex flex-col w-80p mx-auto max-w-[1102px] relative z-1">
+
+                    <div class="closeSearchPop self-end flex flex-col text-right mb-10 items-end cursor-pointer">
+                        <svg width="49" height="3" viewBox="0 0 49 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="#231F20" />
+                            <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="#231F20" />
+                        </svg>
+
+                        <span class="font-Blinker300 text-right  block mt-2 tracking-[7px] text-main1 text-xs">
+                            CLOSE search
+                        </span>
+                    </div>
+                    <form class="flex items-center border-b border-b-main2 pl-2 pr-1 justify-center" role="search"
+                        id="searchform" action="/search.bc" method="get">
+                        <input type="search" placeholder="search"
+                            class="w-full py-5 outline-0 font-Blinker300 text-2xl capitalize text-main2 placeholder:text-main2">
+
+                        <button class="cursor-pointer" type="submit">
+                            <svg width="30" height="29" viewBox="0 0 30 29" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_465_5005)">
+                                    <path
+                                        d="M13.6419 0.263687C6.49152 0.263687 0.673828 6.08143 0.673828 13.2319C0.673828 20.3823 6.49152 26.2001 13.6419 26.2001C16.922 26.2001 19.9232 24.9709 22.2124 22.9538L28.2773 28.9187L29.4929 27.6844L23.4333 21.7243C25.4114 19.4468 26.6153 16.4779 26.6153 13.2316C26.6102 6.08117 20.7923 0.263687 13.6419 0.263687ZM13.6419 24.4687C7.44851 24.4687 2.40516 19.4271 2.40516 13.2319C2.40516 7.03843 7.44678 1.99503 13.6419 1.99503C19.8353 1.99503 24.8787 7.0367 24.8787 13.2319C24.8787 19.4253 19.837 24.4687 13.6419 24.4687Z"
+                                        fill="#807F63" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_465_5005">
+                                        <rect width="29" height="29" fill="white" transform="translate(0.492188)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div> -->
+        <!-- <div class="notFoundsearchFormContainer  h-svh overflow-hidden relative">
+            <div class="flex items-center justify-center h-full w-full">
+                <div class="imgS absolute inset-0 w-full h-full">
+                    <img src="../assets/images/bg-ErrorPage.png" class="w-full h-full object-cover" alt="search">
+                </div>
+                <div class=" h-[115px]  w-90p mx-auto shrink-0 flex items-end absolute right-0 z-10 top-0 left-0">
+
+                    <a href="/"
+                        class=" whitespace-nowrap inline text-main1 top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                        home
+                    </a>
+
+                    <p
+                        class=" whitespace-nowrap mx-2 inline text-main1 top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                        .
+                    </p>
+                    <p
+                        class=" whitespace-nowrap inline text-main1 top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                        search
+                    </p>
+                </div>
+
+
+                <div class="formPage flex flex-col w-80p mx-auto max-w-[1102px] relative z-1">
+
+                    <div class="closeSearchPop self-end flex flex-col text-right mb-10 items-end cursor-pointer">
+                        <svg width="49" height="3" viewBox="0 0 49 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="#231F20" />
+                            <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="#231F20" />
+                        </svg>
+
+                        <span class="font-Blinker300 text-right  block mt-2 tracking-[7px] text-main1 text-xs">
+                            CLOSE search
+                        </span>
+                    </div>
+                    <form class="flex items-center border-b border-b-main2 pl-2 pr-1 justify-center" role="search"
+                        id="searchform" action="/search.bc" method="get">
+                        <input type="search" placeholder="search"
+                            class="w-full py-5 outline-0 font-Blinker300 text-2xl capitalize text-main2 placeholder:text-main2">
+
+                        <button class="cursor-pointer" type="submit">
+                            <svg width="30" height="29" viewBox="0 0 30 29" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_465_5005)">
+                                    <path
+                                        d="M13.6419 0.263687C6.49152 0.263687 0.673828 6.08143 0.673828 13.2319C0.673828 20.3823 6.49152 26.2001 13.6419 26.2001C16.922 26.2001 19.9232 24.9709 22.2124 22.9538L28.2773 28.9187L29.4929 27.6844L23.4333 21.7243C25.4114 19.4468 26.6153 16.4779 26.6153 13.2316C26.6102 6.08117 20.7923 0.263687 13.6419 0.263687ZM13.6419 24.4687C7.44851 24.4687 2.40516 19.4271 2.40516 13.2319C2.40516 7.03843 7.44678 1.99503 13.6419 1.99503C19.8353 1.99503 24.8787 7.0367 24.8787 13.2319C24.8787 19.4253 19.837 24.4687 13.6419 24.4687Z"
+                                        fill="#807F63" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_465_5005">
+                                        <rect width="29" height="29" fill="white" transform="translate(0.492188)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </button>
+                    </form>
+
+                    <div class="para text-center font-Blinker300 text-2xl mt-[146px] text-grayTxt3">
+                        <p>
+                            Sorry, nothing was found.Search for another word
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div> -->
+
+        <div class="FoundsearchFormContainer bg-main1">
+            <form
+                class="flex items-center w-80p mx-auto max-w-[1102px] mt-[204px] mb-24 border-b border-b-main2 pl-2 pr-1 justify-center"
+                role="search" id="searchform" action="/search.bc" method="get">
+                <input type="search" placeholder="search"
+                    class="w-full py-5 outline-0 font-Blinker300 text-2xl capitalize text-main2 placeholder:text-main2">
+
+                <button class="cursor-pointer" type="submit">
+                    <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_465_5005)">
+                            <path
+                                d="M13.6419 0.263687C6.49152 0.263687 0.673828 6.08143 0.673828 13.2319C0.673828 20.3823 6.49152 26.2001 13.6419 26.2001C16.922 26.2001 19.9232 24.9709 22.2124 22.9538L28.2773 28.9187L29.4929 27.6844L23.4333 21.7243C25.4114 19.4468 26.6153 16.4779 26.6153 13.2316C26.6102 6.08117 20.7923 0.263687 13.6419 0.263687ZM13.6419 24.4687C7.44851 24.4687 2.40516 19.4271 2.40516 13.2319C2.40516 7.03843 7.44678 1.99503 13.6419 1.99503C19.8353 1.99503 24.8787 7.0367 24.8787 13.2319C24.8787 19.4253 19.837 24.4687 13.6419 24.4687Z"
+                                fill="#807F63" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_465_5005">
+                                <rect width="29" height="29" fill="white" transform="translate(0.492188)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                </button>
+            </form>
+
+
+            <section class="section1 w-96p mx-auto mb-16">
+                <div class="flex flex-col items-start gap-1 w-full mb-6">
+                    <div class="lineeee w-[63px] flex gap-x-px">
+                        <span class="bg-main2 h-2 w-1.5">
+
+                        </span>
+                        <span class="bg-main2 h-2 w-14">
+
+                        </span>
+                    </div>
+                    <h1 class="font-OctinStencilRg400 text-main2 uppercase text-[24px]">
+                        serach result in architecture
+                    </h1>
+                </div>
+
+
+                <div class="grid grid-cols-3 gap-y-2">
+                    <a href="/@db.list-Project.link" title="@title"
+                        class="projectBox shrink-0 w-[385px] hover:w-[515px] duration-500 relative group/projectBox flex flex-col ">
+
+                        <div style="background: url('[##cms.cms.cdn##]/@db.list-Project.00500X00900prp');background-size: 515px 100vh;"
+                            class="imgS relative grayscale-100 group-hover/projectBox:grayscale-0 group-hover/projectBox:w-full h-full duration-500 overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
+                            <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                            <div class="over absolute min-h-[101px] bottom-9 w-90p left-0 right-0 mx-auto">
+                                <div class="logo mb-5 opacity-0 duration-500 group-hover/projectBox:opacity-100">
+                                    <img src="[##cms.cms.cdn##]/@db.list2-Project.image" alt="db.list-Project.title">
+                                </div>
+                                <div class="line w-80p flex duration-500 max-w-[302px]">
+                                    <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                    <span
+                                        class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                    <span
+                                        class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                    <span class="w-full h-1 bg-white  duration-500"></span>
+                                </div>
+                                <div
+                                    class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
+
+                                    <div
+                                        class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                        <img class="relative w-3 h-2.5 inline"
+                                            src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                        <p>
+                                            @db.list-Project.title
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="flex mt-1.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                        <img class="relative w-3 h-2.5 inline"
+                                            src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                        <p>
+                                            Project Status: @db.list-Project.prp_90618
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </a>
+
+                </div>
+            </section>
+            <section class="section2 w-96p mx-auto mb-16">
+                <div class="flex flex-col items-start gap-1 w-full mb-6">
+                    <div class="lineeee w-[63px] flex gap-x-px">
+                        <span class="bg-main2 h-2 w-1.5">
+
+                        </span>
+                        <span class="bg-main2 h-2 w-14">
+
+                        </span>
+                    </div>
+                    <h2 class="font-OctinStencilRg400 uppercase text-main2  text-[24px]">
+                        serach result in products
+                    </h2>
+                </div>
+
+
+                <div class="grid grid-cols-3 gap-y-2">
+                    <a href="/@link" title="@title"
+                        class="projectBox shrink-0 w-[385px] hover:w-[500px] duration-500 relative group/projectBox flex flex-col ">
+
+                        <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: 500px 100vh;"
+                            class="imgS relative grayscale-100 group-hover/projectBox:grayscale-0 group-hover/projectBox:w-full h-full duration-500 overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
+                            <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                            <div class="over absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
+
+                                <div class="line w-80p flex duration-500 max-w-[302px]">
+                                    <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                    <span
+                                        class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                    <span
+                                        class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                    <span class="w-full h-1 bg-white  duration-500"></span>
+                                </div>
+                                <div
+                                    class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
+
+                                    <div
+                                        class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                        <img class="relative w-3 h-2.5 inline"
+                                            src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                        <p>
+                                            @title
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </a>
+
+                </div>
+            </section>
+            <section class="section3 w-96p mx-auto mb-16">
+                <div class="flex flex-col items-start gap-1 w-full mb-6">
+                    <div class="lineeee w-[63px] flex gap-x-px">
+                        <span class="bg-main2 h-2 w-1.5">
+
+                        </span>
+                        <span class="bg-main2 h-2 w-14">
+
+                        </span>
+                    </div>
+                    <h3 class="font-OctinStencilRg400 text-main2 uppercase text-[24px]">
+                        serach result in events
+                    </h3>
+                </div>
+
+
+                <div class="grid grid-cols-3 gap-y-2">
+                    <a href="/@link" title="@title"
+                        class="projectBox shrink-0 w-[385px] hover:w-[500px] duration-500 relative group/projectBox flex flex-col ">
+
+                        <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: 500px 100vh;"
+                            class="imgS relative grayscale-100 group-hover/projectBox:grayscale-0 group-hover/projectBox:w-full h-full duration-500 overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
+                            <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                            <div class="over absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
+
+                                <div class="line w-80p flex duration-500 max-w-[302px]">
+                                    <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                    <span
+                                        class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                    <span
+                                        class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                    <span class="w-full h-1 bg-white  duration-500"></span>
+                                </div>
+                                <div
+                                    class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
+
+                                    <div
+                                        class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                        <img class="relative w-3 h-2.5 inline"
+                                            src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                        <p>
+                                            @title
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </a>
+
+                </div>
+            </section>
+            <section class="section4 w-96p mx-auto mb-16">
+                <div class="flex flex-col items-start gap-1 w-full mb-6">
+                    <div class="lineeee w-[63px] flex gap-x-px">
+                        <span class="bg-main2 h-2 w-1.5">
+
+                        </span>
+                        <span class="bg-main2 h-2 w-14">
+
+                        </span>
+                    </div>
+                    <h3 class="font-OctinStencilRg400 text-main2 uppercase text-[24px]">
+                        serach result in awards
+                    </h3>
+                </div>
+
+                <div class="relative">
+
+                    <div class="swiper awardsSlider w-80p mx-auto max-w-[1200px]">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div data-id="@id" data-img="@image" data-imgList="@00400X00400prp"
+                                    class=" h-[450px] group/awardBox awardBox border-r relative border-b-[6px] border-white">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="nextAwards cursor-pointer absolute top-[50%] right-0">
+                        <svg width="17" height="27" viewBox="0 0 17 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.109375" y="4.18311" width="5.04907" height="18.7977"
+                                transform="rotate(-45 0.109375 4.18311)" fill="white" />
+                            <rect x="7.96289" y="15.5713" width="4.91516" height="11.2475"
+                                transform="rotate(45 7.96289 15.5713)" fill="white" />
+                        </svg>
+
+                    </div>
+                    <div class="prevAwards cursor-pointer absolute top-[50%] left-0">
+                        <svg width="17" height="27" viewBox="0 0 17 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="5.04907" height="18.7977"
+                                transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 16.8906 4.18311)"
+                                fill="white" />
+                            <rect width="4.91516" height="11.2475"
+                                transform="matrix(-0.707107 0.707107 0.707107 0.707107 9.03711 15.5713)" fill="white" />
+                        </svg>
+
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+</body>
+
+</html>

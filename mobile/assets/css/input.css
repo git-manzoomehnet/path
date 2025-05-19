@@ -79,3 +79,39 @@
   --spacing-90p: 90%;
   --spacing-80p: 80%;
 }
+
+.scrollTop {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.8s ease;
+}
+
+.scrollTop.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wipeScroll {
+  opacity: 0;
+  -webkit-mask-image: linear-gradient(to top, transparent 28%, black 60%);
+  -webkit-mask-size: 100% 200%;
+  -webkit-mask-position: 0% 100%;
+  animation-fill-mode: both;
+}
+
+.wipeScroll.activeScroll {
+  opacity: 1 !important;
+  animation-name: text-wipe;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes text-wipe {
+  0% {
+    -webkit-mask-position: 0% 100%;
+  }
+  100% {
+    -webkit-mask-position: 0% 0%;
+  }
+}

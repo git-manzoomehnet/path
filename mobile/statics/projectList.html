@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/outputMobile2.css">
+</head>
+
+<body>
+    <main class="projectList overflow-x-hidden bg-main1">
+
+        <section class="flex section1 flex-col items-start gap-1  mb-2.5 w-90p mx-auto">
+
+            <div class=" mt-20  shrink-0 mb-9 flex ">
+                <a href="/" title="home"
+                    class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                    home
+                </a>
+
+
+
+
+                <p
+                    class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                    .
+                </p>
+                <p
+                    class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                    architecture
+                </p>
+
+
+            </div>
+
+
+
+
+            <div class="lineeee w-[63px] flex gap-x-px">
+                <span class="bg-main2 h-2 w-1.5">
+
+                </span>
+                <span class="bg-main2 h-2 w-14">
+
+                </span>
+            </div>
+
+
+
+            <h1 class="w-full uppercase mb-2 font-OctinStencilRg400 font-normal text-main2 text-2xl">
+                PATH architecture
+
+
+
+            </h1>
+
+            <div class="para wipeScroll mb-4 font-Blinker300 text-base text-justify text-white">
+                <p>
+                    It is a long established fact that a reader will be distracted by the readable content of a page
+                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                    distribution
+                </p>
+            </div>
+
+
+
+        </section>
+
+        <section class="section2 mb-4">
+            <div class="relative w-90p mx-auto">
+                <!-- Trigger Button & Input -->
+                <div class="flex gap-x-2.5 bg-main1 ">
+                    <button onclick="toggleDropdown()"
+                        class="flex-1 border border-main2 text-left px-4 py-3 text-grayTxt2 text-xl capitalize font-Blinker300">
+                        <span id="selected-option">Choose...</span>
+                    </button>
+                    <button onclick="toggleDropdown()"
+                        class="px-2 border border-main2 text-grayTxt2 text-xl capitalize font-Blinker300">
+                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L7 7L13 1" stroke="white" />
+                        </svg>
+
+                    </button>
+                </div>
+
+                <!-- Dropdown Menu -->
+                <ul id="dropdown" class="absolute z-10 w-full bg-main1 text-gray-200 border border-main2 mt-1 hidden">
+                    <li class="px-4 py-3 text-grayTxt2 text-xl capitalize font-Blinker300"
+                        onclick="selectOption('Option 1','100')">Option 1</li>
+                    <li class="px-4 py-3 text-grayTxt2 text-xl capitalize font-Blinker300"
+                        onclick="selectOption('Option 2','1001')">Option 2</li>
+                    <li class="px-4 py-3 text-grayTxt2 text-xl capitalize font-Blinker300"
+                        onclick="selectOption('Option 3','1002')">Option 3</li>
+                </ul>
+            </div>
+
+        </section>
+        <section class="w-90p mx-auto projectListContainer">
+            <a href="" title="@title" class="mb-10 scrollTop block">
+                <div class="relative">
+                    <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
+                        <img src="../assets/images/Frame 23.png" class="w-full" alt="@title">
+                    </div>
+
+                    <div class="logoProj absolute left-0 bottom-0">
+                        <img src="../assets/images/Mask group.png" alt="@title">
+                    </div>
+                </div>
+
+                <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                    <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                    <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                    <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                    <span class="block w-full shrink-0 bg-white h-1 "></span>
+                </div>
+
+
+                <div class="flex items-center gap-x-2 mb-3" >
+                    <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                            fill="#807F63" />
+                    </svg>
+                    <span class="font-OctinStencilRg400 text-base text-white">
+                        iran tablo factory
+                    </span>
+                </div>
+                <div class="flex items-center gap-x-2 " >
+                    <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                            fill="#807F63" />
+                    </svg>
+                    <span class="font-OctinStencilRg400 text-base text-white">
+                        Project Status : 
+                    </span>
+                </div>
+            </a>
+        </section>
+
+    </main>
+
+    <script src="../assets/js/projectList.js"></script>
+</body>
+
+</html>

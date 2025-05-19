@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black flex justify-center items-center min-h-screen">
+
+  <div class="relative w-64">
+    <!-- Trigger Button & Input -->
+    <div class="flex border border-gray-600 bg-[#1c1c1c] rounded-sm">
+      <button onclick="toggleDropdown()" class="flex-1 text-left px-4 py-2 text-gray-400">
+        <span id="selected-option">Choose...</span>
+      </button>
+      <button onclick="toggleDropdown()" class="px-2 border-l border-gray-600 text-gray-400">
+        ▼
+      </button>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <ul id="dropdown"
+        class="absolute z-10 w-full bg-[#1c1c1c] text-gray-200 border border-gray-600 mt-1 rounded-sm hidden">
+      <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer" onclick="selectOption('Option 1')">Option 1</li>
+      <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer" onclick="selectOption('Option 2')">Option 2</li>
+      <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer" onclick="selectOption('Option 3')">Option 3</li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      document.getElementById("dropdown").classList.toggle("hidden");
+    }
+
+    function selectOption(text) {
+      document.getElementById("selected-option").textContent = text;
+      document.getElementById("dropdown").classList.add("hidden");
+    }
+
+    // بستن منو با کلیک بیرون از dropdown
+    document.addEventListener("click", function (event) {
+      const dropdown = document.getElementById("dropdown");
+      const container = dropdown.parentElement;
+      if (!container.contains(event.target)) {
+        dropdown.classList.add("hidden");
+      }
+    });
+  </script>
+
+</body>
+</html>

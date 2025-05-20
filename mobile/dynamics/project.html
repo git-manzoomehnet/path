@@ -1,0 +1,570 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="2">
+    <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="json" lid="2" usedforid="[##cms.query.id##]">
+    <member request="json-ld" type="scalar" name="fq" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="2" sourcemid="19" usedforid="[##cms.query.id##]">
+    <member name="image-product" type="list" format="4" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" usedforid="[##cms.query.id##]">
+    <member name="product" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="19" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-Product" size="400x400" blgid="630" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="19" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-project" size="400x400" propertyid="3087729" blgid="629" link="project.bc" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="2" mid="19" usedforid="[##cms.query.id##]">
+    <member request="navigationcat" type="tree" name="nav" postsql="select * from [db.nav] where Parentcatid= Catid" />
+</basis>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper.min.css">
+    <basis core="call" lid="2" file="styles2.inc" pageindex="[##cms.cms.pageindex##]" />
+</head>
+
+<body class="bg-main1">
+
+    <main class="productShow bg-main1 overflow-x-hidden">
+        <basis core="call" lid="2" file="header-1.inc" pageindex="[##cms.cms.pageindex##]" />
+
+        <section class="section1 relative h-svh w-svw overflow-hidden">
+
+            <div class="top-20 absolute right-0 left-0 w-90p mx-auto shrink-0 fl0ex ">
+                <a href="/" title="home"
+                    class=" whitespace-nowrap inline text-white font-Blinker300  text-xs tracking-[5.46px]">
+                    home
+                </a>
+
+
+                <basis core="print" datamembername="db.nav">
+
+                    <face>
+                        <p class=" whitespace-nowrap inline text-white font-Blinker300  text-xs tracking-[5.46px]">
+                            .
+                        </p>
+                        <a href="/product-list.bc?catid"
+                            class=" whitespace-nowrap inline text-white font-Blinker300  text-xs tracking-[5.46px]">
+                            @title
+                        </a>
+
+                    </face>
+                </basis>
+
+
+                <basis core="print" datamembername="db.product">
+
+                    <face filter="TypeID=150">
+                        <p
+                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            .
+                        </p>
+                        <p
+                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            @Answer
+                        </p>
+
+                    </face>
+                </basis>
+
+            </div>
+
+
+
+            <basis core="print" datamembername="db.image-product">
+                <layout>
+                    @child
+                </layout>
+                <else-layout>
+
+                </else-layout>
+                <face filter="ord=51">
+                    <div class="imgS w-full h-full">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" class="w-full h-full object-cover" alt="product">
+                    </div>
+
+                </face>
+            </basis>
+            <div class="absolute z-10 bottom-7 left-0 right-0">
+
+
+                <div class="title mb-10">
+                    <basis core="print" datamembername="db.product">
+
+                        <face filter="TypeID=150">
+                            <h1 class="text-center mb-3 font-OctinStencilRg400 text-2xl uppercase text-white">
+                                @Answer
+                            </h1>
+
+                            <div class="lineeeeee w-[176px] flex gap-x-1 mx-auto">
+                                <span class="w-full h-1.5 bg-white"></span>
+                                <span class="w-[16%] h-1.5 bg-white"></span>
+                                <span class="w-[28%] h-1.5 bg-white"></span>
+                                <span class="w-[5%] h-1.5 bg-white"></span>
+                            </div>
+
+                        </face>
+                    </basis>
+                </div>
+
+                <div class="scrollBtm cursor-pointer w-fit mx-auto">
+
+
+                    <svg class="mx-auto" width="19" height="13" viewBox="0 0 19 13" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="16.4336" y="0.106201" width="3.629" height="13.5107"
+                            transform="rotate(45 16.4336 0.106201)" fill="white" />
+                        <rect x="8.25" y="5.75122" width="3.53275" height="8.08412" transform="rotate(135 8.25 5.75122)"
+                            fill="white" />
+                    </svg>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="section2 mb-10 pt-14 w-90p mx-auto ">
+            <div class="flex wipeScroll flex-col items-start gap-6 ">
+                <basis core="print" datamembername="db.product">
+
+                    <face filter="TypeID=150">
+
+                        <div class="flex flex-col h-full overflow-y-auto items-start gap-1 w-full">
+                            <div class="lineeee w-[63px] flex gap-x-px">
+                                <span class="bg-main2 h-2 w-1.5">
+
+                                </span>
+                                <span class="bg-main2 h-2 w-14">
+
+                                </span>
+                            </div>
+                            <h2 class="font-OctinStencilRg400 text-main2  text-2xl">
+                                @Answer
+                            </h2>
+                        </div>
+                    </face>
+                </basis>
+                <div class=" text-base leading-[25px]">
+                    <basis core="print" datamembername="db.product">
+
+                        <face filter="TypeID not in (150,144,159)">
+                            <span class="text-grayTxt font-Blinker300">@Question:</span> 
+                            <span class="text-white font-Blinker400">@Answer</span><br />
+
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.product">
+
+                        <face filter="TypeID=144">
+                            <div class="para text-white font-Blinker300 mt-7 text-justify">
+
+                                @Answer
+                            </div>
+
+                        </face>
+                    </basis>
+                </div>
+            </div>
+
+
+            <div class="">
+
+                <div class="slider_home">
+                    <basis core="print" datamembername="db.image-product">
+                        <layout>
+                            <div class="swiper-container h-[228px] main-slider loading">
+                                <div class="swiper-wrapper">
+
+                                    @child
+
+                                </div>
+                                <div class="prevMain z-1 swiper-button-white absolute top-[50%] left-0">
+                                    <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="3.33239" height="12.4065"
+                                            transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.1484 2.76123)"
+                                            fill="white" />
+                                        <rect width="3.24401" height="7.42337"
+                                            transform="matrix(-0.707107 0.707107 0.707107 0.707107 5.96484 10.2769)"
+                                            fill="white" />
+                                    </svg>
+
+                                </div>
+                                <div class="nextMain z-1 swiper-button-white absolute top-[50%] right-0">
+                                    <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.289062" y="2.76123" width="3.33239" height="12.4065"
+                                            transform="rotate(-45 0.289062 2.76123)" fill="white" />
+                                        <rect x="5.47266" y="10.2769" width="3.24401" height="7.42337"
+                                            transform="rotate(45 5.47266 10.2769)" fill="white" />
+                                    </svg>
+
+                                </div>
+                            </div>
+
+                        </layout>
+
+                        <face filter="ord=1000">
+                            <div class="swiper-slide overflow-hidden">
+                                <figure class="slide-bgimg" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
+                                    <img class="entity-img" src="[##cms.cms.cdn##]/@largeIMG" />
+                                </figure>
+                                <div class="content">
+                                    <p class="title"> </p><span class="caption"></span>
+                                </div>
+                            </div>
+                        </face>
+                    </basis>
+
+                    <!-- thumbnails-->
+
+                    <basis core="print" datamembername="db.image-product">
+                        <layout>
+                            <div class="swiper-container h-[98px] mt-10 nav-slider loading">
+                                <div class="swiper-wrapper">
+                                    @child
+                                </div>
+                            </div>
+
+                        </layout>
+
+                        <face filter="ord=1000">
+                            <div class="swiper-slide overflow-hidden">
+                                <figure class="slide-bgimg" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
+                                    <img class="entity-img" src="[##cms.cms.cdn##]/@largeIMG" />
+                                </figure>
+                                <div class="content">
+                                    <p class="title"> </p>
+                                </div>
+                            </div>
+                        </face>
+                    </basis>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <basis core="print" datamembername="basisName.related-project">
+            <layout>
+
+                <section class="section3 w-90p mx-auto mb-10 mt-20">
+                    <div class="flex justify-between items-center">
+
+                        <div class="flex flex-col items-start gap-1 w-full mb-6">
+                            <div class="lineeee w-[63px] flex gap-x-px">
+                                <span class="bg-main2 h-2 w-1.5">
+
+                                </span>
+                                <span class="bg-main2 h-2 w-14">
+
+                                </span>
+                            </div>
+                            <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                                RELATED PROJETS
+                            </h2>
+                        </div>
+
+                        <div class="flex items-center gap-x-8">
+                            <div class="prevrelatedProject">
+                                <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="3.33239" height="12.4065"
+                                        transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.9297 2.76074)"
+                                        fill="white" />
+                                    <rect width="3.24401" height="7.42337"
+                                        transform="matrix(-0.707107 0.707107 0.707107 0.707107 6.74609 10.2773)"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="nextrelatedProject">
+                                <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.0703125" y="2.76074" width="3.33239" height="12.4065"
+                                        transform="rotate(-45 0.0703125 2.76074)" fill="white" />
+                                    <rect x="5.25391" y="10.2773" width="3.24401" height="7.42337"
+                                        transform="rotate(45 5.25391 10.2773)" fill="white" />
+                                </svg>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper relatedProject overflow-hidden">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+
+                            @child
+                        </div>
+
+                    </div>
+                </section>
+            </layout>
+
+            <face filter="prp_3087729 is null">
+                <div class="swiper-slide">
+                    <a href="/@link" title="@title" class="block">
+                        <div class="relative">
+                            <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
+                                <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
+                            </div>
+
+
+                        </div>
+
+                        <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                            <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-full shrink-0 bg-white h-1 "></span>
+                        </div>
+
+
+                        <div class="flex items-center gap-x-2 mb-3">
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                    fill="#807F63" />
+                            </svg>
+                            <span class="font-OctinStencilRg400 text-base text-white">
+                                @title
+                            </span>
+                        </div>
+
+                    </a>
+
+                </div>
+            </face>
+            <face filter="prp_3087729 is not null">
+                <div class="swiper-slide">
+                    <a href="/@link" title="@title" class=" block">
+                        <div class="relative">
+                            <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
+                                <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
+                            </div>
+
+
+                        </div>
+
+                        <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                            <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-full shrink-0 bg-white h-1 "></span>
+                        </div>
+
+
+                        <div class="flex items-center gap-x-2 mb-3">
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                    fill="#807F63" />
+                            </svg>
+                            <span class="font-OctinStencilRg400 text-base text-white">
+                                @title
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-x-2 ">
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                    fill="#807F63" />
+                            </svg>
+                            <span class="font-OctinStencilRg400 text-base text-white">
+                                Project Status : @prp_3087729
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+            </face>
+        </basis>
+
+
+        <basis core="print" datamembername="basisName.related-product">
+            <layout>
+                <section class="section4 w-90p mx-auto mt-11">
+
+                    <div class="flex justify-between items-center">
+
+                        <div class="flex flex-col items-start gap-1 w-full mb-6">
+                            <div class="lineeee w-[63px] flex gap-x-px">
+                                <span class="bg-main2 h-2 w-1.5">
+
+                                </span>
+                                <span class="bg-main2 h-2 w-14">
+
+                                </span>
+                            </div>
+                            <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                                RELATED PRODUCTS
+                            </h2>
+                        </div>
+
+                        <div class="flex items-center gap-x-8">
+                            <div class="prevrelatedProduct">
+                                <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="3.33239" height="12.4065"
+                                        transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.9297 2.76074)"
+                                        fill="white" />
+                                    <rect width="3.24401" height="7.42337"
+                                        transform="matrix(-0.707107 0.707107 0.707107 0.707107 6.74609 10.2773)"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="nextrelatedProduct">
+                                <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.0703125" y="2.76074" width="3.33239" height="12.4065"
+                                        transform="rotate(-45 0.0703125 2.76074)" fill="white" />
+                                    <rect x="5.25391" y="10.2773" width="3.24401" height="7.42337"
+                                        transform="rotate(45 5.25391 10.2773)" fill="white" />
+                                </svg>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper relatedProduct overflow-hidden">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+
+                            @child
+                        </div>
+
+                    </div>
+                </section>
+            </layout>
+
+            <face>
+                <div class="swiper-slide">
+
+                    <a href="/link" title="title" class=" block">
+                        <div class="relative">
+                            <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
+                                <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
+                            </div>
+
+                        </div>
+
+                        <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                            <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-full shrink-0 bg-white h-1 "></span>
+                        </div>
+
+
+                        <div class="flex items-center gap-x-2 mb-3">
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                    fill="#807F63" />
+                            </svg>
+                            <span class="font-OctinStencilRg400 text-base text-white">
+                                @title
+                            </span>
+                        </div>
+
+                    </a>
+                </div>
+            </face>
+        </basis>
+
+
+    </main>
+
+
+
+
+    <div
+        class="galleryPop -translate-y-[100%] duration-1000 fixed inset-0 z-[2121025885] flex items-center justify-center h-svh w-svw bg-main1/[0.85]">
+        <div class="w-96p mx-auto h-[72vh] max-h-[648px] relative">
+            <div
+                class="closeSearchPop absolute top-0 right-0 z-10  self-end flex flex-col text-right mb-10 items-end cursor-pointer">
+                <svg width="49" height="3" viewBox="0 0 49 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="white" />
+                    <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="white" />
+                </svg>
+
+                <span class="font-Blinker300 text-right  block mt-2 tracking-[5px] text-white text-xs">
+                    CLOSE
+                </span>
+            </div>
+            <div class="swiper popGallery h-full">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <basis core="print" datamembername="db.image-product">
+
+
+                        <face filter="ord=1000">
+                            <div class="swiper-slide">
+                                <div class="imgS h-full flex items-center justify-center">
+                                    <img class="h-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                </div>
+                            </div>
+
+                        </face>
+                    </basis>
+
+
+                </div>
+
+            </div>
+
+            <div class="nextPopGallery z-10 cursor-pointer absolute right-0 top-[50%]">
+                <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.0722656" y="2.76123" width="3.33239" height="12.4065"
+                        transform="rotate(-45 0.0722656 2.76123)" fill="white" />
+                    <rect x="5.25586" y="10.2771" width="3.24401" height="7.42337"
+                        transform="rotate(45 5.25586 10.2771)" fill="white" />
+                </svg>
+
+            </div>
+            <div class="prevPopGallery z-10 cursor-pointer absolute left-0 top-[50%]">
+                <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="3.33239" height="12.4065"
+                        transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.1465 2.76123)" fill="white" />
+                    <rect width="3.24401" height="7.42337"
+                        transform="matrix(-0.707107 0.707107 0.707107 0.707107 5.96289 10.2771)" fill="white" />
+                </svg>
+
+
+            </div>
+        </div>
+    </div>
+
+    <basis core="call" file="footer-1.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+
+    </div>
+    <basis core="call" file="scripts2.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+
+    <script src="[##cms.cms.cdn##]/js/swiper.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/product-mobile.js"></script>
+
+    <script type="application/ld+json">
+    [##json.fq.column1##] 
+    </script>
+</body>
+
+</html>

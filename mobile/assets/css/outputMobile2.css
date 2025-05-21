@@ -2952,6 +2952,9 @@
 .productCat .catBox:nth-child(6n-5) .over {
   background-color: #231f207c;
 }
+.awardBox.touched .imgS::after {
+  opacity: 0;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

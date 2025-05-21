@@ -2,7 +2,7 @@
     <member request="cat" type="tree" name="ProjectCat" parentid="214455" />
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" catid="[##cms.query.catid##]">
-    <member name="list-Project" size="500x900" type="list" link="project.bc" propertyid="90618" />
+    <member name="list-Project" size="500x900" type="list" link="project.bc" propertyid="3087729" />
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" catid="[##cms.query.catid##]">
     <member name="list2-Project" size="200x200" type="list" link="project.bc" />
@@ -12,7 +12,7 @@
         jointype="leftjoin" />
 </basis>
 <basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
-    <member name="seolist" type="list" request="cat" id="[##cms.query.catid##]"></member>
+    <member name="seolist" type="list" request="cat" catid="[##cms.query.catid##]"></member>
 </basis>
 <!DOCTYPE html>
 <html lang="en">
@@ -183,11 +183,9 @@
                         </div>
 
                     </section>
-                    <!-- db.list-Project.prp_90618 is null -->
-
-                    <!-- db.list-Project.prp_90618 not in (null) -->
+                   
                     <basis core="print" datamembername="list.star">
-                        <face>
+                        <face filter="[db.list-Project.prp_3087729] is null">
                             <a href="/@db.list-Project.link" title="@title"
                                 class="projectBox shrink-0 w-[385px] hover:w-[515px] duration-500 relative group/projectBox flex flex-col ">
 
@@ -210,7 +208,52 @@
                                             <span class="w-full h-1 bg-white  duration-500"></span>
                                         </div>
                                         <div
-                                            class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
+                                            class="paras min-h-[90px] duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
+
+                                            <div
+                                                class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                                <img class="relative w-3 h-2.5 inline"
+                                                    src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                                <p>
+                                                    @db.list-Project.title
+                                                </p>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </a>
+
+                        </face>
+                    </basis>
+                    <basis core="print" datamembername="list.star">
+                        <face filter="[db.list-Project.prp_3087729] is not null">
+                            <a href="/@db.list-Project.link" title="@title"
+                                class="projectBox shrink-0 w-[385px] hover:w-[515px] duration-500 relative group/projectBox flex flex-col ">
+
+                                <div style="background: url('[##cms.cms.cdn##]/@db.list-Project.00500X00900prp');background-size: 515px 100vh;"
+                                    class="imgS relative grayscale-100 group-hover/projectBox:grayscale-0 group-hover/projectBox:w-full h-full duration-500 overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
+                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                                    <div class="over absolute min-h-[101px] bottom-9 w-90p left-0 right-0 mx-auto">
+                                        <div
+                                            class="logo mb-5 opacity-0 duration-500 group-hover/projectBox:opacity-100">
+                                            <img src="[##cms.cms.cdn##]/@db.list2-Project.image"
+                                                alt="db.list-Project.title">
+                                        </div>
+                                        <div class="line w-80p flex duration-500 max-w-[302px]">
+                                            <span
+                                                class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                            <span
+                                                class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                            <span
+                                                class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                            <span class="w-full h-1 bg-white  duration-500"></span>
+                                        </div>
+                                        <div
+                                            class="paras min-h-[90px] duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
 
                                             <div
                                                 class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
@@ -225,7 +268,7 @@
                                                 <img class="relative w-3 h-2.5 inline"
                                                     src="[##cms.cms.cdn##]/images/item1-1.svg" />
                                                 <p>
-                                                    Project Status: @db.list-Project.prp_90618
+                                                    Project Status: @db.list-Project.prp_3087729
 
                                                 </p>
                                             </div>

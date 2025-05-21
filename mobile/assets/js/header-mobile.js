@@ -11,7 +11,7 @@ closeMega.addEventListener("click" , function(params) {
 let megaArchHov = document.querySelectorAll(".megaArchHov")
 megaArchHov.forEach(element => {
     element.addEventListener("click" , function (params) {
-        console.log(element.querySelector(".megaArch"));
-        element.classList.toggle("activeMega")
+        
+        element.parentElement.parentElement.classList.toggle("activeMega")
     })
 });

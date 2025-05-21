@@ -1,0 +1,78 @@
+<basis core="dbsource" name="db" source="media" lid="2" sourcemid="1" usedforid="[##cms.query.id##]"> <member name="image-awards" type="list" format="4"/> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" usedforid="[##cms.query.id##]"> <member name="view-awards" type="view" /> </basis>
+
+<a title="" href="/awards.bc?id=[##cms.query.id##]" class="w-full h-full bg-cover bg-center flex items-end">
+    <div class="imgS relative w-full h-full after:w-full after:h-full after:bg-black/[0.5] after:absolute after:inset-0">
+
+        <img src="[##cms.cms.cdn##]/[##cms.query.imgList##]"
+        class="h-full grayscale-100 duration-500  w-full object-cover" alt="@title">
+        <img src="[##cms.cms.cdn##]/[##cms.query.img##]"
+        class="h-full group-hover/awardBox:z-1 group-hover/awardBox:opacity-100 absolute inset-0 opacity-0 duration-500  w-full object-cover" alt="@title">
+    </div>
+    <div class="cover absolute pb-3.5 group-hover/awardBox:opacity-0 duration-500">
+        <basis core="print" datamembername="db.image-awards">
+
+            <face filter="ord=10">
+                <img src="[##cms.cms.cdn##]/@largeIMG" alt="@title" class="w-[58%] max-w-[234.5px]">
+                
+            </face>
+        </basis>
+        <div class=" font-Blinker300 font-light text-white text-base  px-3.5">
+            <basis core="print" datamembername="db.view-awards">
+
+                <face filter="prpID=7243">
+                    <div class="">
+                        <span class="inline">
+                            Award Name :
+                        </span>
+                        <p class="inline">
+                            @Answer
+                        </p>
+                    </div>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.view-awards">
+
+                <face filter="prpID=3087745">
+                    <div class="">
+                        <span class="inline">
+                            @Question :
+                        </span>
+                        <p class="inline">
+                            @Answer
+                        </p>
+                    </div>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.view-awards">
+
+                <face filter="prpID=3087746">
+                    <div class="">
+                        <span class="inline">
+                            @Question :
+                        </span>
+                        <p class="inline">
+                            @Answer
+                        </p>
+                    </div>
+                </face>
+            </basis>
+
+
+        </div>
+    </div>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

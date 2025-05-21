@@ -4,7 +4,7 @@ awardBox.forEach((element,i) => {
     let idMember = element.getAttribute("data-id")
     let idImage = element.getAttribute("data-img")
     let idImageList = element.getAttribute("data-imgList")
-    fetch(`/load-awards.inc?id=${idMember}&img=${idImage}&imgList=${idImageList}`)
+    fetch(`/load-awards.inc?id=${idMember}&img=${idImage}&imgList=${idImageList}&lid=2`)
     .then(response => response.text())
   
     .then(userData => {

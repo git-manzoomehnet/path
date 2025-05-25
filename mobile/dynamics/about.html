@@ -1,0 +1,406 @@
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" usedforid="2376944">
+    <member name="About-us" type="view" />
+
+    <member name="About-us250" postsql="select * from [db.About-us250] where TypeID=250" type="view" />
+
+</basis>
+<basis core="dbsource" name="db" source="media" lid="2" sourcemid="1" usedforid="2376944">
+    <member name="image" type="list" format="4" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="11" catid="214479">
+    <member name="list-personel" size="200x300" propertyid="2732" type="list" />
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="11" catid="214478">
+    <member name="list-Past-colleagues" propertyid="2732" type="list" />
+</basis>
+
+<basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="11">
+    <member request="cat" type="tree" name="personel" parentid="214478" />
+</basis>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <meta name="description" content="about architect path">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper.min.css">
+    <basis core="call" lid="2" file="styles2.inc" pageindex="[##cms.cms.pageindex##]" />
+
+</head>
+
+<body>
+    <main class="aboutUs bg-main1">
+
+        <basis core="call" lid="2" file="header-1.inc" pageindex="[##cms.cms.pageindex##]" />
+
+        <section class="section1 mb-8 relative">
+            <div class="absolute left-0 right-0 z-10 mt-20 w-90p mx-auto shrink-0 mb-9 fl0ex ">
+                <a href="/" title="home"
+                    class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                    home
+                </a>
+
+
+
+
+
+                <p
+                    class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                    .
+                </p>
+                <p
+                    class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                    about us
+                </p>
+
+
+
+            </div>
+
+
+            <div class="imgS relative  after:absolute after:inset-0 after:bg-black/[0.3]">
+                <basis core="print" datamembername="db.image">
+
+                    <face filter="ord=51">
+
+                        <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                    </face>
+                </basis>
+            </div>
+
+            <div class="scrollBtm flex items-center justify-center bottom-5 absolute left-0 right-0  z-10">
+                <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="16.4336" y="0.106445" width="3.629" height="13.5107"
+                        transform="rotate(45 16.4336 0.106445)" fill="white" />
+                    <rect x="8.25" y="5.75098" width="3.53275" height="8.08412" transform="rotate(135 8.25 5.75098)"
+                        fill="white" />
+                </svg>
+
+            </div>
+        </section>
+        <section class="section2  mb-6 w-90p mx-auto">
+
+            <basis core="print" datamembername="db.About-us">
+
+                <face filter="TypeID=150">
+                    <div class="flex wipeScroll flex-col items-start gap-1 w-full mb-3">
+                        <div class="lineeee  w-[63px] flex gap-x-px">
+                            <span class="bg-main2 h-2 w-1.5">
+
+                            </span>
+                            <span class="bg-main2 h-2 w-14">
+
+                            </span>
+                        </div>
+
+                        <h1 class="w-full font-OctinStencilRg400 font-normal uppercase text-main2 text-2xl">
+                            @Answer
+
+
+
+                        </h1>
+
+
+
+                    </div>
+
+
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.About-us250">
+
+                <face filter="RowNumber=1">
+
+                    <div class="para wipeScroll leading-[22px] text-justify text-white font-Blinker300 text-sm">
+                        @largetext
+                    </div>
+                </face>
+            </basis>
+
+
+        </section>
+        <section class="section3 mb-11">
+            <div class="imgS relative  after:absolute after:inset-0 after:bg-black/[0.3]">
+                <basis core="print" datamembername="db.image">
+
+                    <face filter="ord=52">
+
+                        <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                    </face>
+                </basis>
+            </div>
+        </section>
+
+        <section class="section4 mb-11  w-90p mx-auto">
+
+            <basis core="print" datamembername="db.About-us250">
+
+                <face filter="RowNumber in (2,3)">
+
+                    <div class="flex wipeScroll flex-col items-start gap-1 w-full mb-3">
+                        <div class="lineeee w-[63px] flex gap-x-px">
+                            <span class="bg-main2 h-2 w-1.5">
+
+                            </span>
+                            <span class="bg-main2 h-2 w-14">
+
+                            </span>
+                        </div>
+
+
+
+                        <h2 class="w-full font-OctinStencilRg400 font-normal uppercase text-main2 text-2xl">
+                            @text
+
+
+
+                        </h2>
+
+
+
+                    </div>
+
+                    <div class="para wipeScroll leading-[22px] text-justify text-white font-Blinker300 text-sm mb-6">
+                        @largetext
+                    </div>
+                </face>
+            </basis>
+
+
+        </section>
+
+        <section class="section5 mb-3">
+            <div class="imgS">
+                <basis core="print" datamembername="db.image">
+
+                    <face filter="ord=53">
+
+                        <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                    </face>
+                </basis>
+            </div>
+        </section>
+
+        <section class="section6  mb-9 w-90p mx-auto">
+
+            <basis core="print" datamembername="db.About-us250">
+
+                <face filter="RowNumber = 4">
+
+                    <div class="flex wipeScroll flex-col items-start gap-1 w-full mb-3">
+                        <div class="lineeee w-[63px] flex gap-x-px">
+                            <span class="bg-main2 h-2 w-1.5">
+
+                            </span>
+                            <span class="bg-main2 h-2 w-14">
+
+                            </span>
+                        </div>
+
+
+
+                        <h3 class="w-full font-OctinStencilRg400 font-normal uppercase text-main2 text-2xl">
+                            @text
+
+
+
+                        </h3>
+
+
+
+                    </div>
+
+                    <div class="para wipeScroll leading-[22px] text-justify text-white font-Blinker300 text-sm mb-6">
+                        @largetext
+                    </div>
+                </face>
+            </basis>
+
+
+        </section>
+
+
+        <section class="section7 mb-11 w-90p mx-auto">
+            <div class="flex wipeScroll flex-col items-start gap-1 w-full mb-6">
+                <div class="lineeee w-[63px] flex gap-x-px">
+                    <span class="bg-main2 h-2 w-1.5">
+
+                    </span>
+                    <span class="bg-main2 h-2 w-14">
+
+                    </span>
+                </div>
+
+
+
+                <h3 class="w-full font-OctinStencilRg400 font-normal uppercase text-main2 text-2xl">
+                    our team
+
+
+
+                </h3>
+
+
+
+            </div>
+            <div class="members">
+
+                <basis core="print" datamembername="db.list-personel">
+
+                    <face>
+                        <div class="member mb-8 flex gap-x-2.5">
+                            <div class="imgS shrink-0">
+                                <img src="[##cms.cms.cdn##]/@00200X00300prp" alt="@title">
+                            </div>
+
+                            <div class="title">
+                                <h5 class="font-Blinker400 text-lg capitalize mb-2 text-white">
+                                    @title
+                                </h5>
+                                <span class="font-Blinker300 text-base text-white capitalize">
+                                    @prp_2732
+                                </span>
+                            </div>
+                        </div>
+
+                    </face>
+                </basis>
+            </div>
+
+        </section>
+        <section class="section8 mb-8 wipeScroll w-90p mx-auto">
+            <div class="flex  flex-col items-start gap-1 w-full mb-3">
+                <div class="lineeee w-[63px] flex gap-x-px">
+                    <span class="bg-main2 h-2 w-1.5">
+
+                    </span>
+                    <span class="bg-main2 h-2 w-14">
+
+                    </span>
+                </div>
+
+
+
+                <h3 class="w-full font-OctinStencilRg400 font-normal uppercase text-main2 text-2xl">
+                    Past colleagues
+
+
+
+
+                </h3>
+
+
+
+            </div>
+
+            <basis core="print" datamembername="basisName.personel">
+
+                <face>
+                    <div class="para mb-6 font-Blinker300 text-base leading-[22px] text-white text-justify">
+                        <p>
+                            @urldescription
+                        </p>
+                    </div>
+                </face>
+            </basis>
+
+            <div class="collList">
+                <basis core="print" datamembername="db.list-Past-colleagues">
+                    <face>
+
+                        <div class="customer ">
+                            <div class="flex gap-x-2 mb-1 items-center">
+                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                <p class="font-Blinker400 capitalize text-white text-xl tracking-wider">
+                                    @title
+                                </p>
+                            </div>
+                            <span class="font-Blinker300 capitalize pl-5 text-base text-white">
+                                @prp_2732
+                            </span>
+                        </div>
+                    </face>
+                </basis>
+            </div>
+        </section>
+
+        <basis core="call" lid="2" file="footer-1.inc" pageindex="[##cms.cms.pageindex##]" />
+
+    </main>
+
+
+
+
+
+    <div
+        class="galleryPop -translate-y-[100%] duration-1000 fixed inset-0 z-[2121025885] flex items-center justify-center h-svh w-svw bg-main1/[0.85]">
+        <div class="w-96p mx-auto h-[72vh] max-h-[648px] relative">
+            <div
+                class="closeSearchPop absolute top-0 right-0 z-10  self-end flex flex-col text-right mb-10 items-end cursor-pointer">
+                <svg width="49" height="3" viewBox="0 0 49 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="white" />
+                    <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="white" />
+                </svg>
+
+                <span class="font-Blinker300 text-right  block mt-2 tracking-[5px] text-white text-xs">
+                    CLOSE
+                </span>
+            </div>
+            <div class="swiper popGallery h-full">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <basis core="print" datamembername="db.list-personel">
+
+                        <face>
+                            <div class="swiper-slide">
+                                <div class="imgS h-full flex items-center justify-center">
+                                    <img class="h-f0ull" src="[##cms.cms.cdn##]/@00200X00300prp" alt="@name">
+                                </div>
+                            </div>
+
+                        </face>
+                    </basis>
+
+
+                </div>
+
+            </div>
+
+            <div class="nextPopGallery z-10 cursor-pointer absolute right-0 top-[50%]">
+                <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.0722656" y="2.76123" width="3.33239" height="12.4065"
+                        transform="rotate(-45 0.0722656 2.76123)" fill="white" />
+                    <rect x="5.25586" y="10.2771" width="3.24401" height="7.42337"
+                        transform="rotate(45 5.25586 10.2771)" fill="white" />
+                </svg>
+
+            </div>
+            <div class="prevPopGallery z-10 cursor-pointer absolute left-0 top-[50%]">
+                <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="3.33239" height="12.4065"
+                        transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.1465 2.76123)" fill="white" />
+                    <rect width="3.24401" height="7.42337"
+                        transform="matrix(-0.707107 0.707107 0.707107 0.707107 5.96289 10.2771)" fill="white" />
+                </svg>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <basis core="call" file="scripts2.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+
+    <script src="[##cms.cms.cdn##]/js/swiper.min.js"></script>
+
+    <script src="[##cms.cms.cdn##]/js/aboutUs-mobile.js"></script>
+</body>
+
+</html>

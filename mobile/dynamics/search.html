@@ -1,0 +1,635 @@
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="20" catid="211422">
+    <member name="product-list" size="400x400" type="list" postsql=" select * from [db.product-list] where title like '%[##cms.query.q##]%'" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" catid="211421">
+    <member name="list-Project" postsql=" select * from [db.list-Project] where title like '%[##cms.query.q##]%'" size="400x400" type="list" link="project.bc" propertyid="3087729" />
+</basis>
+
+
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" catid="214687">
+    <member name="list-events" postsql=" select * from [db.list-events] where title like '%[##cms.query.q##]%'" size="300x400" propertyid="3087761" type="list" link="event.bc" />
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" catid="214648">
+    <member name="list-awards" postsql=" select * from [db.list-awards] where title like '%[##cms.query.q##]%'" size="400x400" propertyid="3087746,3087745" type="list" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نتیجه جستجو برای [##cms.query.q##]</title>
+    <meta name="description" content="نتیجه جستجو برای [##cms.query.q##]" />
+
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper.min.css" />
+    <basis core="call" lid="2" file="styles2.inc" pageindex="[##cms.cms.pageindex##]" />
+</head>
+
+<body>
+    <main>
+        <basis core="group" if="'[##cms.query.q##]'=''">
+            <div class="searchFormContainer h-svh overflow-hidden relative">
+                <basis core="call" lid="2" file="header-2.inc" pageindex="[##cms.cms.pageindex##]" />
+
+                <div class="flex items-center justify-center h-full w-full">
+                    <div class="imgS absolute inset-0 w-full h-full">
+                        <img src="[##cms.cms.cdn##]/images/bg-ErrorPage.png" class="w-full h-full object-cover"
+                            alt="search" />
+                    </div>
+                    <div class="absolute left-0 right-0 z-10 top-20 w-90p mx-auto shrink-0 mb-9 fl0ex ">
+                        <a href="/" title="home"
+                            class=" whitespace-nowrap inline text-main1 top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            home
+                        </a>
+
+
+
+
+
+                        <p
+                            class=" whitespace-nowrap mx-2 inline text-main1 top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            .
+                        </p>
+                        <p
+                            class=" whitespace-nowrap inline text-main1 top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            search
+                        </p>
+
+
+
+                    </div>
+
+                    <div class="formPage flex flex-col w-90p mx-auto relative z-1">
+                        <div class="closeSearchPop self-end flex flex-col text-right mb-10 items-end cursor-pointer">
+                            <svg width="49" height="3" viewBox="0 0 49 3" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="#231F20" />
+                                <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="#231F20" />
+                            </svg>
+
+                            <span class="font-Blinker300 text-right block mt-2 tracking-[7px] text-main1 text-xs">
+                                CLOSE search
+                            </span>
+                        </div>
+                        <form class="flex items-center border-b border-b-main2 pl-2 pr-1 justify-center" role="search"
+                            id="searchform" action="/search.bc" method="get">
+                            <input name="q" type="search" placeholder="search"
+                                class="w-full py-5 outline-0 font-Blinker300 text-2xl capitalize text-white placeholder:text-white" />
+
+                            <button class="cursor-pointer" type="submit">
+                                <svg width="30" height="29" viewBox="0 0 30 29" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_465_5005)">
+                                        <path
+                                            d="M13.6419 0.263687C6.49152 0.263687 0.673828 6.08143 0.673828 13.2319C0.673828 20.3823 6.49152 26.2001 13.6419 26.2001C16.922 26.2001 19.9232 24.9709 22.2124 22.9538L28.2773 28.9187L29.4929 27.6844L23.4333 21.7243C25.4114 19.4468 26.6153 16.4779 26.6153 13.2316C26.6102 6.08117 20.7923 0.263687 13.6419 0.263687ZM13.6419 24.4687C7.44851 24.4687 2.40516 19.4271 2.40516 13.2319C2.40516 7.03843 7.44678 1.99503 13.6419 1.99503C19.8353 1.99503 24.8787 7.0367 24.8787 13.2319C24.8787 19.4253 19.837 24.4687 13.6419 24.4687Z"
+                                            fill="#807F63" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_465_5005">
+                                            <rect width="29" height="29" fill="white" transform="translate(0.492188)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </basis>
+
+        <basis core="group"
+            if="'[##db.product-list.RowNumber##]' = '' and '[##db.list-Project.RowNumber##]' = '' and '[##db.list-events.RowNumber##]' = '' and '[##db.list-awards.RowNumber##]' = ''">
+            <div class="notFoundsearchFormContainer h-svh overflow-hidden relative">
+                <basis core="call" lid="2" file="header-2.inc" pageindex="[##cms.cms.pageindex##]" />
+
+                <div class="flex items-center justify-center h-full w-full">
+                    <div class="imgS absolute inset-0 w-full h-full">
+                        <img src="[##cms.cms.cdn##]/images/bg-ErrorPage.png" class="w-full h-full object-cover"
+                            alt="search" />
+                    </div>
+                    <div class="absolute left-0 right-0 z-10 top-20 w-90p mx-auto shrink-0 mb-9 fl0ex ">
+                        <a href="/" title="home"
+                            class=" whitespace-nowrap inline text-main1  font-Blinker300  text-xs tracking-[5.46px]">
+                            home
+                        </a>
+
+
+
+
+
+                        <p
+                            class=" whitespace-nowrap mx-2 inline text-main1  font-Blinker300  text-xs tracking-[5.46px]">
+                            .
+                        </p>
+                        <p class=" whitespace-nowrap inline text-main1  font-Blinker300  text-xs tracking-[5.46px]">
+                            search
+                        </p>
+
+
+
+                    </div>
+
+
+                    <div class="formPage flex flex-col w-80p mx-auto max-w-[1102px] relative z-1">
+                        <div class="closeSearchPop self-end flex flex-col text-right mb-10 items-end cursor-pointer">
+                            <svg width="49" height="3" viewBox="0 0 49 3" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="#231F20" />
+                                <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="#231F20" />
+                            </svg>
+
+                            <span class="font-Blinker300 text-right block mt-2 tracking-[7px] text-main1 text-xs">
+                                CLOSE search
+                            </span>
+                        </div>
+                        <form class="flex items-center border-b border-b-main2 pl-2 pr-1 justify-center" role="search"
+                            id="searchform" action="/search.bc" method="get">
+                            <input name="q" type="search" placeholder="search" value="[##cms.query.q##]"
+                                class="w-full py-5 outline-0 font-Blinker300 text-2xl capitalize text-main1 placeholder:text-main1" />
+
+                            <button class="cursor-pointer" type="submit">
+                                <svg width="30" height="29" viewBox="0 0 30 29" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_465_5005)">
+                                        <path
+                                            d="M13.6419 0.263687C6.49152 0.263687 0.673828 6.08143 0.673828 13.2319C0.673828 20.3823 6.49152 26.2001 13.6419 26.2001C16.922 26.2001 19.9232 24.9709 22.2124 22.9538L28.2773 28.9187L29.4929 27.6844L23.4333 21.7243C25.4114 19.4468 26.6153 16.4779 26.6153 13.2316C26.6102 6.08117 20.7923 0.263687 13.6419 0.263687ZM13.6419 24.4687C7.44851 24.4687 2.40516 19.4271 2.40516 13.2319C2.40516 7.03843 7.44678 1.99503 13.6419 1.99503C19.8353 1.99503 24.8787 7.0367 24.8787 13.2319C24.8787 19.4253 19.837 24.4687 13.6419 24.4687Z"
+                                            fill="#807F63" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_465_5005">
+                                            <rect width="29" height="29" fill="white" transform="translate(0.492188)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                        </form>
+
+                        <div
+                            class="para text-center capitalize font-Blinker300 text-2xl mt-[146px] max-w-[263px] text-grayTxt3">
+                            <p>Sorry, nothing was found.Search for another word</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </basis>
+        <basis core="group" if="'[##cms.query.q##]'<>''">
+            <basis core="group"
+                if="'[##db.product-list.RowNumber##]' <> '' or '[##db.list-Project.RowNumber##]' <> '' or '[##db.list-events.RowNumber##]' <> '' or '[##db.list-awards.RowNumber##]' <> ''">
+                <div class="FoundsearchFormContainer overflow-hidden bg-main1">
+                    <basis core="call" lid="2" file="header-1.inc" pageindex="[##cms.cms.pageindex##]" />
+
+                    <form
+                        class="flex items-center w-90p mx-auto  pt-[119px] mb-20 border-b border-b-main2 pl-2 pr-1 justify-center"
+                        role="search" id="searchform" action="/search.bc" method="get">
+                        <input name="q" type="search" value="[##cms.query.q##]" placeholder="search"
+                            class="w-full py-5 outline-0 font-Blinker300 text-2xl capitalize text-white placeholder:text-white" />
+
+                        <button class="cursor-pointer" type="submit">
+                            <svg width="30" height="29" viewBox="0 0 30 29" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_465_5005)">
+                                    <path
+                                        d="M13.6419 0.263687C6.49152 0.263687 0.673828 6.08143 0.673828 13.2319C0.673828 20.3823 6.49152 26.2001 13.6419 26.2001C16.922 26.2001 19.9232 24.9709 22.2124 22.9538L28.2773 28.9187L29.4929 27.6844L23.4333 21.7243C25.4114 19.4468 26.6153 16.4779 26.6153 13.2316C26.6102 6.08117 20.7923 0.263687 13.6419 0.263687ZM13.6419 24.4687C7.44851 24.4687 2.40516 19.4271 2.40516 13.2319C2.40516 7.03843 7.44678 1.99503 13.6419 1.99503C19.8353 1.99503 24.8787 7.0367 24.8787 13.2319C24.8787 19.4253 19.837 24.4687 13.6419 24.4687Z"
+                                        fill="#807F63" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_465_5005">
+                                        <rect width="29" height="29" fill="white" transform="translate(0.492188)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </form>
+
+                    <basis core="print" datamembername="db.list-Project">
+
+
+                        <layout>
+
+                            <section class="section3 w-90p mx-auto mb-10 mt-20">
+                                <div class="flex justify-between items-center">
+
+                                    <div class="flex flex-col items-start gap-1 w-full mb-6">
+                                        <div class="lineeee w-[63px] flex gap-x-px">
+                                            <span class="bg-main2 h-2 w-1.5">
+
+                                            </span>
+                                            <span class="bg-main2 h-2 w-14">
+
+                                            </span>
+                                        </div>
+                                        <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                                            serach result in architecture
+                                        </h2>
+                                    </div>
+
+                                    <div class="flex items-center gap-x-8">
+                                        <div class="prevrelatedProject">
+                                            <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="3.33239" height="12.4065"
+                                                    transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.9297 2.76074)"
+                                                    fill="white" />
+                                                <rect width="3.24401" height="7.42337"
+                                                    transform="matrix(-0.707107 0.707107 0.707107 0.707107 6.74609 10.2773)"
+                                                    fill="white" />
+                                            </svg>
+
+                                        </div>
+                                        <div class="nextrelatedProject">
+                                            <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="0.0703125" y="2.76074" width="3.33239" height="12.4065"
+                                                    transform="rotate(-45 0.0703125 2.76074)" fill="white" />
+                                                <rect x="5.25391" y="10.2773" width="3.24401" height="7.42337"
+                                                    transform="rotate(45 5.25391 10.2773)" fill="white" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="swiper relatedProject overflow-hidden">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+
+                                        @child
+                                    </div>
+
+                                </div>
+                            </section>
+                        </layout>
+
+                        <face filter="prp_3087729 is null">
+                            <div class="swiper-slide">
+                                <a href="/@link" title="@title" class="block">
+                                    <div class="relative">
+                                        <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
+                                            <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                                        <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-full shrink-0 bg-white h-1 "></span>
+                                    </div>
+
+
+                                    <div class="flex items-center gap-x-2 mb-3">
+                                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                                fill="#807F63" />
+                                        </svg>
+                                        <span class="font-OctinStencilRg400 text-base text-white">
+                                            @title
+                                        </span>
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </face>
+                        <face filter="prp_3087729 is not null">
+                            <div class="swiper-slide">
+                                <a href="/@link" title="@title" class=" block">
+                                    <div class="relative">
+                                        <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
+                                            <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                                        <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-full shrink-0 bg-white h-1 "></span>
+                                    </div>
+
+
+                                    <div class="flex items-center gap-x-2 mb-3">
+                                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                                fill="#807F63" />
+                                        </svg>
+                                        <span class="font-OctinStencilRg400 text-base text-white">
+                                            @title
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center gap-x-2 ">
+                                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                                fill="#807F63" />
+                                        </svg>
+                                        <span class="font-OctinStencilRg400 text-base text-white">
+                                            Project Status : @prp_3087729
+                                        </span>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </face>
+                    </basis>
+
+
+
+                    <basis core="print" datamembername="db.product-list">
+                        <layout>
+                            <section class="section4 w-90p mx-auto mt-11">
+
+                                <div class="flex justify-between items-center">
+
+                                    <div class="flex flex-col items-start gap-1 w-full mb-6">
+                                        <div class="lineeee w-[63px] flex gap-x-px">
+                                            <span class="bg-main2 h-2 w-1.5">
+
+                                            </span>
+                                            <span class="bg-main2 h-2 w-14">
+
+                                            </span>
+                                        </div>
+                                        <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                                            RELATED PRODUCTS
+                                        </h2>
+                                    </div>
+
+                                    <div class="flex items-center gap-x-8">
+                                        <div class="prevrelatedProduct">
+                                            <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="3.33239" height="12.4065"
+                                                    transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.9297 2.76074)"
+                                                    fill="white" />
+                                                <rect width="3.24401" height="7.42337"
+                                                    transform="matrix(-0.707107 0.707107 0.707107 0.707107 6.74609 10.2773)"
+                                                    fill="white" />
+                                            </svg>
+
+                                        </div>
+                                        <div class="nextrelatedProduct">
+                                            <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="0.0703125" y="2.76074" width="3.33239" height="12.4065"
+                                                    transform="rotate(-45 0.0703125 2.76074)" fill="white" />
+                                                <rect x="5.25391" y="10.2773" width="3.24401" height="7.42337"
+                                                    transform="rotate(45 5.25391 10.2773)" fill="white" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper relatedProduct overflow-hidden">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+
+                                        @child
+                                    </div>
+
+                                </div>
+                            </section>
+                        </layout>
+
+                        <face>
+                            <div class="swiper-slide">
+
+                                <a href="/@link" title="title" class=" block">
+                                    <div class="relative">
+                                        <div class="imgS relative">
+                                            <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                                        <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-full shrink-0 bg-white h-1 "></span>
+                                    </div>
+
+
+                                    <div class="flex items-center gap-x-2 mb-3">
+                                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                                fill="#807F63" />
+                                        </svg>
+                                        <span class="font-OctinStencilRg400 text-base text-white">
+                                            @title
+                                        </span>
+                                    </div>
+
+                                </a>
+                            </div>
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.list-events">
+                        <layout>
+                            <section class="section4 w-90p mx-auto mt-11">
+
+                                <div class="flex justify-between items-center">
+
+                                    <div class="flex flex-col items-start gap-1 w-full mb-6">
+                                        <div class="lineeee w-[63px] flex gap-x-px">
+                                            <span class="bg-main2 h-2 w-1.5">
+
+                                            </span>
+                                            <span class="bg-main2 h-2 w-14">
+
+                                            </span>
+                                        </div>
+                                        <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                                            search result in events
+                                        </h2>
+                                    </div>
+
+                                    <div class="flex items-center gap-x-8">
+                                        <div class="prevrelatedEvents">
+                                            <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="3.33239" height="12.4065"
+                                                    transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.9297 2.76074)"
+                                                    fill="white" />
+                                                <rect width="3.24401" height="7.42337"
+                                                    transform="matrix(-0.707107 0.707107 0.707107 0.707107 6.74609 10.2773)"
+                                                    fill="white" />
+                                            </svg>
+
+                                        </div>
+                                        <div class="nextrelatedEvents">
+                                            <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="0.0703125" y="2.76074" width="3.33239" height="12.4065"
+                                                    transform="rotate(-45 0.0703125 2.76074)" fill="white" />
+                                                <rect x="5.25391" y="10.2773" width="3.24401" height="7.42337"
+                                                    transform="rotate(45 5.25391 10.2773)" fill="white" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper relatedEvents overflow-hidden">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+
+                                        @child
+                                    </div>
+
+                                </div>
+                            </section>
+                        </layout>
+
+                        <face>
+                            <div class="swiper-slide">
+
+                                <a href="/@link" title="@title" class="mb-10  block">
+                                    <div class="relative">
+                                        <div class="imgS relative">
+                                            <img src="[##cms.cms.cdn##]/@00300X00400prp" class="w-full" alt="@title">
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                                        <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                                        <span class="block w-full shrink-0 bg-white h-1 "></span>
+                                    </div>
+
+
+                                    <div class="flex items-center gap-x-2 mb-3">
+                                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                                fill="#807F63" />
+                                        </svg>
+                                        <span class="font-OctinStencilRg400 text-base text-white">
+                                            @title
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center gap-x-2 ">
+                                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                                fill="#807F63" />
+                                        </svg>
+                                        <span class="font-OctinStencilRg400 text-base text-white">
+                                            @prp_3087761
+                                        </span>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.list-awards">
+                        <layout>
+                            <section class="section4 w-90p mx-auto mt-11">
+
+                                <div class="flex justify-between items-center">
+
+                                    <div class="flex flex-col items-start gap-1 w-full mb-6">
+                                        <div class="lineeee w-[63px] flex gap-x-px">
+                                            <span class="bg-main2 h-2 w-1.5">
+
+                                            </span>
+                                            <span class="bg-main2 h-2 w-14">
+
+                                            </span>
+                                        </div>
+                                        <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                                           search result in awards
+                                        </h2>
+                                    </div>
+
+                                    <div class="flex items-center gap-x-8">
+                                        <div class="prevrelatedAwards">
+                                            <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="3.33239" height="12.4065"
+                                                    transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.9297 2.76074)"
+                                                    fill="white" />
+                                                <rect width="3.24401" height="7.42337"
+                                                    transform="matrix(-0.707107 0.707107 0.707107 0.707107 6.74609 10.2773)"
+                                                    fill="white" />
+                                            </svg>
+
+                                        </div>
+                                        <div class="nextrelatedAwards">
+                                            <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="0.0703125" y="2.76074" width="3.33239" height="12.4065"
+                                                    transform="rotate(-45 0.0703125 2.76074)" fill="white" />
+                                                <rect x="5.25391" y="10.2773" width="3.24401" height="7.42337"
+                                                    transform="rotate(45 5.25391 10.2773)" fill="white" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper relatedAwards overflow-hidden">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+
+                                        @child
+                                    </div>
+
+                                </div>
+                            </section>
+                        </layout>
+
+                        <face>
+                            <div class="swiper-slide">
+
+                                <div data-id="@id" data-img="@image" data-imgList="@00400X00400prp"
+                                    class=" mb-9 group/awardBox awardBox  border-r relative border-b border-white">
+
+                                </div>
+
+                            </div>
+                        </face>
+
+
+                    </basis>
+
+                    <basis core="call" lid="2" file="footer-1.inc" pageindex="[##cms.cms.pageindex##]" />
+                </div>
+            </basis>
+        </basis>
+    </main>
+
+    <basis core="call" file="scripts2.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+
+    <script src="[##cms.cms.cdn##]/js/swiper.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/search-mobile.js"></script>
+</body>
+
+</html>

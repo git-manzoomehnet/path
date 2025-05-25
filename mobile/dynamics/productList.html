@@ -2,19 +2,10 @@
     <member name="seolist" type="list" request="cat" catid="[##cms.query.catid##]"></member>
 </basis>
 
-<basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="19">
-    <member request="cat" type="tree" name="ProjectCat" parentid="214455" />
+<basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="20">
+    <member request="cat" type="tree" name="ProjectCat" parentid="214465" />
 </basis>
-<basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" catid="[##cms.query.catid##]">
-    <member name="list-Project" size="400x400" type="list" link="project.bc" propertyid="3087729" />
-</basis>
-<basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" catid="[##cms.query.catid##]">
-    <member name="list2-Project" size="200x200" type="list" link="project.bc" />
-</basis>
-<basis core="inlinesource" name="list">
-    <member name="star" lefttblcol="db.list2-Project.id" righttblcol="db.list-Project.id" format="join"
-        jointype="leftjoin" />
-</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="20" catid="214465"> <member name="list-product-m" size="400x400" type="list"/> </basis>
 
 
 
@@ -46,10 +37,18 @@
                     class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
                     home
                 </a>
+                
+                <p
+                class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                .
+            </p>
+            
+            <a href="/product-cat.bc" title="home"
+                class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                products
+            </a>
 
-
-
-                <basis core="print" datamembername="basisName.ProjectCat">
+                <basis core="print" datamembername="basisName.productCat">
 
                     <face filter="catid='[##cms.query.catid##]'">
                         <p
@@ -81,7 +80,7 @@
 
 
 
-            <basis core="print" datamembername="basisName.ProjectCat">
+            <basis core="print" datamembername="basisName.productCat">
 
                 <face filter="catid='[##cms.query.catid##]'">
                     <h1 class="w-full projTitle uppercase mb-2 font-OctinStencilRg400 font-normal text-main2 text-2xl">
@@ -92,9 +91,9 @@
             </basis>
 
 
-            <basis core="print" datamembername="basisName.ProjectCat">
+            <basis core="print" datamembername="basisName.productCat">
              
-                <face filter="catid=214455">
+                <face filter="catid=214465">
                     <div class="para wipeScroll mb-4 font-Blinker300 text-base text-justify text-white">
                         <p>
                            @urldescription
@@ -128,26 +127,26 @@
                 <!-- Dropdown Menu -->
                 <ul id="dropdown" class="absolute z-10 px-3 pt-3 pb-7 bg-main2 text-gray-200  mt-1 hidden w-[calc(100%-42px)]">
 
-                    <basis core="print" datamembername="basisName.ProjectCat">
+                    <basis core="print" datamembername="basisName.productCat">
                        
-                        <face filter="catid=214455">
+                        <face filter="catid=214465">
                             <li class="p-3 flex items-center  text-main1 gap-x-2.5 border-b capitalize border-b-grayTxt2 text-lg font-Blinker300"
-                                onclick="selectOption('all architecture','@catid')">
+                                onclick="selectOption('PATH PRODUCTS','@catid')">
                                 <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="6" height="8" fill="#231F20"/>
                                     </svg>
                                     
                                 <span>
 
-                                    all architecture
+                                      PATH PRODUCTS
                                 </span>
                             </li>
                             
                         </face>
                     </basis>
-                    <basis core="print" datamembername="basisName.ProjectCat">
+                    <basis core="print" datamembername="basisName.productCat">
                        
-                        <face filter="catid<>214455">
+                        <face filter="catid<>214465">
                             <li class="p-3 flex items-center  text-main1 gap-x-2.5 border-b capitalize border-b-grayTxt2 text-lg font-Blinker300"
                             onclick="selectOption('@title','@catid')">
                             <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,18 +168,16 @@
         </section>
         <section class="w-90p mx-auto projectListContainer">
 
-            <basis core="print" datamembername="list.star">
+            <basis core="print" datamembername="db.list-product-m">
                
                 <face>
-                    <a href="/@db.list2-Project.link" title="@db.list2-Project.title" class="mb-10 scrollTop block">
+                    <a href="/@link" title="@title" class="mb-10 scrollTop block">
                         <div class="relative">
                             <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
-                                <img src="[##cms.cms.cdn##]/@db.list-Project.00400X00400prp" class="w-full" alt="@title">
+                                <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
                             </div>
         
-                            <div class="logoProj absolute left-0 bottom-0">
-                                <img src="[##cms.cms.cdn##]/@db.list2-Project.00200X00200prp" alt="@title">
-                            </div>
+                           
                         </div>
         
                         <div class="flex overflow-hidden gap-x-1 w-full my-3">
@@ -189,24 +186,13 @@
                             <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
                             <span class="block w-full shrink-0 bg-white h-1 "></span>
                         </div>
-        
-        
                         <div class="flex items-center gap-x-2 mb-3">
                             <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
                                     fill="#807F63" />
                             </svg>
                             <span class="font-OctinStencilRg400 text-base text-white">
-                                @db.list2-Project.title	
-                            </span>
-                        </div>
-                        <div class="flex items-center gap-x-2 ">
-                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
-                                    fill="#807F63" />
-                            </svg>
-                            <span class="font-OctinStencilRg400 text-base text-white">
-                                Project Status : @db.list-Project.prp_3087729
+                                @title	
                             </span>
                         </div>
                     </a>
@@ -219,7 +205,7 @@
     </main>
     <basis core="call" file="scripts2.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
 
-    <script src="[##cms.cms.cdn##]/js/projectList-mobile.js"></script>
+    <script src="[##cms.cms.cdn##]/js/productList-mobile.js"></script>
 </body>
 
 </html>

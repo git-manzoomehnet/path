@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error | 500</title>
+    <meta name="description" content="Error 500">
+    <basis core="call" lid="2" file="styles2.inc" pageindex="[##cms.cms.pageindex##]" />
+</head>
+<body>
+    <main class="errorPage overflow-hidden relative h-svh flex flex-col justify-center items-center">
+        <basis core="call" lid="2" file="header-2.inc" pageindex="[##cms.cms.pageindex##]" />
+
+        <div class="bg absolute inset-0">
+            <img src="[##cms.cms.cdn##]/images/bg-ErrorPage.png" class="w-full h-full object-cover" alt="bgcover">
+        </div>
+        <div class="in relative z-10 w-90p mx-auto">
+            <div class="imgS flex items-center justify-center mb-20">
+                <img class="w-[221px]" src="[##cms.cms.cdn##]/images/500-des.png" alt="500">
+            </div>
+
+            <div class="para font-Blinker300 text-lg text-justify capitalize mb-6 text-[#171717]">
+                <p>
+                    we’re sorry, but the page you’re looking for cannot be found. It may have been moved, renamed, or no longer exists.
+                </p>
+            </div>
+
+
+
+            <a href="/"
+                    class=" w-full bg-transparent group/formBtn formBtn h-[50px] border border-main2 flex items-center justify-center relative hover:bg-main2 duration-500 cursor-pointer ">
+                    <span class="group-hover/formBtn:text-white text-main2 font-Blinker400 uppercase font-normal text-sm text-center">
+                      back home
+    
+    
+                    </span>
+                    <div class="inline-flex items-center gap-1 absolute bottom-0 left-0 right-0">
+                      <div class="w-2.5 h-0.75 bg-main2 group-hover/formBtn:bg-white duration-500"></div>
+                      <div class="w-[154px] h-0.75 bg-main2 group-hover/formBtn:bg-white duration-500"></div>
+                      <div class="w-[93px] h-0.75 bg-main2 group-hover/formBtn:bg-white duration-500"></div>
+                      <div class="w-[274px] h-0.75 bg-main2 group-hover/formBtn:bg-white duration-500"></div>
+                    </div>
+                    <div class="loaderForm absolute hidden"></div>
+    
+                  </a>
+        </div>
+    </main>
+
+
+    <basis core="call" file="scripts2.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+
+</body>
+</html>

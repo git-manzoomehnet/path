@@ -43,7 +43,7 @@
         </div>
         <div class="logo">
             <a href="/" title="home">
-                <img class="w-[78px]" src="[##cms.cms.cdn##]/images/logo-header-light-m.png" alt="home">
+                <img class="w-[78px]" src="[##cms.cms.cdn##]/images/logo-header-dark-m.png" alt="home">
             </a>
         </div>
     </div>
@@ -62,7 +62,7 @@
     </div>
 
     <div class="logo mt-[145px] flex items-center justify-center">
-        <img class="w-[78px]" src="[##cms.cms.cdn##]/images/logo-header-light.png" alt="home">
+        <img class="w-[126px]" src="[##cms.cms.cdn##]/images/logo-header-light.png" alt="home">
 
     </div>
     <div class="links mt-[70px]">
@@ -73,9 +73,9 @@
                     home
                 </a>
             </li>
-            <li class="text-center pb-6 w-fit mx-auto cursor-pointer group/megaArch megaArchHov">
+            <li class="text-center pb-6 w-fit mx-auto cursor-pointer group/megaArch ">
                 <div class=" flex items-center justify-center gap-x-2">
-                    <svg class="rotate-180 duration-500 group-[&.activeMega]/megaArch:rotate-0" width="19" height="13"
+                    <svg class="rotate-180 duration-500 group-[&.activeMega]/megaArch:rotate-0 megaArchHov" width="19" height="13"
                         viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="3.629" height="13.5107"
                             transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 16.4336 12.1196)" fill="white" />
@@ -96,9 +96,9 @@
 
                             <face filter="parentid=214455">
 
-                                <li class="pb-3 text-left last:pb-0 text-center">
+                                <li class="pb-3 text-center last:pb-0">
                                     <a href="/project-list.bc?catid=@catid" title="@title"
-                                        class="font-Blinker300 text-lg text-left text-grayTxt hover:text-white hover:font-OctinStencilRg400 duration-500 capitalize">
+                                        class="font-Blinker300 text-lg text-center text-grayTxt hover:text-white hover:font-OctinStencilRg400 duration-500 capitalize">
                                         @title
                                     </a>
                                 </li>
@@ -114,9 +114,9 @@
                     about
                 </a>
             </li>
-            <li class="text-center pb-6 w-fit mx-auto cursor-pointer group/products megaArchHov">
+            <li class="text-center pb-6 w-fit mx-auto cursor-pointer group/products ">
                 <div class=" flex items-center justify-center gap-x-2">
-                    <svg class="rotate-180 duration-500 group-[&.activeMega]/products:rotate-0" width="19" height="13"
+                    <svg class="rotate-180 duration-500 group-[&.activeMega]/products:rotate-0 megaArchHov" width="19" height="13"
                         viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="3.629" height="13.5107"
                             transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 16.4336 12.1196)" fill="white" />
@@ -124,10 +124,10 @@
                             transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 8.25 6.47461)" fill="white" />
                     </svg>
 
-                    <span
+                    <a href="/product-cat.bc"
                         class="text-xl text-white tracking-[2px] text-center capitalize font-OctinStencilRg400 duration-500">
                         product
-                    </span>
+                    </a>
                 </div>
                 <div
                     class="megaArch pl-3 border- border-l-white h-0 opacity-0 duration-500 scale-y-0 origin-top group-[&.activeMega]/products:scale-y-100 group-[&.activeMega]/products:opacity-100 group-[&.activeMega]/products:h-fit group-[&.activeMega]/products:mt-4">
@@ -135,9 +135,9 @@
                         <basis core="print" datamembername="basisName.productCat">
 
                             <face filter="parentid=214465">
-                                <li class="pb-3 text-left last:pb-0 text-center">
+                                <li class="pb-3 text-center last:pb-0">
                                     <a href="/product-list.bc?catid=@catid"
-                                        class="font-Blinker300 text-lg text-left text-grayTxt hover:text-white hover:font-OctinStencilRg400 duration-500 capitalize">
+                                        class="font-Blinker300 text-lg text-center text-grayTxt hover:text-white hover:font-OctinStencilRg400 duration-500 capitalize">
                                         @title
                                     </a>
                                 </li>
@@ -246,6 +246,9 @@
         </ul>
     </div>
 </div>
+
+
+
 
 
 

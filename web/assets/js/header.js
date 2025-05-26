@@ -1,6 +1,8 @@
 let menuBar = document.querySelector(".menuBar")
 let megaMenu = document.querySelector(".megaMenu")
 let header = document.querySelector("header")
+let darkFlag = false
+
 let closeMega = document.querySelector(".closeMega")
 menuBar.addEventListener("click" , function(params) {
     megaMenu.classList.remove("translate-x-[100%]")

@@ -537,6 +537,10 @@
   letter-spacing: 0%;
   text-transform: capitalize;
 }
+.popForm form [data-bc-title-container]{
+  
+  margin-bottom: 9px !important;
+}
 .popForm form [data-bc-title-container] {
   float: unset !important;
   width: unset !important;

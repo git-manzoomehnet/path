@@ -1,12 +1,12 @@
 <basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="1">
     <member request="cat" type="tree" name="event-Cat" parentid="214687" />
 </basis>
-<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" catid="214687">
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" catid="[##cms.query.catid##]">
     <member name="list-award" size="500x900" propertyid="3087761" type="list" link="events.bc" />
 </basis>
 
 <basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
-    <member name="seolist" type="list" request="cat" id="[##cms.query.catid##]"></member>
+    <member name="seolist" type="list" request="cat" catid="[##cms.query.catid##]"></member>
 </basis>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +21,14 @@
         </face>
     </basis>
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/locomotive.css">
-    <basis core="call" file="styles2.inc" />
+    <basis core="call" file="styles2.inc" lid="2" />
 
 
 </head>
 
 <body>
     <main class="projectList overflow-x-hidden bg-main1">
-        <basis core="call" file="header-1.inc" />
+        <basis core="call" file="header-1.inc" lid="2" />
         <span class="catid" style="display: none;">[##cms.query.catid##]</span>
         <div class="containerHorizontal">
             <section id="PinSection">
@@ -220,7 +220,7 @@
                         </face>
                     </basis>
 
-                    <basis core="call" file="footer-2.inc" />
+                    <basis core="call" file="footer-2.inc" lid="2" />
                 </div>
             </section>
         </div>
@@ -229,7 +229,7 @@
 
 
 
-    <basis core="call" file="scripts2.inc" />
+    <basis core="call" file="scripts2.inc" lid="2" />
 
     <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.4.1.min.js"></script>
     <script src="[##cms.cms.cdn##]/_js/imageLoaded.js"></script>

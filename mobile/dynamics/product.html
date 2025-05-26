@@ -68,11 +68,11 @@
 
                     <face filter="TypeID=150">
                         <p
-                            class=" whites0pace-now0rap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            class=" whites0pace-now0rap inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
                             .
                         </p>
                         <p
-                            class=" whitesp0ace-nowr0ap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            class=" whitesp0ace-nowr0ap inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
                             @Answer
                         </p>
 
@@ -91,7 +91,7 @@
 
                 </else-layout>
                 <face filter="ord=51">
-                    <div class="imgS w-full h-full">
+                    <div class="imgS w-full h-full relative after:absolute after:inset-0 after:bg-black/[0.2]">
                         <img src="[##cms.cms.cdn##]/@largeIMG" class="w-full h-full object-cover" alt="product">
                     </div>
 
@@ -100,7 +100,7 @@
             <div class="absolute z-10 bottom-7 left-0 right-0">
 
 
-                <div class="title mb-10">
+                <div class="title mb-6">
                     <basis core="print" datamembername="db.product">
 
                         <face filter="TypeID=150">
@@ -135,50 +135,6 @@
             </div>
         </section>
         <section class="section2 mb-10 pt-14 w-90p mx-auto ">
-            <div class="flex wipeScroll flex-col items-start gap-6 ">
-                <basis core="print" datamembername="db.product">
-
-                    <face filter="TypeID=150">
-
-                        <div class="flex flex-col h-full overflow-y-auto items-start gap-1 w-full">
-                            <div class="lineeee w-[63px] flex gap-x-px">
-                                <span class="bg-main2 h-2 w-1.5">
-
-                                </span>
-                                <span class="bg-main2 h-2 w-14">
-
-                                </span>
-                            </div>
-                            <h2 class="font-OctinStencilRg400 text-main2  text-2xl">
-                                @Answer
-                            </h2>
-                        </div>
-                    </face>
-                </basis>
-                <div class=" text-base leading-[25px]">
-                    <basis core="print" datamembername="db.product">
-
-                        <face filter="TypeID not in (150,144,159)">
-                            <span class="text-grayTxt font-Blinker300">@Question:</span> 
-                            <span class="text-white font-Blinker400">@Answer</span><br />
-
-                        </face>
-                    </basis>
-
-                    <basis core="print" datamembername="db.product">
-
-                        <face filter="TypeID=144">
-                            <div class="para text-white font-Blinker300 mt-7 text-justify">
-
-                                @Answer
-                            </div>
-
-                        </face>
-                    </basis>
-                </div>
-            </div>
-
-
             <div class="">
 
                 <div class="slider_home">
@@ -256,9 +212,149 @@
 
             </div>
 
+           
+            <div class="flex wipeScroll flex-col items-start gap-6 ">
+                <basis core="print" datamembername="db.product">
+
+                    <face filter="TypeID=150">
+
+                        <div class="flex flex-col h-full overflow-y-auto items-start gap-1 w-full">
+                            <div class="lineeee w-[63px] flex gap-x-px">
+                                <span class="bg-main2 h-2 w-1.5">
+
+                                </span>
+                                <span class="bg-main2 h-2 w-14">
+
+                                </span>
+                            </div>
+                            <h2 class="font-OctinStencilRg400 text-main2  text-2xl">
+                                @Answer
+                            </h2>
+                        </div>
+                    </face>
+                </basis>
+                <div class=" text-base leading-[25px]">
+                    <basis core="print" datamembername="db.product">
+
+                        <face filter="TypeID not in (150,144,159)">
+                            <span class="text-grayTxt font-Blinker300">@Question:</span> 
+                            <span class="text-white font-Blinker400">@Answer</span><br />
+
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.product">
+
+                        <face filter="TypeID=144">
+                            <div class="para text-white font-Blinker300 mt-7 text-justify">
+
+                                @Answer
+                            </div>
+
+                        </face>
+                    </basis>
+                </div>
+            </div>
+
+
+       
         </section>
 
-        <basis core="print" datamembername="basisName.related-project">
+  
+
+        <basis core="print" datamembername="basisName.related-product">
+            <layout>
+                <section class="section4 w-90p mx-auto mt-11">
+
+                    <div class="flex justify-between items-center">
+
+                        <div class="flex flex-col items-start gap-1 w-full mb-6">
+                            <div class="lineeee w-[63px] flex gap-x-px">
+                                <span class="bg-main2 h-2 w-1.5">
+
+                                </span>
+                                <span class="bg-main2 h-2 w-14">
+
+                                </span>
+                            </div>
+                            <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                                RELATED PRODUCTS
+                            </h2>
+                        </div>
+
+                        <div class="flex items-center gap-x-8">
+                            <div class="prevrelatedProduct">
+                                <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="3.33239" height="12.4065"
+                                        transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.9297 2.76074)"
+                                        fill="white" />
+                                    <rect width="3.24401" height="7.42337"
+                                        transform="matrix(-0.707107 0.707107 0.707107 0.707107 6.74609 10.2773)"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="nextrelatedProduct">
+                                <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.0703125" y="2.76074" width="3.33239" height="12.4065"
+                                        transform="rotate(-45 0.0703125 2.76074)" fill="white" />
+                                    <rect x="5.25391" y="10.2773" width="3.24401" height="7.42337"
+                                        transform="rotate(45 5.25391 10.2773)" fill="white" />
+                                </svg>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper relatedProduct overflow-hidden">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+
+                            @child
+                        </div>
+
+                    </div>
+                </section>
+            </layout>
+
+            <face>
+                <div class="swiper-slide">
+
+                    <a href="/@link" title="title" class=" block">
+                        <div class="relative">
+                            <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
+                                <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
+                            </div>
+
+                        </div>
+
+                        <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                            <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-full shrink-0 bg-white h-1 "></span>
+                        </div>
+
+
+                        <div class="flex items-center gap-x-2 mb-3">
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                    fill="#807F63" />
+                            </svg>
+                            <span class="font-OctinStencilRg400 text-base text-white">
+                                @title
+                            </span>
+                        </div>
+
+                    </a>
+                </div>
+            </face>
+        </basis>
+      <basis core="print" datamembername="basisName.related-project">
             <layout>
 
                 <section class="section3 w-90p mx-auto mb-10 mt-20">
@@ -392,100 +488,6 @@
                         </div>
                     </a>
 
-                </div>
-            </face>
-        </basis>
-
-
-        <basis core="print" datamembername="basisName.related-product">
-            <layout>
-                <section class="section4 w-90p mx-auto mt-11">
-
-                    <div class="flex justify-between items-center">
-
-                        <div class="flex flex-col items-start gap-1 w-full mb-6">
-                            <div class="lineeee w-[63px] flex gap-x-px">
-                                <span class="bg-main2 h-2 w-1.5">
-
-                                </span>
-                                <span class="bg-main2 h-2 w-14">
-
-                                </span>
-                            </div>
-                            <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
-                                RELATED PRODUCTS
-                            </h2>
-                        </div>
-
-                        <div class="flex items-center gap-x-8">
-                            <div class="prevrelatedProduct">
-                                <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="3.33239" height="12.4065"
-                                        transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.9297 2.76074)"
-                                        fill="white" />
-                                    <rect width="3.24401" height="7.42337"
-                                        transform="matrix(-0.707107 0.707107 0.707107 0.707107 6.74609 10.2773)"
-                                        fill="white" />
-                                </svg>
-
-                            </div>
-                            <div class="nextrelatedProduct">
-                                <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="0.0703125" y="2.76074" width="3.33239" height="12.4065"
-                                        transform="rotate(-45 0.0703125 2.76074)" fill="white" />
-                                    <rect x="5.25391" y="10.2773" width="3.24401" height="7.42337"
-                                        transform="rotate(45 5.25391 10.2773)" fill="white" />
-                                </svg>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper relatedProduct overflow-hidden">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-
-                            @child
-                        </div>
-
-                    </div>
-                </section>
-            </layout>
-
-            <face>
-                <div class="swiper-slide">
-
-                    <a href="/link" title="title" class=" block">
-                        <div class="relative">
-                            <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
-                                <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
-                            </div>
-
-                        </div>
-
-                        <div class="flex overflow-hidden gap-x-1 w-full my-3">
-                            <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
-                            <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
-                            <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
-                            <span class="block w-full shrink-0 bg-white h-1 "></span>
-                        </div>
-
-
-                        <div class="flex items-center gap-x-2 mb-3">
-                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
-                                    fill="#807F63" />
-                            </svg>
-                            <span class="font-OctinStencilRg400 text-base text-white">
-                                @title
-                            </span>
-                        </div>
-
-                    </a>
                 </div>
             </face>
         </basis>

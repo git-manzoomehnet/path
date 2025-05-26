@@ -44,7 +44,7 @@
 
             <div class="top-20 absolute right-0 left-0 w-90p mx-auto shrink-0 fl0ex ">
                 <a href="/" title="home"
-                    class=" whitespace-nowrap inline text-white font-Blinker300  text-xs tracking-[5.46px]">
+                    class=" whitesp0ace-nowrap inline text-white font-Blinker300  text-xs tracking-[5.46px]">
                     home
                 </a>
 
@@ -52,11 +52,11 @@
                 <basis core="print" datamembername="db.nav">
 
                     <face>
-                        <p class=" whitespace-nowrap inline text-white font-Blinker300  text-xs tracking-[5.46px]">
+                        <p class=" whites0pace-nowrap inline text-white font-Blinker300  text-xs tracking-[5.46px]">
                             .
                         </p>
                         <a href="/product-list.bc?catid"
-                            class=" whitespace-nowrap inline text-white font-Blinker300  text-xs tracking-[5.46px]">
+                            class=" whites0pace-nowrap inline text-white font-Blinker300  text-xs tracking-[5.46px]">
                             @title
                         </a>
 
@@ -68,11 +68,11 @@
 
                     <face filter="TypeID=150">
                         <p
-                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            class=" whites0pace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
                             .
                         </p>
                         <p
-                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            class=" whitesp0ace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
                             @Answer
                         </p>
 
@@ -91,7 +91,7 @@
 
                 </else-layout>
                 <face filter="ord=51">
-                    <div class="imgS w-full h-full">
+                    <div class="imgS w-full h-full relative after:absolute after:inset-0 after:bg-black/[0.2]">
                         <img src="[##cms.cms.cdn##]/@largeIMG" class="w-full h-full object-cover" alt="product">
                     </div>
 
@@ -100,7 +100,7 @@
             <div class="absolute z-10 bottom-7 left-0 right-0">
 
 
-                <div class="title mb-10">
+                <div class="title mb-6">
                     <basis core="print" datamembername="db.product">
 
                         <face filter="TypeID=150">
@@ -135,50 +135,6 @@
             </div>
         </section>
         <section class="section2 mb-10 pt-14 w-90p mx-auto ">
-            <div class="flex wipeScroll flex-col items-start gap-6 ">
-                <basis core="print" datamembername="db.product">
-
-                    <face filter="TypeID=150">
-
-                        <div class="flex flex-col h-full overflow-y-auto items-start gap-1 w-full">
-                            <div class="lineeee w-[63px] flex gap-x-px">
-                                <span class="bg-main2 h-2 w-1.5">
-
-                                </span>
-                                <span class="bg-main2 h-2 w-14">
-
-                                </span>
-                            </div>
-                            <h2 class="font-OctinStencilRg400 text-main2  text-2xl">
-                                @Answer
-                            </h2>
-                        </div>
-                    </face>
-                </basis>
-                <div class=" text-base leading-[25px]">
-                    <basis core="print" datamembername="db.product">
-
-                        <face filter="TypeID not in (150,144,159)">
-                            <span class="text-grayTxt font-Blinker300">@Question:</span> 
-                            <span class="text-white font-Blinker400">@Answer</span><br />
-
-                        </face>
-                    </basis>
-
-                    <basis core="print" datamembername="db.product">
-
-                        <face filter="TypeID=144">
-                            <div class="para text-white font-Blinker300 mt-7 text-justify">
-
-                                @Answer
-                            </div>
-
-                        </face>
-                    </basis>
-                </div>
-            </div>
-
-
             <div class="">
 
                 <div class="slider_home">
@@ -255,6 +211,52 @@
                 </div>
 
             </div>
+          
+            <div class="flex wipeScroll flex-col items-start gap-6 ">
+                <basis core="print" datamembername="db.product">
+
+                    <face filter="TypeID=150">
+
+                        <div class="flex flex-col h-full overflow-y-auto items-start gap-1 w-full">
+                            <div class="lineeee w-[63px] flex gap-x-px">
+                                <span class="bg-main2 h-2 w-1.5">
+
+                                </span>
+                                <span class="bg-main2 h-2 w-14">
+
+                                </span>
+                            </div>
+                            <h2 class="font-OctinStencilRg400 text-main2  text-2xl">
+                                @Answer
+                            </h2>
+                        </div>
+                    </face>
+                </basis>
+                <div class=" text-base leading-[25px]">
+                    <basis core="print" datamembername="db.product">
+
+                        <face filter="TypeID not in (150,144,159)">
+                            <span class="text-grayTxt font-Blinker300">@Question:</span> 
+                            <span class="text-white font-Blinker400">@Answer</span><br />
+
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.product">
+
+                        <face filter="TypeID=144">
+                            <div class="para text-white font-Blinker300 mt-7 text-justify">
+
+                                @Answer
+                            </div>
+
+                        </face>
+                    </basis>
+                </div>
+            </div>
+
+
+        
 
         </section>
 
@@ -458,7 +460,7 @@
             <face>
                 <div class="swiper-slide">
 
-                    <a href="/link" title="title" class=" block">
+                    <a href="/@link" title="title" class=" block">
                         <div class="relative">
                             <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
                                 <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">

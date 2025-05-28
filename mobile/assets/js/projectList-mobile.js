@@ -20,18 +20,19 @@ function selectOption(text,catidin) {
     document.getElementById("dropdown").classList.add("hidden");
 
 
-    fetch(`/load-project.inc?catid=${catidin}&refresh=true&lid=2`)
-    .then(response => response.text())
+    // fetch(`/load-project.inc?catid=${catidin}&refresh=true&lid=2`)
+    // .then(response => response.text())
   
-    .then(userData => {
+    // .then(userData => {
 
-        projectListContainer.innerHTML=""
-        projectListContainer.innerHTML=userData
-        scrollTopFn()
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+    //     projectListContainer.innerHTML=""
+    //     projectListContainer.innerHTML=userData
+    //     scrollTopFn()
+    // })
+    // .catch(error => {
+    //   console.error('Error:', error);
+    // });
+console.log(text);
 
 
 

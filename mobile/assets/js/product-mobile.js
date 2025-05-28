@@ -81,7 +81,7 @@ navSliderOptions = {
     //  loopAdditionalSlides: 10,
     speed: 1000,
     spaceBetween: 15,
-    slidesPerView: 2.5,
+    slidesPerView: "auto",
     centeredSlides: true,
     touchRatio: 0.2,
     slideToClickedSlide: true,

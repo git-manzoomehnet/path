@@ -34,7 +34,7 @@
 
             <div class=" mt-20  shrink-0 mb-9 fl0ex ">
                 <a href="/" title="home"
-                    class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                    class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
                     home
                 </a>
 
@@ -44,11 +44,11 @@
 
                     <face filter="catid='[##cms.query.catid##]'">
                         <p
-                            class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
                             .
                         </p>
                         <p
-                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
                             @title
                         </p>
 
@@ -117,13 +117,20 @@
                 </div>
 
                 <!-- Dropdown Menu -->
-                <ul id="dropdown" class="absolute z-10 w-full bg-main1 text-gray-200 border border-main2 mt-1 hidden">
+                <ul id="dropdown" class="absolute z-10 px-3 pt-3 pb-7 bg-main2 text-gray-200  mt-1 hidden w-[calc(100%-42px)]">
 
                     <basis core="print" datamembername="basisName.eventtCat">
                        
                         <face filter="catid=214687">
-                            <li class="px-4 py-3 text-grayTxt2 text-xl capitalize font-Blinker300"
-                                onclick="selectOption('all event','@catid')"> all event
+                            <li class="p-3 flex items-center  text-main1 gap-x-2.5 border-b capitalize border-b-grayTxt2 text-lg font-Blinker300"
+                                onclick="selectOption('all event','@catid')">
+                                  <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="6" height="8" fill="#231F20"/>
+                                    </svg>
+                                <span>
+
+                                    all event
+                                </span>
                             </li>
                             
                         </face>
@@ -131,8 +138,15 @@
                     <basis core="print" datamembername="basisName.eventtCat">
                        
                         <face filter="catid<>214687">
-                            <li class="px-4 py-3 text-grayTxt2 text-xl capitalize font-Blinker300"
-                                onclick="selectOption('@title','@catid')"> @title
+                            <li class="p-3 flex items-center  text-main1 gap-x-2.5 border-b capitalize border-b-grayTxt2 text-lg font-Blinker300"
+                                onclick="selectOption('@title','@catid')">
+                                  <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="6" height="8" fill="#231F20"/>
+                                    </svg>
+                                <span>
+
+                                    @title
+                                </span>
                             </li>
                             
                         </face>
@@ -188,7 +202,7 @@
                                     fill="#807F63" />
                             </svg>
                             <span class="font-OctinStencilRg400 text-base text-white">
-                                Project Status : @prp_3087729
+                              @prp_3087761
                             </span>
                         </div>
                     </a>

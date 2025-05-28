@@ -106,9 +106,9 @@
 
 .wipeScroll {
   opacity: 0;
-  -webkit-mask-image: linear-gradient(to top, transparent 28%, black 60%);
-  -webkit-mask-size: 100% 200%;
-  -webkit-mask-position: 0% 100%;
+  -webkit-mask-image: linear-gradient(to top, black 40%, transparent 72%); /* تغییر اینجا */
+  -webkit-mask-size: 100% 300%;
+  -webkit-mask-position: 0% 0%; /* تغییر اینجا */
   animation-fill-mode: both;
 }
 
@@ -122,10 +122,10 @@
 
 @keyframes text-wipe {
   0% {
-    -webkit-mask-position: 0% 100%;
+    -webkit-mask-position: 0% 0%; /* تغییر اینجا */
   }
   100% {
-    -webkit-mask-position: 0% 0%;
+    -webkit-mask-position: 0% 100%; /* تغییر اینجا */
   }
 }
 

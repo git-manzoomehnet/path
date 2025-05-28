@@ -94,7 +94,7 @@
 
             <basis core="print" datamembername="basisName.ProjectCat">
              
-                <face filter="catid=214455">
+                <face filter="catid='[##cms.query.catid##]'">
                     <div class="para wipeScroll mb-4 font-Blinker300 text-base text-justify text-white">
                         <p>
                            @urldescription
@@ -133,6 +133,8 @@
                         <face filter="catid=214455">
                             <li class="p-3 flex items-center  text-main1 gap-x-2.5 border-b capitalize border-b-grayTxt2 text-lg font-Blinker300"
                                 onclick="selectOption('all architecture','@catid')">
+                                                            <a class="flex items-center  gap-x-2.5" href="/project-list.bc?catid=@catid" title="@title">
+
                                 <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="6" height="8" fill="#231F20"/>
                                     </svg>
@@ -141,6 +143,7 @@
 
                                     all architecture
                                 </span>
+                                                            </a>
                             </li>
                             
                         </face>
@@ -150,6 +153,7 @@
                         <face filter="catid<>214455">
                             <li class="p-3 flex items-center  text-main1 gap-x-2.5 border-b capitalize border-b-grayTxt2 text-lg font-Blinker300"
                             onclick="selectOption('@title','@catid')">
+                            <a class="flex items-center  gap-x-2.5" href="/project-list.bc?catid=@catid" title="@title">
                             <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="6" height="8" fill="#231F20"/>
                                 </svg>
@@ -158,6 +162,7 @@
 
                                 @title
                             </span>
+                            </a>
                         </li>
                             
                         </face>
@@ -171,7 +176,45 @@
 
             <basis core="print" datamembername="list.star">
                
-                <face>
+                                        <face filter="[db.list-Project.prp_3087729] is null">
+
+                    <a href="/@db.list2-Project.link" title="@db.list2-Project.title" class="mb-10 scrollTop block">
+                        <div class="relative">
+                            <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
+                                <img src="[##cms.cms.cdn##]/@db.list-Project.00400X00400prp" class="w-full" alt="@title">
+                            </div>
+        
+                            <div class="logoProj absolute left-0 bottom-0">
+                                <img src="[##cms.cms.cdn##]/@db.list2-Project.00200X00200prp" alt="@title">
+                            </div>
+                        </div>
+        
+                        <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                            <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                            <span class="block w-full shrink-0 bg-white h-1 "></span>
+                        </div>
+        
+        
+                        <div class="flex items-center gap-x-2 mb-3">
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                    fill="#807F63" />
+                            </svg>
+                            <span class="font-OctinStencilRg400 text-base text-white">
+                                @db.list2-Project.title	
+                            </span>
+                        </div>
+                       
+                    </a>
+                    
+                </face>
+            </basis>
+            <basis core="print" datamembername="list.star">
+               
+                                        <face filter="[db.list-Project.prp_3087729] is not null">
+
                     <a href="/@db.list2-Project.link" title="@db.list2-Project.title" class="mb-10 scrollTop block">
                         <div class="relative">
                             <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
@@ -217,6 +260,7 @@
         <basis core="call" file="footer-1.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
 
     </main>
+
     <basis core="call" file="scripts2.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
 
     <script src="[##cms.cms.cdn##]/js/projectList-mobile.js"></script>

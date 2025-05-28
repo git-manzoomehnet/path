@@ -743,6 +743,9 @@
   .\!h-\[50px\] {
     height: 50px !important;
   }
+  .\!h-\[87px\] {
+    height: 87px !important;
+  }
   .\!h-\[calc\(100\%-115px\)\] {
     height: calc(100% - 115px) !important;
   }
@@ -988,6 +991,9 @@
   }
   .min-h-svh {
     min-height: 100svh;
+  }
+  .\!w-\[147px\] {
+    width: 147px !important;
   }
   .w-1\.5 {
     width: calc(var(--spacing) * 1.5);
@@ -1863,6 +1869,9 @@
   }
   .pr-1 {
     padding-right: calc(var(--spacing) * 1);
+  }
+  .pr-6 {
+    padding-right: calc(var(--spacing) * 6);
   }
   .pr-11 {
     padding-right: calc(var(--spacing) * 11);
@@ -2855,9 +2864,9 @@
 }
 .wipeScroll {
   opacity: 0;
-  -webkit-mask-image: linear-gradient(to top, transparent 28%, black 60%);
-  -webkit-mask-size: 100% 200%;
-  -webkit-mask-position: 0% 100%;
+  -webkit-mask-image: linear-gradient(to top, black 40%, transparent 72%);
+  -webkit-mask-size: 100% 300%;
+  -webkit-mask-position: 0% 0%;
   animation-fill-mode: both;
 }
 .wipeScroll.activeScroll {
@@ -2869,10 +2878,10 @@
 }
 @keyframes text-wipe {
   0% {
-    -webkit-mask-position: 0% 100%;
+    -webkit-mask-position: 0% 0%;
   }
   100% {
-    -webkit-mask-position: 0% 0%;
+    -webkit-mask-position: 0% 100%;
   }
 }
 .stackEffect .tabs-wrapper {

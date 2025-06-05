@@ -173,3 +173,51 @@ closeSearchPop.addEventListener("click" , function (params) {
             galleryPop.classList.add("-translate-y-[100%]")
 
 })
+
+
+
+
+
+
+
+let lastScrollYTop = window.scrollY;
+let isInitialLoadTop = true;
+
+const elementsTop = document.querySelectorAll('.scrollTop');
+
+const observerTop = new IntersectionObserver((entries) => {
+  const currentScrollY = window.scrollY;
+  const isScrollingDown = currentScrollY > lastScrollYTop;
+  const isScrollingUp = currentScrollY < lastScrollYTop;
+
+  entries.forEach(entry => {
+    const el = entry.target;
+
+    if (entry.isIntersecting) {
+      // اگر در بارگذاری اولیه یا در هر جهتی از اسکرول باشیم
+      if (isInitialLoadTop || isScrollingDown || isScrollingUp) {
+        el.classList.add('visible', 'animate');
+        observerTop.unobserve(el); // فقط یکبار اجرا شود
+      }
+    }
+  });
+
+  lastScrollYTop = currentScrollY;
+  isInitialLoadTop = false;
+}, {
+  threshold: 0.01
+});
+
+elementsTop.forEach(el => observerTop.observe(el));
+
+
+
+  window.addEventListener("load", function () {
+        const slider = document.getElementById("mainSlider");
+        const text = document.getElementById("textContent");
+
+        if (slider && text) {
+            const sliderHeight = slider.offsetHeight;
+            text.style.maxHeight = sliderHeight + "px";
+        }
+    });

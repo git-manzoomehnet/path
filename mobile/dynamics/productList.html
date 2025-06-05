@@ -25,181 +25,183 @@
 </head>
 
 <body>
-    <main class="projectList overflow-x-hidden bg-main1">
+    <main class="projectList min-h-svh flex flex-col justify-between overflow-x-hidden bg-main1">
+<div class="">
 
-        <span style="display: none;" class="catid">[##cms.query.catid##]</span>
-        <basis core="call" lid="2" file="header-1.inc" pageindex="[##cms.cms.pageindex##]" />
+    <span style="display: none;" class="catid">[##cms.query.catid##]</span>
+    <basis core="call" lid="2" file="header-1.inc" pageindex="[##cms.cms.pageindex##]" />
 
-        <section class="flex section1 flex-col items-start gap-1  mb-2.5 w-90p mx-auto">
+    <section class="flex section1 flex-col items-start gap-1  mb-2.5 w-90p mx-auto">
 
-            <div class=" mt-20  shrink-0 mb-9 flex ">
-                <a href="/" title="home"
-                    class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                    home
-                </a>
-                
-                <p
-                class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                .
-            </p>
-            
-            <a href="/product-cat.bc" title="home"
-                class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                products
+        <div class=" mt-20  shrink-0 mb-9 fl0ex ">
+            <a href="/" title="home"
+                class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
+                home
             </a>
-
-                <basis core="print" datamembername="basisName.productCat">
-
-                    <face filter="catid='[##cms.query.catid##]'">
-                        <p
-                            class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                            .
-                        </p>
-                        <p
-                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                            @title
-                        </p>
-
-                    </face>
-                </basis>
-
-
-            </div>
-
-
-
-
-            <div class="lineeee w-[63px] flex gap-x-px">
-                <span class="bg-main2 h-2 w-1.5">
-
-                </span>
-                <span class="bg-main2 h-2 w-14">
-
-                </span>
-            </div>
-
-
+            
+            <p
+            class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
+            .
+        </p>
+        
+        <a href="/product-cat.bc" title="home"
+            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
+            products
+        </a>
 
             <basis core="print" datamembername="basisName.productCat">
 
                 <face filter="catid='[##cms.query.catid##]'">
-                    <h1 class="w-full projTitle uppercase mb-2 font-OctinStencilRg400 font-normal text-main2 text-2xl">
+                    <p
+                        class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
+                        .
+                    </p>
+                    <p
+                        class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-xs tracking-[5.46px]">
                         @title
-                    </h1>
+                    </p>
 
                 </face>
             </basis>
 
 
-            <basis core="print" datamembername="basisName.productCat">
-             
-                <face filter="catid=214465">
-                    <div class="para wipeScroll mb-4 font-Blinker300 text-base text-justify text-white">
-                        <p>
-                           @urldescription
-                        </p>
-                    </div>
-                    
-                </face>
-            </basis>
+        </div>
 
 
 
-        </section>
 
-        <section class="section2 mb-4">
-            <div class="relative w-90p mx-auto">
-                <!-- Trigger Button & Input -->
-                <div class="flex gap-x-2.5 bg-main1 ">
-                    <button onclick="toggleDropdown()"
-                        class="flex-1 border border-main2 text-left px-4 py-3 text-grayTxt2 text-xl capitalize font-Blinker300">
-                        <span id="selected-option">Choose...</span>
-                    </button>
-                    <button onclick="toggleDropdown()"
-                        class="px-2 border border-main2 text-grayTxt2 text-xl capitalize font-Blinker300">
-                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L7 7L13 1" stroke="white" />
-                        </svg>
+        <div class="lineeee w-[63px] flex gap-x-px">
+            <span class="bg-main2 h-2 w-1.5">
 
-                    </button>
+            </span>
+            <span class="bg-main2 h-2 w-14">
+
+            </span>
+        </div>
+
+
+
+        <basis core="print" datamembername="basisName.productCat">
+
+            <face filter="catid='[##cms.query.catid##]'">
+                <h1 class="w-full projTitle uppercase mb-2 font-OctinStencilRg400 font-normal text-main2 text-2xl">
+                    @title
+                </h1>
+
+            </face>
+        </basis>
+
+
+        <basis core="print" datamembername="basisName.productCat">
+         
+            <face filter="catid=214465">
+                <div class="para wipeScroll mb-4 font-Blinker300 text-base text-justify text-white">
+                    <p>
+                       @urldescription
+                    </p>
                 </div>
+                
+            </face>
+        </basis>
 
-                <!-- Dropdown Menu -->
-                <ul id="dropdown" class="absolute z-10 px-3 pt-3 pb-7 bg-main2 text-gray-200  mt-1 hidden w-[calc(100%-42px)]">
 
-                    <basis core="print" datamembername="basisName.productCat">
-                       
-                        <face filter="catid=214465">
-                            <li class="p-3 flex items-center  text-main1 gap-x-2.5 border-b capitalize border-b-grayTxt2 text-lg font-Blinker300"
-                                onclick="selectOption('PATH PRODUCTS','@catid')">
-                                <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="6" height="8" fill="#231F20"/>
-                                    </svg>
-                                    
-                                <span>
 
-                                      PATH PRODUCTS
-                                </span>
-                            </li>
-                            
-                        </face>
-                    </basis>
-                    <basis core="print" datamembername="basisName.productCat">
-                       
-                        <face filter="catid<>214465">
-                            <li class="p-3 flex items-center  text-main1 gap-x-2.5 border-b capitalize border-b-grayTxt2 text-lg font-Blinker300"
-                            onclick="selectOption('@title','@catid')">
+    </section>
+
+    <section class="section2 mb-4">
+        <div class="relative w-90p mx-auto">
+            <!-- Trigger Button & Input -->
+            <div class="flex gap-x-2.5 bg-main1 ">
+                <button onclick="toggleDropdown()"
+                    class="flex-1 border border-main2 text-left px-4 py-3 text-grayTxt2 text-xl capitalize font-Blinker300">
+                    <span id="selected-option">Choose...</span>
+                </button>
+                <button onclick="toggleDropdown()"
+                    class="px-2 border border-main2 text-grayTxt2 text-xl capitalize font-Blinker300">
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="white" />
+                    </svg>
+
+                </button>
+            </div>
+
+            <!-- Dropdown Menu -->
+            <ul id="dropdown" class="absolute z-10 px-3 pt-3 pb-7 bg-main2 text-gray-200  mt-1 hidden w-[calc(100%-42px)]">
+
+                <basis core="print" datamembername="basisName.productCat">
+                   
+                    <face filter="catid=214465">
+                        <li class="p-3 flex items-center  text-main1 gap-x-2.5 border-b capitalize border-b-grayTxt2 text-lg font-Blinker300"
+                            onclick="selectOption('PATH PRODUCTS','@catid')">
                             <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="6" height="8" fill="#231F20"/>
                                 </svg>
                                 
                             <span>
 
-                                @title
+                                  PATH PRODUCTS
                             </span>
                         </li>
-                            
-                        </face>
-                    </basis>
-                    
-                </ul>
-            </div>
-
-        </section>
-        <section class="w-90p mx-auto projectListContainer">
-
-            <basis core="print" datamembername="db.list-product-m">
-               
-                <face>
-                    <a href="/@link" title="@title" class="mb-10 scrollTop block">
-                        <div class="relative">
-                            <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
-                                <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
-                            </div>
-        
-                           
-                        </div>
-        
-                        <div class="flex overflow-hidden gap-x-1 w-full my-3">
-                            <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
-                            <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
-                            <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
-                            <span class="block w-full shrink-0 bg-white h-1 "></span>
-                        </div>
-                        <div class="flex items-center gap-x-2 mb-3">
-                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
-                                    fill="#807F63" />
+                        
+                    </face>
+                </basis>
+                <basis core="print" datamembername="basisName.productCat">
+                   
+                    <face filter="catid<>214465">
+                        <li class="p-3 flex items-center  text-main1 gap-x-2.5 border-b capitalize border-b-grayTxt2 text-lg font-Blinker300"
+                        onclick="selectOption('@title','@catid')">
+                        <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="6" height="8" fill="#231F20"/>
                             </svg>
-                            <span class="font-OctinStencilRg400 text-base text-white">
-                                @title	
-                            </span>
+                            
+                        <span>
+
+                            @title
+                        </span>
+                    </li>
+                        
+                    </face>
+                </basis>
+                
+            </ul>
+        </div>
+
+    </section>
+    <section class="w-90p mx-auto projectListContainer">
+
+        <basis core="print" datamembername="db.list-product-m">
+           
+            <face>
+                <a href="/@link" title="@title" class="mb-10 scrollTop block">
+                    <div class="relative">
+                        <div class="imgS relative after:absolute after:inset-0 after:bg-black/[0.2]">
+                            <img src="[##cms.cms.cdn##]/@00400X00400prp" class="w-full" alt="@title">
                         </div>
-                    </a>
-                    
-                </face>
-            </basis>
-        </section>
+    
+                       
+                    </div>
+    
+                    <div class="flex overflow-hidden gap-x-1 w-full my-3">
+                        <span class="block w-[4%] shrink-0 bg-white h-1 "></span>
+                        <span class="block w-[27%] shrink-0 bg-white h-1 "></span>
+                        <span class="block w-[17%] shrink-0 bg-white h-1 "></span>
+                        <span class="block w-full shrink-0 bg-white h-1 "></span>
+                    </div>
+                    <div class="flex items-center gap-x-2 mb-3">
+                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4.26744H7.42841L3.94634 0.808105L0 4.72678L5.1172 9.80811H12V4.26744Z"
+                                fill="#807F63" />
+                        </svg>
+                        <span class="font-OctinStencilRg400 text-base text-white">
+                            @title	
+                        </span>
+                    </div>
+                </a>
+                
+            </face>
+        </basis>
+    </section>
+</div>
         <basis core="call" file="footer-1.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
 
     </main>

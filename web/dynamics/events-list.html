@@ -27,199 +27,203 @@
 </head>
 
 <body>
-
     <main class="projectList overflow-x-hidden bg-main1">
         <basis core="call" file="header-1.inc" lid="2" />
+          <basis core="call" file="loader.inc" />
+
         <span class="catid" style="display: none;">[##cms.query.catid##]</span>
         <div class="containerHorizontal">
             <section id="PinSection">
                 <div class="Pin-Wrapp">
-
-                    <section class="section1 relative pl-7 w-[477px] shrink-0 ">
-                        <div class="absolute top-[115px] z-[2121025882] shrink-0 flex items-end  left-7">
-
-                            <a href="/"
-                                class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                                home
-                            </a>
-
-
-                            <basis core="print" datamembername="basisName.event-Cat">
-
-                                <face filter="catid='[##cms.query.catid##]'">
-                                    <p
-                                        class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                                        .
-                                    </p>
-                                    <p
-                                        class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                                        @title
-                                    </p>
-
-                                </face>
-                            </basis>
-                        </div>
-
-
-                        <div class="titles h-full flex flex-col justify-end pb-[100px] pt-[180px] items-start">
-
-
-                            <div class="flex flex-col items-start gap-1 w-full mb-2">
-                                <div class="lineeee w-[63px] flex gap-x-px">
-                                    <span class="bg-main2 h-2 w-1.5">
-
-                                    </span>
-                                    <span class="bg-main2 h-2 w-14">
-
-                                    </span>
-                                </div>
-
-
+                    <div class="flex">
+                        <section class="section1 relative pl-7 w-[477px] shrink-0 ">
+                            <div class="absolute top-[115px] z-[2121025882] shrink-0 flex items-end  left-7">
+    
+                                <a href="/"
+                                    class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                                    home
+                                </a>
+    
+    
                                 <basis core="print" datamembername="basisName.event-Cat">
-
+    
                                     <face filter="catid='[##cms.query.catid##]'">
-                                        <h1 class="w-full font-OctinStencilRg400 font-normal text-main2 text-2xl">
+                                        <p
+                                            class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                                            .
+                                        </p>
+                                        <p
+                                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
                                             @title
-                                        </h1>
-
+                                        </p>
+    
                                     </face>
                                 </basis>
-
-
-
-
                             </div>
-
-                            <div class="overflow-y-auto mb-[100px] ">
-
-                                <basis core="print" datamembername="basisName.event-Cat">
-
-                                    <face filter="catid=214687">
-
-                                        <div
-                                            class="para mb-7 w-[400px] font-Blinker300 text-base text-justify text-white">
-                                            <p>
-                                                @urldescription
-
-                                            </p>
-                                        </div>
-
-                                    </face>
-                                </basis>
-
-                                <div class="catsList">
-                                    <ul>
-
-                                        <basis core="print" datamembername="basisName.event-Cat">
-
-                                            <face filter="catid=214687">
-                                                <li class="mb-7 last:mb-0">
-                                                    <a href="/events-list.bc?catid=214687" title="" data-catid="@catid"
-                                                        class="flex gap-x-1.5 items-center catlist group/catlist">
-                                                        <div
-                                                            class="flex w-3.5 h-3.5 justify-center items-center group-[&.activeCat]/catlist:border group-[&.activeCat]/catlist:border-white">
-                                                            <span
-                                                                class="block w-1.5 h-2 bg-grayTxt3  group-[&.activeCat]/catlist:bg-white"></span>
-
-                                                        </div>
-                                                        <p
-                                                            class="font-Blinker300 text-xl capitalize text-grayTxt3 group-[&.activeCat]/catlist:text-white">
-                                                            all event
-
-                                                        </p>
-                                                    </a>
-                                                </li>
-
-                                            </face>
-                                        </basis>
-                                        <basis core="print" datamembername="basisName.event-Cat">
-
-                                            <face filter="catid<>214687">
-                                                <li class="mb-7 last:mb-0">
-                                                    <a href="/events-list.bc?catid=@catid" data-catid="@catid" title=""
-                                                        class="flex gap-x-1.5 items-center catlist group/catlist">
-                                                        <div
-                                                            class="flex w-3.5 h-3.5 justify-center items-center group-[&.activeCat]/catlist:border group-[&.activeCat]/catlist:border-white">
-                                                            <span
-                                                                class="block w-1.5 h-2 bg-grayTxt3  group-[&.activeCat]/catlist:bg-white"></span>
-
-                                                        </div>
-                                                        <p
-                                                            class="font-Blinker300 text-xl capitalize text-grayTxt3 group-[&.activeCat]/catlist:text-white">
-                                                            @title
-
-                                                        </p>
-                                                    </a>
-                                                </li>
-                                            </face>
-                                        </basis>
-
-                                    </ul>
+    
+    
+                            <div class="titles h-full flex flex-col justify-end pb-[100px] pt-[180px] items-start">
+    
+    
+                                <div class="flex flex-col items-start gap-1 w-full mb-2">
+                                    <div class="lineeee w-[63px] flex gap-x-px">
+                                        <span class="bg-main2 h-2 w-1.5">
+    
+                                        </span>
+                                        <span class="bg-main2 h-2 w-14">
+    
+                                        </span>
+                                    </div>
+    
+    
+                                    <basis core="print" datamembername="basisName.event-Cat">
+    
+                                        <face filter="catid='[##cms.query.catid##]'">
+                                            <h1 class="w-full font-OctinStencilRg400 font-normal text-main2 text-2xl">
+                                                @title
+                                            </h1>
+    
+                                        </face>
+                                    </basis>
+    
+    
+    
+    
                                 </div>
-
-                            </div>
-
-                            <div class="overflow-hidden shrink-0 w-full flex gap-x-2 items-center h-fit">
-                                <span class="font-Blinker300 text-sm text-white capitalize">
-                                    scroll
-                                </span>
-
-                                <div class="scrollBtmHorizontal overflow-hidden w-[172px] h-px bg-white">
-                                    <div class="line w-[50%] h-px bg-main2"></div>
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
-
-                    </section>
-
-                    <basis core="print" datamembername="db.list-award">
-
-                        <face>
-                            <a href="/@link" title="@title"
-                                class="projectBox shrink-0 w-[385px] hover:w-[515px] duration-500 relative group/projectBox flex flex-col ">
-
-                                <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: 515px 100vh;"
-                                    class="imgS relative grayscale-100 group-hover/projectBox:grayscale-0 group-hover/projectBox:w-full h-full duration-500 overflow-hidden after:absolute after:inset-0 after:w-full after:h-full after:bg-black/[0.2]">
-                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
-                                    <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
-
-                                        <div class="line w-80p flex duration-500 max-w-[302px]">
-                                            <span
-                                                class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span
-                                                class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span
-                                                class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-full h-1 bg-white  duration-500"></span>
-                                        </div>
-                                        <div
-                                            class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
-
+    
+                                <div class="overflow-y-auto mb-[100px]  pr-6">
+    
+                                    <basis core="print" datamembername="basisName.event-Cat">
+    
+                                        <face filter="catid=214687">
+    
                                             <div
-                                                class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline"
-                                                    src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                                class="para mb-7 w-[400px] font-Blinker300 text-base text-justify text-white">
                                                 <p>
-                                                    @title
+                                                    @urldescription
+    
                                                 </p>
                                             </div>
-                                            <span class="block mt-2.5 font-Blinker300 text-sm uppercase text-white">
-                                                @prp_3087761
-                                            </span>
-                                        </div>
+    
+                                        </face>
+                                    </basis>
+    
+                                    <div class="catsList">
+                                        <ul>
+    
+                                            <basis core="print" datamembername="basisName.event-Cat">
+    
+                                                <face filter="catid=214687">
+                                                    <li class="mb-7 last:mb-0">
+                                                        <a href="/events-list.bc?catid=214687" title="" data-catid="@catid"
+                                                            class="flex gap-x-1.5 items-center catlist group/catlist">
+                                                            <div
+                                                                class="flex w-3.5 h-3.5 justify-center items-center group-[&.activeCat]/catlist:border group-[&.activeCat]/catlist:border-white">
+                                                                <span
+                                                                    class="block w-1.5 h-2 bg-grayTxt3  group-[&.activeCat]/catlist:bg-white"></span>
+    
+                                                            </div>
+                                                            <p
+                                                                class="font-Blinker300 text-xl capitalize text-grayTxt3 group-[&.activeCat]/catlist:text-white">
+                                                                all event
+    
+                                                            </p>
+                                                        </a>
+                                                    </li>
+    
+                                                </face>
+                                            </basis>
+                                            <basis core="print" datamembername="basisName.event-Cat">
+    
+                                                <face filter="catid<>214687">
+                                                    <li class="mb-7 last:mb-0">
+                                                        <a href="/events-list.bc?catid=@catid" data-catid="@catid" title=""
+                                                            class="flex gap-x-1.5 items-center catlist group/catlist">
+                                                            <div
+                                                                class="flex w-3.5 h-3.5 justify-center items-center group-[&.activeCat]/catlist:border group-[&.activeCat]/catlist:border-white">
+                                                                <span
+                                                                    class="block w-1.5 h-2 bg-grayTxt3  group-[&.activeCat]/catlist:bg-white"></span>
+    
+                                                            </div>
+                                                            <p
+                                                                class="font-Blinker300 text-xl capitalize text-grayTxt3 group-[&.activeCat]/catlist:text-white">
+                                                                @title
+    
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                </face>
+                                            </basis>
+    
+                                        </ul>
+                                    </div>
+    
+                                </div>
+    
+                                <div class="overflow-hidden shrink-0 w-full flex gap-x-2 items-center h-fit">
+                                    <span class="font-Blinker300 text-sm text-white capitalize">
+                                        scroll
+                                    </span>
+    
+                                    <div class="scrollBtmHorizontal overflow-hidden w-[172px] h-px bg-white">
+                                        <div class="line w-[50%] h-px bg-main2"></div>
                                     </div>
                                 </div>
+    
+    
+    
+    
+                            </div>
+    
+                        </section>
+    
+                        <basis core="print" datamembername="db.list-award">
+    
+                            <face>
+                                <a href="/@link" title="@title"
+                                    class="projectBox shrink-0 w-[385px] hover:w-[515px] duration-500 relative group/projectBox flex flex-col ">
+    
+                                    <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: 515px 100vh;"
+                                        class="imgS relative grayscale-100 group-hover/projectBox:grayscale-0 group-hover/projectBox:w-full h-full duration-500 overflow-hidden after:absolute after:inset-0 after:w-full after:h-full after:bg-black/[0.2]">
+                                        <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                                        <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
+    
+                                            <div class="line w-80p flex duration-500 max-w-[302px]">
+                                                <span
+                                                    class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                                <span
+                                                    class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                                <span
+                                                    class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                                <span class="w-full h-1 bg-white  duration-500"></span>
+                                            </div>
+                                            <div
+                                                class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
+    
+                                                <div
+                                                    class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                                    <img class="relative w-3 h-2.5 inline"
+                                                        src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                                    <p>
+                                                        @title
+                                                    </p>
+                                                </div>
+                                                <span class="block mt-2.5 font-Blinker300 text-sm uppercase text-white">
+                                                    @prp_3087761
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+    
+    
+                                </a>
+    
+                            </face>
+                        </basis>
 
+                    </div>
 
-
-                            </a>
-
-                        </face>
-                    </basis>
 
                     <basis core="call" file="footer-2.inc" lid="2" />
                 </div>

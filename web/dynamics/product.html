@@ -1,14 +1,14 @@
-    <basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <basis core="dbsource" request="seo" source="basiscore" name="db" lid="2">
         <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
     </basis>
-    <basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]">
+    <basis core="dbsource" source="basiscore" name="json" lid="2" usedforid="[##cms.query.id##]">
         <member request="json-ld" type="scalar" name="fq" />
     </basis>
     <basis core="dbsource" name="db" source="media" lid="2" sourcemid="product" usedforid="[##cms.query.id##]"> <member name="image-product" type="list" format="4"/> </basis>
     <basis core="dbsource" name="db" source="basiscore" lid="2" mid="20" usedforid="[##cms.query.id##]"> <member name="product" type="view"/> </basis>
     <basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="20" usedforid="[##cms.query.id##]"> <member type="list" name="related-product" size="500x900" blgid="18" /> </basis>
     <basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="20" usedforid="[##cms.query.id##]"> <member type="list" name="related-project" link="project.bc" size="500x900" propertyid="3087729" blgid="1527" /> </basis>	
-        <basis core="dbsource" source="basiscore" name="db" lid="2" mid="20" usedforid="[##cms.query.id##]" > <member request="navigationcat" type="tree" name="nav" postsql="select * from [db.nav] where Parentcatid= Catid"  /> </basis>
+     <basis core="dbsource" source="basiscore" name="db" lid="2" mid="20" usedforid="[##cms.query.id##]" > <member request="navigationcat" type="tree" name="nav" postsql="select * from [db.nav] where Parentcatid= Catid"  /> </basis>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -31,13 +31,20 @@
             <basis core="call" file="header-1.inc" />
 
             <section class="section1 relative h-svh w-svw overflow-hidden">
-                <div class="absolute right-0 w-90p mx-auto top-[115px] z-[2121025882] shrink-0 flex items-end  left-0">
+                <div class="absolute right-0 w-96p mx-auto top-[115px] z-[2121025882] shrink-0 flex items-end  left-0">
 
                     <a href="/"
                         class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
                         home
                     </a>
-
+         <p
+                                class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                                .
+                            </p>
+                            <a href="/product-cat.bc"
+                                class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                                product
+                            </a>
                     <basis core="print" datamembername="db.nav">
                        
                         <face>
@@ -45,7 +52,7 @@
                                 class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
                                 .
                             </p>
-                            <a href="/product-list.bc?catid"
+                            <a href="/product-list.bc?catid=@catid"
                                 class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
                                 @title
                             </a>
@@ -87,7 +94,7 @@
                 <div class="absolute z-10 bottom-7 left-0 right-0">
 
 
-                    <div class="title mb-10">
+                    <div class="title mb-10 scrollTop">
                         <basis core="print" datamembername="db.product">
 
                             <face filter="TypeID=150">
@@ -95,7 +102,7 @@
                                     @Answer
                                 </h1>
 
-                                <div class="lineeeeee w-[257px] flex gap-x-1 mx-auto">
+                                <div class="lineeeeee w-[257px] flex gap-x-1 mx-auto"  dir="rtl">
                                     <span class="w-full h-1.5 bg-white"></span>
                                     <span class="w-[16%] h-1.5 bg-white"></span>
                                     <span class="w-[28%] h-1.5 bg-white"></span>
@@ -124,12 +131,12 @@
                 </div>
             </section>
             <section class="section2 pt-14 w-90p mx-auto flex gap-x-11">
-                <div class="flex flex-col items-start gap-6 wipeScroll">
+                <div class="flex flex-col items-start gap-6 wipeScroll" id="textContent">
                     <basis core="print" datamembername="db.product">
 
                         <face filter="TypeID=150">
 
-                            <div class="flex flex-col overflow-y-auto items-start gap-1 w-full">
+                            <div class="flex flex-col  items-start gap-1 w-full">
                                 <div class="lineeee w-[63px] flex gap-x-px">
                                     <span class="bg-main2 h-2 w-1.5">
             
@@ -144,11 +151,11 @@
                             </div>
                         </face>
                     </basis>
-                    <div class=" text-[16px] leading-[25px]">
+                    <div class="h-full overflow-y-auto text-[16px] leading-[25px]">
                         <basis core="print" datamembername="db.product">
 
                             <face filter="TypeID not in (150,144,159)">
-                                <span class="text-grayTxt font-Blinker300">@Question:</span> 
+                                <span class="text-grayTxt font-Blinker300 capitalize ">@Question:</span> 
                                 <span class="text-white font-Blinker400">@Answer</span><br />
 
                             </face>
@@ -168,7 +175,7 @@
                 </div>
 
 
-                <div class="w-[67.5%]">
+                <div class="w-[67.5%]" id="mainSlider">
 
                     <div class="slider_home">
                         <basis core="print" datamembername="db.image-product">
@@ -250,104 +257,7 @@
 
             </section>
 
-            <basis core="print" datamembername="basisName.related-project">
-                <layout>
-                
-                    <section class="section3 w-90p mx-auto mt-20">
-                        <div class="flex flex-col items-start gap-1 w-full mb-6">
-                            <div class="lineeee w-[63px] flex gap-x-px">
-                                <span class="bg-main2 h-2 w-1.5">
-            
-                                </span>
-                                <span class="bg-main2 h-2 w-14">
-            
-                                </span>
-                            </div>
-                            <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
-                                RELATED PROJETS
-                            </h2>
-                        </div>
-            
-            
-                        <div class="grid grid-cols-3">
-                        
-            @child
-                        
-                        </div>
-                    </section>
-                </layout>
-            
-                <face filter="prp_3087729 is null">
-                    <a href="/@link" title="@title"
-                                class="projectBox relative group/projectBox flex flex-col ">
-            
-                                <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: cover;"
-                                    class="imgS   group-hover/projectBox:grayscale-0 grayscale-100 relative after:absolute w-[calc(100%-60px)] group-hover/projectBox:w-full duration-500 h-[900px] overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
-                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
-                                    <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
-                                        <div class="line w-80p flex duration-500 max-w-[302px]">
-                                            <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-full h-1 bg-white  duration-500"></span>
-                                        </div>
-                                        <div
-                                            class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
-            
-                                            <div class="flex mt-2.5 mb-5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
-                                                <p>
-                                                @title
-                                                </p>
-                                            </div>
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-            
-            
-            
-                            </a>
-                </face>
-                <face filter="prp_3087729 is not null">
-                    <a href="/@link" title="@title"
-                                class="projectBox relative group/projectBox flex flex-col ">
-            
-                                <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: cover;"
-                                    class="imgS relative after:absolute w-[calc(100%-60px)] group-hover/projectBox:w-full duration-500 grayscale-100  group-hover/projectBox:grayscale-0 h-[900px] overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
-                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
-                                    <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
-                                        <div class="line w-80p flex duration-500 max-w-[302px]">
-                                            <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-full h-1 bg-white  duration-500"></span>
-                                        </div>
-                                        <div
-                                            class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
-            
-                                            <div class="flex mt-2.5 mb-1.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
-                                                <p>
-                                                @title
-                                                </p>
-                                            </div>
-                                            <div class="flex  font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
-                                                <p>
-                                                Project Status:@prp_3087729
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-            
-            
-            
-                            </a>
-                </face>
-            </basis>
-
+         
 
             <basis core="print" datamembername="basisName.related-product">
                 <layout>
@@ -367,7 +277,7 @@
                         </div>
             
             
-                        <div class="grid grid-cols-3">
+                        <div class="grid grid-cols-3 gap-y-11">
                             
                             @child
             
@@ -448,6 +358,103 @@
               </face>
           </basis>
         
+   <basis core="print" datamembername="basisName.related-project">
+                <layout>
+                
+                    <section class="section3 w-90p mx-auto mt-20">
+                        <div class="flex flex-col items-start gap-1 w-full mb-6">
+                            <div class="lineeee w-[63px] flex gap-x-px">
+                                <span class="bg-main2 h-2 w-1.5">
+            
+                                </span>
+                                <span class="bg-main2 h-2 w-14">
+            
+                                </span>
+                            </div>
+                            <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                                RELATED PROJETS
+                            </h2>
+                        </div>
+            
+            
+                        <div class="grid grid-cols-3 gap-y-11">
+                        
+            @child
+                        
+                        </div>
+                    </section>
+                </layout>
+            
+                <face filter="prp_3087729 is null">
+                    <a href="/@link" title="@title"
+                                class="projectBox relative group/projectBox flex flex-col ">
+            
+                                <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: cover;"
+                                    class="imgS   group-hover/projectBox:grayscale-0 grayscale-100 relative after:absolute w-[calc(100%-60px)] group-hover/projectBox:w-full duration-500 h-[900px] overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
+                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                                    <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
+                                        <div class="line w-80p flex duration-500 max-w-[302px]">
+                                            <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                            <span class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                            <span class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                            <span class="w-full h-1 bg-white  duration-500"></span>
+                                        </div>
+                                        <div
+                                            class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
+            
+                                            <div class="flex mt-2.5 mb-5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                                <p>
+                                                @title
+                                                </p>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+            
+            
+            
+                            </a>
+                </face>
+                <face filter="prp_3087729 is not null">
+                    <a href="/@link" title="@title"
+                                class="projectBox relative group/projectBox flex flex-col ">
+            
+                                <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: cover;"
+                                    class="imgS relative after:absolute w-[calc(100%-60px)] group-hover/projectBox:w-full duration-500 grayscale-100  group-hover/projectBox:grayscale-0 h-[900px] overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
+                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                                    <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
+                                        <div class="line w-80p flex duration-500 max-w-[302px]">
+                                            <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                            <span class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                            <span class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                            <span class="w-full h-1 bg-white  duration-500"></span>
+                                        </div>
+                                        <div
+                                            class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
+            
+                                            <div class="flex mt-2.5 mb-1.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                                <p>
+                                                @title
+                                                </p>
+                                            </div>
+                                            <div class="flex  font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                                <p>
+                                                Project Status:@prp_3087729
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+            
+            
+                            </a>
+                </face>
+            </basis>
 
         </div>
 

@@ -175,13 +175,13 @@
 
         </section>
 
-        <section class="section5 mb-3">
-            <div class="imgS">
+        <section class="section5 mb-3 member group/member">
+            <div class="imgS overflow-hidden relative after:duration-1000 group-hover/member:grayscale-0 group-[&.activeMemebr]/member:after:scale-x-0 after:origin-right duration-500 after:bg-main1 after:absolute after:inset-0">
                 <basis core="print" datamembername="db.image">
 
                     <face filter="ord=53">
 
-                        <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                        <img class="w-full -translate-x-10 duration-[2000ms] group-[&.activeMemebr]/member:translate-x-0" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
                     </face>
                 </basis>
             </div>
@@ -254,9 +254,9 @@
                 <basis core="print" datamembername="db.list-personel">
 
                     <face>
-                        <div class="member mb-8 flex gap-x-2.5">
-                            <div class="imgS shrink-0">
-                                <img src="[##cms.cms.cdn##]/@00200X00300prp" alt="@title">
+                        <div class="member group/member mb-8 flex gap-x-2.5">
+                            <div class="imgS shrink-0  overflow-hidden relative after:duration-1000 group-hover/member:grayscale-0 group-[&.activeMemebr]/member:after:scale-x-0 after:origin-right duration-500 after:bg-main1 after:absolute after:inset-0">
+                                <img class="-translate-x-10 duration-[2000ms] group-[&.activeMemebr]/member:translate-x-0" src="[##cms.cms.cdn##]/@00200X00300prp" alt="@title">
                             </div>
 
                             <div class="title">
@@ -397,7 +397,8 @@
 
 
     <basis core="call" file="scripts2.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
-
+    <script src="[##cms.cms.cdn##]/_js/gsap.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/ScrollTrigger.min.js"></script>
     <script src="[##cms.cms.cdn##]/js/swiper.min.js"></script>
 
     <script src="[##cms.cms.cdn##]/js/aboutUs-mobile.js"></script>

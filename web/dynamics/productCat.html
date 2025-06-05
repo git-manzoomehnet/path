@@ -24,7 +24,7 @@
                         </basis>          
 </div>
         <div class="grid relative z-10 h-full grid-cols-3 grid-rows-2">
-            <div class="catBox  firstBox pb-3 pl-[30px] flex flex-col justify-between">
+            <div class="catBox  firstBox pb-3  flex flex-col justify-between " style="padding-left: 2vw;">
 
 
                 <div class=" h-[115px] shrink-0 flex items-end relative z-10 top-0 left-0">
@@ -74,7 +74,7 @@
               
                 <face filter="catid<>214465">
                     <div class="catBox group/catBox ">
-                        <a href="/product-list.bc?@catid" title="@title" class="relative flex flex-col justify-end w-full h-full">
+                        <a href="/product-list.bc?catid=@catid" title="@title" class="relative flex flex-col justify-end w-full h-full">
         
         
                             <div
@@ -251,6 +251,26 @@
                                         </a>
                                     </li>
                                 </face>
+                            </basis>
+                            <basis core="print" datamembername="db.contactus">
+
+                               <face filter="text='linkedin'">
+                            <li>
+                                <a href="https://linkdin.com/@largetext" title="facebook" aria-label="facebook"
+                                    target="_blank">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7.49076 14.0242H0.774027C0.346418 14.0242 0 13.6775 0 13.2501V0.77402C0 0.34647 0.346473 0 0.774027 0H13.2502C13.6776 0 14.0242 0.34647 14.0242 0.77402V13.2501C14.0242 13.6776 13.6776 14.0242 13.2502 14.0242H9.67647V8.59324H11.4994L11.7723 6.47671H9.67647V5.12544C9.67647 4.51265 9.84664 4.09506 10.7254 4.09506L11.8461 4.09457V2.20153C11.6523 2.17574 10.987 2.11811 10.213 2.11811C8.59706 2.11811 7.49076 3.10446 7.49076 4.91582V6.47671H5.66317V8.59324H7.49076V14.0242Z"
+                                            fill="#807F63" />
+                                    </svg>
+
+
+
+                                </a>
+                            </li>
+
+                        </face>
                             </basis>
                         </ul>
                     </div>

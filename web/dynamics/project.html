@@ -1,487 +1,525 @@
-    <basis core="dbsource" request="seo" source="basiscore" name="db" lid="2">
-        <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="2">
+    <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="json" lid="2" usedforid="[##cms.query.id##]">
+    <member request="json-ld" type="scalar" name="fq" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="2" sourcemid="19" usedforid="[##cms.query.id##]">
+    <member name="image-product" type="list" format="4" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" usedforid="[##cms.query.id##]">
+    <member name="product" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="19" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-Product" size="500x900" blgid="630" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="19" usedforid="[##cms.query.id##]">
+    <member type="list" name="related-project" size="500x900" propertyid="3087729" blgid="629" link="project.bc" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="2" mid="19" usedforid="[##cms.query.id##]">
+    <member request="navigationcat" type="tree" name="nav" postsql="select * from [db.nav] where Parentcatid= Catid" />
+</basis>
+
+<basis core="inlinesource" name="list">
+    <member name="star" lefttblcol="db.list2-Project.id" righttblcol="db.list-Project.id" format="join"
+        jointype="leftjoin" />
+</basis>
+
+<basis core="dbsource" source="basiscore" name="db" lid="2" mid="19" usedforid="[##cms.query.id##]">
+    <member type="list" name="list-Project" size="500x900" propertyid="3087729" blgid="629" link="project.bc" />
+    <member type="list" name="list2-Project" size="200x200" propertyid="3087729" blgid="629" link="project.bc" />
+
+</basis>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
     </basis>
-    <basis core="dbsource" source="basiscore" name="json" lid="2" usedforid="[##cms.query.id##]">
-        <member request="json-ld" type="scalar" name="fq" />
-    </basis>
-    <basis core="dbsource" name="db" source="media" lid="2" sourcemid="19" usedforid="[##cms.query.id##]"> <member name="image-product" type="list" format="4"/> </basis>
-    <basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" usedforid="[##cms.query.id##]"> <member name="product" type="view"/> </basis>
-<basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="19" usedforid="[##cms.query.id##]"> <member type="list" name="related-Product" size="500x900"  blgid="630"  /> </basis>
-<basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="19" usedforid="[##cms.query.id##]"> <member type="list" name="related-project" size="500x900" propertyid="3087729"  blgid="629" link="project.bc" /> </basis>	
-     <basis core="dbsource" source="basiscore" name="db" lid="2" mid="19" usedforid="[##cms.query.id##]" > <member request="navigationcat" type="tree" name="nav" postsql="select * from [db.nav] where Parentcatid= Catid"  /> </basis>
-    <!DOCTYPE html>
-    <html lang="en">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper.min.css">
+    <basis core="call" file="styles2.inc" />
+</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <basis core="print" datamembername="db.seolist">
-            <face>
-                <title>[##cms.seo.title|db.seolist.title##]</title>
-                <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
-            </face>
-        </basis>
-        <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper.min.css">
-        <basis core="call" file="styles2.inc" />
-    </head>
+<body>
 
-    <body>
+    <main class="productShow bg-main1 overflow-x-hidden">
+        <basis core="call" file="header-1.inc" />
 
-        <main class="productShow bg-main1 overflow-x-hidden">
-            <basis core="call" file="header-1.inc" />
+        <section class="section1 relative h-svh w-svw overflow-hidden">
+            <div class="absolute right-0 w-90p mx-auto top-[115px] z-[2121025882] shrink-0 flex items-end  left-0">
 
-            <section class="section1 relative h-svh w-svw overflow-hidden">
-                <div class="absolute right-0 w-90p mx-auto top-[115px] z-[2121025882] shrink-0 flex items-end  left-0">
+                <a href="/"
+                    class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                    home
+                </a>
 
-                    <a href="/"
-                        class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                        home
-                    </a>
+                <basis core="print" datamembername="db.nav">
 
-                    <basis core="print" datamembername="db.nav">
-                       
-                        <face>
-                            <p
-                                class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                                .
-                            </p>
-                            <a href="/product-list.bc?catid"
-                                class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                                @title
-                            </a>
-                            
-                        </face>
-                    </basis>
-
-
-                    <basis core="print" datamembername="db.product">
-
-                        <face filter="TypeID=150">
-                            <p
-                                class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                                .
-                            </p>
-                            <p
-                                class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                                @Answer
-                            </p>
-
-                        </face>
-                    </basis>
-                </div>
-
-                <basis core="print" datamembername="db.image-product">
-                    <layout>
-                        @child
-                    </layout>
-                    <else-layout>
-
-                    </else-layout>
-                    <face filter="ord=1">
-                        <div class="imgS w-full h-full">
-                            <img src="[##cms.cms.cdn##]/@largeIMG" class="w-full h-full object-cover" alt="product">
-                        </div>
+                    <face>
+                        <p
+                            class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            .
+                        </p>
+                        <a href="/product-list.bc?catid"
+                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            @title
+                        </a>
 
                     </face>
                 </basis>
-                <div class="absolute z-10 bottom-7 left-0 right-0">
 
 
-                    <div class="title mb-10">
-                        <basis core="print" datamembername="db.product">
+                <basis core="print" datamembername="db.product">
 
-                            <face filter="TypeID=150">
-                                <h1 class="text-center mb-3 font-OctinStencilRg400 text-[32px] uppercase text-white">
-                                    @Answer
-                                </h1>
+                    <face filter="TypeID=150">
+                        <p
+                            class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            .
+                        </p>
+                        <p
+                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                            @Answer
+                        </p>
 
-                                <div class="lineeeeee w-[257px] flex gap-x-1 mx-auto">
-                                    <span class="w-full h-1.5 bg-white"></span>
-                                    <span class="w-[16%] h-1.5 bg-white"></span>
-                                    <span class="w-[28%] h-1.5 bg-white"></span>
-                                    <span class="w-[5%] h-1.5 bg-white"></span>
-                                </div>
+                    </face>
+                </basis>
+            </div>
 
-                            </face>
-                        </basis>
+            <basis core="print" datamembername="db.image-product">
+                <layout>
+                    @child
+                </layout>
+                <else-layout>
+
+                </else-layout>
+                <face filter="ord=1">
+                    <div class="imgS w-full h-full">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" class="w-full h-full object-cover" alt="product">
                     </div>
 
-                    <div class="scrollBtm cursor-pointer w-fit mx-auto">
-                        <span class="font-Blinker300 block text-white capitalize mb-2.5 text-sm">
-                            scroll down
-                        </span>
+                </face>
+            </basis>
+            <div class="absolute z-10 bottom-7 left-0 right-0">
 
-                        <svg class="mx-auto" width="19" height="13" viewBox="0 0 19 13" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <rect x="16.4336" y="0.106201" width="3.629" height="13.5107"
-                                transform="rotate(45 16.4336 0.106201)" fill="white" />
-                            <rect x="8.25" y="5.75122" width="3.53275" height="8.08412" transform="rotate(135 8.25 5.75122)"
-                                fill="white" />
-                        </svg>
 
-                    </div>
-
-                </div>
-            </section>
-            <section class="section2 mb-10 pt-14 w-90p mx-auto flex gap-x-11">
-                <div class="flex wipeScroll flex-col items-start gap-6 ">
+                <div class="title mb-10">
                     <basis core="print" datamembername="db.product">
 
                         <face filter="TypeID=150">
+                            <h1 class="text-center mb-3 font-OctinStencilRg400 text-[32px] uppercase text-white">
+                                @Answer
+                            </h1>
 
-                            <div class="flex flex-col h-full overflow-y-auto items-start gap-1 w-full">
-                                <div class="lineeee w-[63px] flex gap-x-px">
-                                    <span class="bg-main2 h-2 w-1.5">
-            
-                                    </span>
-                                    <span class="bg-main2 h-2 w-14">
-            
-                                    </span>
+                            <div class="lineeeeee w-[257px] flex gap-x-1 mx-auto">
+                                <span class="w-full h-1.5 bg-white"></span>
+                                <span class="w-[16%] h-1.5 bg-white"></span>
+                                <span class="w-[28%] h-1.5 bg-white"></span>
+                                <span class="w-[5%] h-1.5 bg-white"></span>
+                            </div>
+
+                        </face>
+                    </basis>
+                </div>
+
+                <div class="scrollBtm cursor-pointer w-fit mx-auto">
+                    <span class="font-Blinker300 block text-white capitalize mb-2.5 text-sm">
+                        scroll down
+                    </span>
+
+                    <svg class="mx-auto" width="19" height="13" viewBox="0 0 19 13" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="16.4336" y="0.106201" width="3.629" height="13.5107"
+                            transform="rotate(45 16.4336 0.106201)" fill="white" />
+                        <rect x="8.25" y="5.75122" width="3.53275" height="8.08412" transform="rotate(135 8.25 5.75122)"
+                            fill="white" />
+                    </svg>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="section2 mb-10 pt-14 w-90p mx-auto flex gap-x-11" >
+            <div class="flex wipeScroll flex-col items-start gap-6 " id="textContent">
+                <basis core="print" datamembername="db.product">
+
+                    <face filter="TypeID=150">
+
+                        <div class="flex flex-col items-start gap-1 w-full">
+                            <div class="lineeee w-[63px] flex gap-x-px">
+                                <span class="bg-main2 h-2 w-1.5">
+
+                                </span>
+                                <span class="bg-main2 h-2 w-14">
+
+                                </span>
+                            </div>
+                            <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                                @Answer
+                            </h2>
+                        </div>
+                    </face>
+                </basis>
+                <div class=" text-[16px] leading-[25px] h-full overflow-y-auto pr-6">
+                    <basis core="print" datamembername="db.product">
+
+                        <face filter="TypeID not in (150,144,159)">
+                            <span class="text-grayTxt font-Blinker300">@Question:</span> 
+                            <span class="text-white font-Blinker400">@Answer</span><br />
+
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.product">
+
+                        <face filter="TypeID=144">
+                            <div class="para text-white font-Blinker300 mt-7 text-justify">
+
+                                @Answer
+                            </div>
+
+                        </face>
+                    </basis>
+                </div>
+            </div>
+
+
+            <div class="w-[67.5%] h-fit" id="mainSlider">
+
+                <div class="slider_home">
+                    <basis core="print" datamembername="db.image-product">
+                        <layout>
+                            <div class="swiper-container main-slider loading">
+                                <div class="swiper-wrapper">
+
+                                    @child
+
                                 </div>
-                                <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
-                                    @Answer
-                                </h2>
+                                <div class="prevMain swiper-button-white">
+                                    <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="3.33239" height="12.4065"
+                                            transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.1484 2.76123)"
+                                            fill="white" />
+                                        <rect width="3.24401" height="7.42337"
+                                            transform="matrix(-0.707107 0.707107 0.707107 0.707107 5.96484 10.2769)"
+                                            fill="white" />
+                                    </svg>
+
+                                </div>
+                                <div class="nextMain swiper-button-white">
+                                    <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.289062" y="2.76123" width="3.33239" height="12.4065"
+                                            transform="rotate(-45 0.289062 2.76123)" fill="white" />
+                                        <rect x="5.47266" y="10.2769" width="3.24401" height="7.42337"
+                                            transform="rotate(45 5.47266 10.2769)" fill="white" />
+                                    </svg>
+
+                                </div>
+                            </div>
+
+                        </layout>
+
+                        <face filter="ord=1000">
+                            <div class="swiper-slide">
+                                <figure class="slide-bgimg" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
+                                    <img class="entity-img" src="[##cms.cms.cdn##]/@largeIMG" />
+                                </figure>
+                                <div class="content">
+                                    <p class="title"> </p><span class="caption"></span>
+                                </div>
                             </div>
                         </face>
                     </basis>
-                    <div class=" text-[16px] leading-[25px]">
-                        <basis core="print" datamembername="db.product">
 
-                            <face filter="TypeID not in (150,144,159)">
-                                <span class="text-grayTxt font-Blinker300">@Question:</span> 
-                                <span class="text-white font-Blinker400">@Answer</span><br />
+                    <!-- thumbnails-->
 
-                            </face>
-                        </basis>
+                    <basis core="print" datamembername="db.image-product">
+                        <layout>
+                            <div class="swiper-container mt-10 nav-slider loading">
+                                <div class="swiper-wrapper">
 
-                        <basis core="print" datamembername="db.product">
 
-                            <face filter="TypeID=144">
-                                <div class="para text-white font-Blinker300 mt-7 text-justify">
+                                    @child
 
-                                    @Answer
                                 </div>
+                            </div>
 
-                            </face>
-                        </basis>
-                    </div>
+                        </layout>
+
+                        <face filter="ord=1000">
+                            <div class="swiper-slide">
+                                <figure class="slide-bgimg" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
+                                    <img class="entity-img" src="[##cms.cms.cdn##]/@largeIMG" />
+                                </figure>
+                                <div class="content">
+                                    <p class="title"> </p>
+                                </div>
+                            </div>
+                        </face>
+                    </basis>
+
                 </div>
 
+            </div>
 
-                <div class="w-[67.5%]">
+        </section>
 
-                    <div class="slider_home">
-                        <basis core="print" datamembername="db.image-product">
-                            <layout>
-                                <div class="swiper-container main-slider loading">
-                                    <div class="swiper-wrapper">
+        <basis core="print" datamembername="list.star">
+            <layout>
 
-                                        @child
+                <section class="section3 w-90p mx-auto mt-20">
+                    <div class="flex flex-col items-start gap-1 w-full mb-6">
+                        <div class="lineeee w-[63px] flex gap-x-px">
+                            <span class="bg-main2 h-2 w-1.5">
 
-                                    </div>
-                                    <div class="prevMain swiper-button-white">
-                                        <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <rect width="3.33239" height="12.4065"
-                                                transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.1484 2.76123)"
-                                                fill="white" />
-                                            <rect width="3.24401" height="7.42337"
-                                                transform="matrix(-0.707107 0.707107 0.707107 0.707107 5.96484 10.2769)"
-                                                fill="white" />
-                                        </svg>
+                            </span>
+                            <span class="bg-main2 h-2 w-14">
 
-                                    </div>
-                                    <div class="nextMain swiper-button-white">
-                                        <svg width="12" height="18" viewBox="0 0 12 18" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="0.289062" y="2.76123" width="3.33239" height="12.4065"
-                                                transform="rotate(-45 0.289062 2.76123)" fill="white" />
-                                            <rect x="5.47266" y="10.2769" width="3.24401" height="7.42337"
-                                                transform="rotate(45 5.47266 10.2769)" fill="white" />
-                                        </svg>
-
-                                    </div>
-                                </div>
-
-                            </layout>
-
-                            <face filter="ord=1000">
-                                <div class="swiper-slide">
-                                    <figure class="slide-bgimg" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
-                                        <img class="entity-img" src="[##cms.cms.cdn##]/@largeIMG" />
-                                    </figure>
-                                    <div class="content">
-                                        <p class="title"> </p><span class="caption"></span>
-                                    </div>
-                                </div>
-                            </face>
-                        </basis>
-
-                        <!-- thumbnails-->
-
-                        <basis core="print" datamembername="db.image-product">
-                            <layout>
-                                <div class="swiper-container mt-10 nav-slider loading">
-                                    <div class="swiper-wrapper">
-
-
-                                        @child
-
-                                    </div>
-                                </div>
-
-                            </layout>
-
-                            <face filter="ord=1000">
-                                <div class="swiper-slide">
-                                    <figure class="slide-bgimg" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
-                                        <img class="entity-img" src="[##cms.cms.cdn##]/@largeIMG" />
-                                    </figure>
-                                    <div class="content">
-                                        <p class="title"> </p>
-                                    </div>
-                                </div>
-                            </face>
-                        </basis>
-
+                            </span>
+                        </div>
+                        <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                            RELATED PROJETS
+                        </h2>
                     </div>
 
+
+                    <div class="grid grid-cols-3 gap-y-11">
+
+                        @child
+
+                    </div>
+                </section>
+            </layout>
+
+            <face filter="[db.list-Project.prp_3087729] is null">
+
+                <a href="/@db.list2-Project.link" title="@db.list2-Project.title"
+                    class="projectBox relative group/projectBox flex flex-col ">
+
+                    <div style="background: url('[##cms.cms.cdn##]/@db.list-Project.00500X00900prp');background-size: cover;"
+                        class="imgS   group-hover/projectBox:grayscale-0 grayscale-100 relative after:absolute w-[calc(100%-60px)] group-hover/projectBox:w-full duration-500 h-[900px] overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
+                        <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                        <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
+                            <div class="logoProj mb-5 opacity-0 duration-500 group-hover/projectBox:opacity-100">
+                                <img src="[##cms.cms.cdn##]/@db.list2-Project.00200X00200prp"
+                                    alt="db.list2-Project.title">
+                            </div>
+
+                            <div class="line w-80p flex duration-500 max-w-[302px]">
+                                <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                <span class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                <span class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                <span class="w-full h-1 bg-white  duration-500"></span>
+                            </div>
+                            <div
+                                class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
+
+                                <div
+                                    class="flex mt-2.5 mb-5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                    <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                    <p>
+                                        @db.list2-Project.title
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </a>
+            </face>
+            <face filter="[db.list-Project.prp_3087729] is not null">
+
+                <a href="/@db.list2-Project.link" title="@db.list2-Project.title"
+                    class="projectBox relative group/projectBox flex flex-col ">
+
+                    <div style="background: url('[##cms.cms.cdn##]/@db.list-Project.00500X00900prp');background-size: cover;"
+                        class="imgS   group-hover/projectBox:grayscale-0 grayscale-100 relative after:absolute w-[calc(100%-60px)] group-hover/projectBox:w-full duration-500 h-[900px] overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
+                        <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                        <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
+                            <div class="logoProj mb-5 opacity-0 duration-500 group-hover/projectBox:opacity-100">
+                                <img src="[##cms.cms.cdn##]/@db.list2-Project.00200X00200prp"
+                                    alt="db.list2-Project.title">
+                            </div>
+
+                            <div class="line w-80p flex duration-500 max-w-[302px]">
+                                <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                <span class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                <span class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                <span class="w-full h-1 bg-white  duration-500"></span>
+                            </div>
+                            <div
+                                class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
+
+                                <div
+                                    class="flex mt-2.5 mb-5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                    <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                    <p>
+                                        @db.list2-Project.title
+                                    </p>
+                                </div>
+ <div class="flex  font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                    <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                    <p>
+                                        Project Status:@db.list2-Project.prp_3087729
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </a>
+            </face>
+         
+        </basis>
+
+
+        <basis core="print" datamembername="basisName.related-product">
+            <layout>
+                <section class="section4 w-90p mx-auto mt-11 mb-20">
+                    <div class="flex flex-col items-start gap-1 w-full mb-6">
+                        <div class="lineeee w-[63px] flex gap-x-px">
+                            <span class="bg-main2 h-2 w-1.5">
+
+                            </span>
+                            <span class="bg-main2 h-2 w-14">
+
+                            </span>
+                        </div>
+                        <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
+                            RELATED PRODUCTS
+                        </h2>
+                    </div>
+
+
+                    <div class="grid grid-cols-3">
+
+                        @child
+
+                    </div>
+                </section>
+            </layout>
+
+            <face>
+                <a href="/@link" title="@title" class="productBox relative group/productBox flex flex-col ">
+
+                    <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: cover;"
+                        class="imgS grayscale-100 group-hover/productBox:grayscale-0 relative w-[calc(100%-60px)] group-hover/productBox:w-full duration-500 h-[900px] overflow-hidden after:absolute after:w-full after:h-full after:bg-black/[0.2]">
+                        <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                        <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
+                            <div class="line w-80p flex duration-500 max-w-[302px]">
+                                <span class="w-[3%] h-1 bg-white group-hover/productBox:mr-1 duration-500"></span>
+                                <span class="w-[27.1%] h-1 bg-white group-hover/productBox:mr-1 duration-500"></span>
+                                <span class="w-[16.5%] h-1 bg-white group-hover/productBox:mr-1 duration-500"></span>
+                                <span class="w-full h-1 bg-white  duration-500"></span>
+                            </div>
+                            <div
+                                class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/productBox:opacity-100 group-hover/productBox:translate-y-0">
+
+                                <div class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                    <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                    <p>
+                                        @title
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </a>
+            </face>
+        </basis>
+
+
+    </main>
+
+
+
+
+    <div
+        class="galleryPop -translate-y-[100%] duration-1000 fixed inset-0 z-[2121025885] flex items-center justify-center h-svh w-svw bg-main1/[0.85]">
+        <div class="w-96p mx-auto h-[72vh] max-h-[648px] relative">
+            <div
+                class="closeSearchPop absolute top-0 right-0 z-10  self-end flex flex-col text-right mb-10 items-end cursor-pointer">
+                <svg width="49" height="3" viewBox="0 0 49 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="white" />
+                    <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="white" />
+                </svg>
+
+                <span class="font-Blinker300 text-right  block mt-2 tracking-[5px] text-white text-xs">
+                    CLOSE
+                </span>
+            </div>
+            <div class="swiper popGallery h-full">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <basis core="print" datamembername="db.image-product">
+
+
+                        <face filter="ord=1000">
+                            <div class="swiper-slide">
+                                <div class="imgS h-full flex items-center justify-center">
+                                    <img class="h-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                                </div>
+                            </div>
+
+                        </face>
+                    </basis>
+
+
                 </div>
 
-            </section>
+            </div>
 
-            <basis core="print" datamembername="basisName.related-project">
-                <layout>
-                
-                    <section class="section3 w-90p mx-auto mt-20">
-                        <div class="flex flex-col items-start gap-1 w-full mb-6">
-                            <div class="lineeee w-[63px] flex gap-x-px">
-                                <span class="bg-main2 h-2 w-1.5">
-            
-                                </span>
-                                <span class="bg-main2 h-2 w-14">
-            
-                                </span>
-                            </div>
-                            <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
-                                RELATED PROJETS
-                            </h2>
-                        </div>
-            
-            
-                        <div class="grid grid-cols-3">
-                        
-            @child
-                        
-                        </div>
-                    </section>
-                </layout>
-            
-                <face filter="prp_3087729 is null">
-                    <a href="/@link" title="@title"
-                                class="projectBox relative group/projectBox flex flex-col ">
-            
-                                <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: cover;"
-                                    class="imgS   group-hover/projectBox:grayscale-0 grayscale-100 relative after:absolute w-[calc(100%-60px)] group-hover/projectBox:w-full duration-500 h-[900px] overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
-                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
-                                    <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
-                                        <div class="line w-80p flex duration-500 max-w-[302px]">
-                                            <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-full h-1 bg-white  duration-500"></span>
-                                        </div>
-                                        <div
-                                            class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
-            
-                                            <div class="flex mt-2.5 mb-5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
-                                                <p>
-                                                @title
-                                                </p>
-                                            </div>
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-            
-            
-            
-                            </a>
-                </face>
-                <face filter="prp_3087729 is not null">
-                    <a href="/@link" title="@title"
-                                class="projectBox relative group/projectBox flex flex-col ">
-            
-                                <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: cover;"
-                                    class="imgS relative after:absolute w-[calc(100%-60px)] group-hover/projectBox:w-full duration-500 grayscale-100  group-hover/projectBox:grayscale-0 h-[900px] overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
-                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
-                                    <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
-                                        <div class="line w-80p flex duration-500 max-w-[302px]">
-                                            <span class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-full h-1 bg-white  duration-500"></span>
-                                        </div>
-                                        <div
-                                            class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
-            
-                                            <div class="flex mt-2.5 mb-1.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
-                                                <p>
-                                                @title
-                                                </p>
-                                            </div>
-                                            <div class="flex  font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
-                                                <p>
-                                                Project Status:@prp_3087729
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-            
-            
-            
-                            </a>
-                </face>
-            </basis>
+            <div class="nextPopGallery z-10 cursor-pointer absolute right-0 top-[50%]">
+                <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.0722656" y="2.76123" width="3.33239" height="12.4065"
+                        transform="rotate(-45 0.0722656 2.76123)" fill="white" />
+                    <rect x="5.25586" y="10.2771" width="3.24401" height="7.42337"
+                        transform="rotate(45 5.25586 10.2771)" fill="white" />
+                </svg>
+
+            </div>
+            <div class="prevPopGallery z-10 cursor-pointer absolute left-0 top-[50%]">
+                <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="3.33239" height="12.4065"
+                        transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.1465 2.76123)" fill="white" />
+                    <rect width="3.24401" height="7.42337"
+                        transform="matrix(-0.707107 0.707107 0.707107 0.707107 5.96289 10.2771)" fill="white" />
+                </svg>
 
 
-            <basis core="print" datamembername="basisName.related-product">
-                <layout>
-                    <section class="section4 w-90p mx-auto mt-11 mb-20">
-                        <div class="flex flex-col items-start gap-1 w-full mb-6">
-                            <div class="lineeee w-[63px] flex gap-x-px">
-                                <span class="bg-main2 h-2 w-1.5">
-            
-                                </span>
-                                <span class="bg-main2 h-2 w-14">
-            
-                                </span>
-                            </div>
-                            <h2 class="font-OctinStencilRg400 text-main2  text-[24px]">
-                                RELATED PRODUCTS
-                            </h2>
-                        </div>
-            
-            
-                        <div class="grid grid-cols-3">
-                            
-                            @child
-            
-                        </div>
-                    </section>
-                </layout>
-        
-                <face>
-                    <a href="/@link" title="@title"
-                                class="productBox relative group/productBox flex flex-col ">
-            
-                                <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: cover;"
-                                    class="imgS grayscale-100 group-hover/productBox:grayscale-0 relative w-[calc(100%-60px)] group-hover/productBox:w-full duration-500 h-[900px] overflow-hidden after:absolute after:w-full after:h-full after:bg-black/[0.2]">
-                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
-                                    <div class="over z-10 absolute min-h-[101px] bottom-0 w-90p left-0 right-0 mx-auto">
-                                        <div class="line w-80p flex duration-500 max-w-[302px]">
-                                            <span class="w-[3%] h-1 bg-white group-hover/productBox:mr-1 duration-500"></span>
-                                            <span class="w-[27.1%] h-1 bg-white group-hover/productBox:mr-1 duration-500"></span>
-                                            <span class="w-[16.5%] h-1 bg-white group-hover/productBox:mr-1 duration-500"></span>
-                                            <span class="w-full h-1 bg-white  duration-500"></span>
-                                        </div>
-                                        <div
-                                            class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/productBox:opacity-100 group-hover/productBox:translate-y-0">
-            
-                                            <div class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline" src="[##cms.cms.cdn##]/images/item1-1.svg" />
-                                                <p>
-                                                @title
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-            
-            
-            
-                            </a>
-                </face>
-            </basis>
-
-
-        </main>
-
-
-
-               
-  <div class="galleryPop -translate-y-[100%] duration-1000 fixed inset-0 z-[2121025885] flex items-center justify-center h-svh w-svw bg-main1/[0.85]">
-    <div class="w-96p mx-auto h-[72vh] max-h-[648px] relative">
-      <div
-        class="closeSearchPop absolute top-0 right-0 z-10  self-end flex flex-col text-right mb-10 items-end cursor-pointer">
-        <svg width="49" height="3" viewBox="0 0 49 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="white" />
-          <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="white" />
-        </svg>
-
-        <span class="font-Blinker300 text-right  block mt-2 tracking-[5px] text-white text-xs">
-          CLOSE
-        </span>
-      </div>
-      <div class="swiper popGallery h-full">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-                        <basis core="print" datamembername="db.image-product">
-
-              
-            <face filter="ord=1000">
-                <div class="swiper-slide">
-                  <div class="imgS h-full flex items-center justify-center">
-                    <img class="h-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
-                  </div>
-                </div>
-                  
-              </face>
-          </basis>
-        
-
+            </div>
         </div>
-
-      </div>
-
-      <div class="nextPopGallery z-10 cursor-pointer absolute right-0 top-[50%]">
-        <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0.0722656" y="2.76123" width="3.33239" height="12.4065" transform="rotate(-45 0.0722656 2.76123)"
-            fill="white" />
-          <rect x="5.25586" y="10.2771" width="3.24401" height="7.42337" transform="rotate(45 5.25586 10.2771)"
-            fill="white" />
-        </svg>
-
-      </div>
-      <div class="prevPopGallery z-10 cursor-pointer absolute left-0 top-[50%]">
-        <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="3.33239" height="12.4065"
-            transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.1465 2.76123)" fill="white" />
-          <rect width="3.24401" height="7.42337"
-            transform="matrix(-0.707107 0.707107 0.707107 0.707107 5.96289 10.2771)" fill="white" />
-        </svg>
-
-
-      </div>
     </div>
-  </div>
 
-  <basis core="call" file="footer-1.inc" />
+    <basis core="call" file="footer-1.inc" />
 
-        </div>
-  <basis core="call" file="scripts2.inc" />
+    </div>
+    <basis core="call" file="scripts2.inc" />
 
-        <script src="[##cms.cms.cdn##]/js/swiper.min.js"></script>
-        <script src="[##cms.cms.cdn##]/js/product.js"></script>
+    <script src="[##cms.cms.cdn##]/js/swiper.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/product.js"></script>
 
-        <script type="application/ld+json">
+    <script type="application/ld+json">
     [##json.fq.column1##] 
     </script>
-    </body>
+</body>
 
-    </html>
+</html>

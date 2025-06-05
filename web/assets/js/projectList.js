@@ -54,6 +54,13 @@ $(".containerHorizontal").imagesLoaded({
 
 
       // Custom js
+let innerScrollSec = document.querySelector(".section1 .overflow-y-auto")
+
+innerScrollSec.addEventListener('wheel', stopPropagation, { passive: false });
+function stopPropagation(e) {
+  e.stopPropagation();
+}
+
 
 let catid = document.querySelector(".catid").innerHTML
     

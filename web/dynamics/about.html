@@ -17,14 +17,14 @@
     <title>About Us</title>
     <meta name="description" content="about architect path">
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/locomotive.css">
-    <basis core="call" file="styles2.inc" />
+    <basis core="call" file="styles2.inc" lid="2"/>
 </head>
 
 <body>
 
 
     <main class="aboutUs overflow-x-hidden bg-main1">
-        <basis core="call" file="header-1.inc" />
+        <basis core="call" file="header-1.inc" lid="2"/>
 
         <div class="containerHorizontal">
             <section id="PinSection">
@@ -217,12 +217,12 @@
                     </section>
 
 
-                    <section class="section5 shrink-0 pr-20 flex flex-col  max-2xl:pt-10 min-2xl:pt-[120px] gap-y-3">
-                        <div class="imgS">
+                    <section class="section5 member group/member shrink-0 pr-20 flex flex-col  max-2xl:pt-10 min-2xl:pt-[120px] gap-y-3">
+                        <div class="imgS h-[58.5vh] max-h-[526px]  overflow-hidden relative after:duration-1000 group-hover/member:grayscale-0 group-[&.activeMemebr]/member:after:scale-x-0 after:origin-right duration-500 after:bg-main1 after:absolute after:inset-0">
                             <basis core="print" datamembername="db.image">
                                
                                 <face filter="ord=3">
-                                    <img class="h-[58.5vh] max-h-[526px]" id="myImage"
+                                    <img class="h-[58.5vh] max-h-[526px] -translate-x-20 duration-[2000ms] group-[&.activeMemebr]/member:translate-x-0" id="myImage"
                                         src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
                                     
                                 </face>
@@ -316,7 +316,9 @@
 
                     <basis core="print" datamembername="db.list-Past-colleagues">
                         <layout>
-                            <section class="section7 pr-11 shrink-0 flex flex-col max-2xl:pt-10 min-2xl:pt-[120px]">
+                            <section style="    height: 52vh;
+    margin: auto 0;
+    padding: 0;" class="section7 pr-11 shrink-0 flex flex-col max-2xl:pt-10 min-2xl:pt-[120px]">
                                 <div class="flex wipeScroll flex-col items-start gap-1 w-full mb-2">
                                     <div class="lineeee w-[63px] flex gap-x-px">
                                         <span class="bg-main2 h-2 w-1.5">
@@ -366,14 +368,14 @@
                             
                         </face>
                     </basis>
-                    <basis core="call" file="footer-2.inc" />
+                    <basis core="call" file="footer-2.inc" lid="2"/>
 
                 </div>
             </section>
         </div>
     </main>
 
-    <basis core="call" file="scripts2.inc" />
+    <basis core="call" file="scripts2.inc" lid="2"/>
 
     <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.4.1.min.js"></script>
     <script src="[##cms.cms.cdn##]/_js/imageLoaded.js"></script>

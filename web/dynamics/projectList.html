@@ -34,254 +34,258 @@
 
 <body>
     <main class="projectList overflow-x-hidden bg-main1">
+          <basis core="call" file="loader.inc" />
+
         <basis core="call" file="header-1.inc" />
         <span class="catid" style="display: none;">[##cms.query.catid##]</span>
         <div class="containerHorizontal">
             <section id="PinSection">
                 <div class="Pin-Wrapp">
-
-                    <section class="section1 relative pl-7 w-[477px] shrink-0 ">
-                        <div class="absolute top-[115px] z-[2121025882] shrink-0 flex items-end  left-7">
-
-                            <a href="/"
-                                class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                                home
-                            </a>
-
-
-                            <basis core="print" datamembername="basisName.ProjectCat">
-
-                                <face filter="catid='[##cms.query.catid##]'">
-                                    <p
-                                        class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                                        .
-                                    </p>
-                                    <p
-                                        class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
-                                        @title
-                                    </p>
-
-                                </face>
-                            </basis>
-                        </div>
-
-
-                        <div class="titles h-full flex flex-col justify-end pb-[100px] pt-[180px] items-start">
-
-
-                            <div class="flex flex-col items-start gap-1 w-full mb-2">
-                                <div class="lineeee w-[63px] flex gap-x-px">
-                                    <span class="bg-main2 h-2 w-1.5">
-
-                                    </span>
-                                    <span class="bg-main2 h-2 w-14">
-
-                                    </span>
-                                </div>
-
-
+                    <div class="flex">
+                        
+                        <section class="section1 relative w-[477px] shrink-0 "  style="">
+                            <div class="absolute top-[115px] z-[2121025882] shrink-0 flex items-end  left-7">
+    
+                                <a href="/"
+                                    class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                                    home
+                                </a>
+    
+    
                                 <basis core="print" datamembername="basisName.ProjectCat">
-
+    
                                     <face filter="catid='[##cms.query.catid##]'">
-                                        <h1 class="w-full font-OctinStencilRg400 font-normal text-main2 text-2xl">
+                                        <p
+                                            class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
+                                            .
+                                        </p>
+                                        <p
+                                            class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
                                             @title
-
-
-
-                                        </h1>
-
+                                        </p>
+    
                                     </face>
                                 </basis>
-
-
-
-
                             </div>
-
-                            <div class="overflow-y-auto mb-[100px] ">
-
-                                <basis core="print" datamembername="basisName.ProjectCat">
-
-                                    <face filter="catid='[##cms.query.catid##]'">
-
-                                        <div
-                                            class="para mb-7 w-[400px] font-Blinker300 text-base text-justify text-white">
-                                            <p>
-                                                @urldescription
-
-                                            </p>
-                                        </div>
-
-                                    </face>
-                                </basis>
-
-                                <div class="catsList">
-                                    <ul>
-
-                                        <basis core="print" datamembername="basisName.ProjectCat">
-
-                                            <face filter="catid=214455">
-                                                <li class="mb-7 last:mb-0">
-                                                    <a href="/project-list.bc?catid=214455" title="" data-catid="@catid"
-                                                        class="flex gap-x-1.5 items-center catlist group/catlist">
-                                                        <div
-                                                            class="flex w-3.5 h-3.5 justify-center items-center group-[&.activeCat]/catlist:border group-[&.activeCat]/catlist:border-white">
-                                                            <span
-                                                                class="block w-1.5 h-2 bg-grayTxt3  group-[&.activeCat]/catlist:bg-white"></span>
-
-                                                        </div>
-                                                        <p
-                                                            class="font-Blinker300 text-xl capitalize text-grayTxt3 group-[&.activeCat]/catlist:text-white">
-                                                            all architecture
-
-                                                        </p>
-                                                    </a>
-                                                </li>
-
-                                            </face>
-                                        </basis>
-                                        <basis core="print" datamembername="basisName.ProjectCat">
-
-                                            <face filter="catid<>214455">
-                                                <li class="mb-7 last:mb-0">
-                                                    <a href="/project-list.bc?catid=@catid" data-catid="@catid" title=""
-                                                        class="flex gap-x-1.5 items-center catlist group/catlist">
-                                                        <div
-                                                            class="flex w-3.5 h-3.5 justify-center items-center group-[&.activeCat]/catlist:border group-[&.activeCat]/catlist:border-white">
-                                                            <span
-                                                                class="block w-1.5 h-2 bg-grayTxt3  group-[&.activeCat]/catlist:bg-white"></span>
-
-                                                        </div>
-                                                        <p
-                                                            class="font-Blinker300 text-xl capitalize text-grayTxt3 group-[&.activeCat]/catlist:text-white">
-                                                            @title
-
-                                                        </p>
-                                                    </a>
-                                                </li>
-                                            </face>
-                                        </basis>
-
-                                    </ul>
+    
+    
+                            <div class="titles h-full flex flex-col justify-end pb-[100px] pt-[180px] items-start">
+    
+    
+                                <div class="flex flex-col items-start gap-1 w-full mb-2">
+                                    <div class="lineeee w-[63px] flex gap-x-px">
+                                        <span class="bg-main2 h-2 w-1.5">
+    
+                                        </span>
+                                        <span class="bg-main2 h-2 w-14">
+    
+                                        </span>
+                                    </div>
+    
+    
+                                    <basis core="print" datamembername="basisName.ProjectCat">
+    
+                                        <face filter="catid='[##cms.query.catid##]'">
+                                            <h1 class="w-full font-OctinStencilRg400 font-normal text-main2 text-2xl">
+                                                @title
+    
+    
+    
+                                            </h1>
+    
+                                        </face>
+                                    </basis>
+    
+    
+    
+    
                                 </div>
-
-                            </div>
-
-                            <div class="overflow-hidden shrink-0 w-full flex gap-x-2 items-center h-fit">
-                                <span class="font-Blinker300 text-sm text-white capitalize">
-                                    scroll
-                                </span>
-
-                                <div class="scrollBtmHorizontal overflow-hidden w-[172px] h-px bg-white">
-                                    <div class="line w-[50%] h-px bg-main2"></div>
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
-
-                    </section>
-                   
-                    <basis core="print" datamembername="list.star">
-                        <face filter="[db.list-Project.prp_3087729] is null">
-                            <a href="/@db.list-Project.link" title="@title"
-                                class="projectBox shrink-0 w-[385px] hover:w-[515px] duration-500 relative group/projectBox flex flex-col ">
-
-                                <div style="background: url('[##cms.cms.cdn##]/@db.list-Project.00500X00900prp');background-size: 515px 100vh;"
-                                    class="imgS relative grayscale-100 group-hover/projectBox:grayscale-0 group-hover/projectBox:w-full h-full duration-500 overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
-                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
-                                    <div class="over absolute min-h-[101px] bottom-9 w-90p left-0 right-0 mx-auto">
-                                        <div
-                                            class="logo mb-5 opacity-0 duration-500 group-hover/projectBox:opacity-100">
-                                            <img src="[##cms.cms.cdn##]/@db.list2-Project.image"
-                                                alt="db.list-Project.title">
-                                        </div>
-                                        <div class="line w-80p flex duration-500 max-w-[302px]">
-                                            <span
-                                                class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span
-                                                class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span
-                                                class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-full h-1 bg-white  duration-500"></span>
-                                        </div>
-                                        <div
-                                            class="paras min-h-[90px] duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
-
+    
+                                <div class="overflow-y-auto mb-[100px] overflow-x-hidden pr-6" data-scroll="false">
+    
+                                    <basis core="print" datamembername="basisName.ProjectCat">
+    
+                                        <face filter="catid='[##cms.query.catid##]'">
+    
                                             <div
-                                                class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline"
-                                                    src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                                class="para mb-7 w-[400px] font-Blinker300 text-base text-justify text-white pr-6">
                                                 <p>
-                                                    @db.list-Project.title
+                                                    @urldescription
+    
                                                 </p>
                                             </div>
-                                          
-                                        </div>
+    
+                                        </face>
+                                    </basis>
+    
+                                    <div class="catsList">
+                                        <ul>
+    
+                                            <basis core="print" datamembername="basisName.ProjectCat">
+    
+                                                <face filter="catid=214455">
+                                                    <li class="mb-7 last:mb-0">
+                                                        <a href="/project-list.bc?catid=214455" title="" data-catid="@catid"
+                                                            class="flex gap-x-1.5 items-center catlist group/catlist">
+                                                            <div
+                                                                class="flex w-3.5 h-3.5 justify-center items-center group-[&.activeCat]/catlist:border group-[&.activeCat]/catlist:border-white">
+                                                                <span
+                                                                    class="block w-1.5 h-2 bg-grayTxt3  group-[&.activeCat]/catlist:bg-white"></span>
+    
+                                                            </div>
+                                                            <p
+                                                                class="font-Blinker300 text-xl capitalize text-grayTxt3 group-[&.activeCat]/catlist:text-white">
+                                                                all architecture
+    
+                                                            </p>
+                                                        </a>
+                                                    </li>
+    
+                                                </face>
+                                            </basis>
+                                            <basis core="print" datamembername="basisName.ProjectCat">
+    
+                                                <face filter="catid<>214455">
+                                                    <li class="mb-7 last:mb-0">
+                                                        <a href="/project-list.bc?catid=@catid" data-catid="@catid" title=""
+                                                            class="flex gap-x-1.5 items-center catlist group/catlist">
+                                                            <div
+                                                                class="flex w-3.5 h-3.5 justify-center items-center group-[&.activeCat]/catlist:border group-[&.activeCat]/catlist:border-white">
+                                                                <span
+                                                                    class="block w-1.5 h-2 bg-grayTxt3  group-[&.activeCat]/catlist:bg-white"></span>
+    
+                                                            </div>
+                                                            <p
+                                                                class="font-Blinker300 text-xl capitalize text-grayTxt3 group-[&.activeCat]/catlist:text-white">
+                                                                @title
+    
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                </face>
+                                            </basis>
+    
+                                        </ul>
+                                    </div>
+    
+                                </div>
+    
+                                <div class="overflow-hidden shrink-0 w-full flex gap-x-2 items-center h-fit">
+                                    <span class="font-Blinker300 text-sm text-white capitalize">
+                                        scroll
+                                    </span>
+    
+                                    <div class="scrollBtmHorizontal overflow-hidden w-[172px] h-px bg-white">
+                                        <div class="line w-[50%] h-px bg-main2"></div>
                                     </div>
                                 </div>
-
-
-
-                            </a>
-
-                        </face>
-                    </basis>
-                    <basis core="print" datamembername="list.star">
-                        <face filter="[db.list-Project.prp_3087729] is not null">
-                            <a href="/@db.list-Project.link" title="@title"
-                                class="projectBox shrink-0 w-[385px] hover:w-[515px] duration-500 relative group/projectBox flex flex-col ">
-
-                                <div style="background: url('[##cms.cms.cdn##]/@db.list-Project.00500X00900prp');background-size: 515px 100vh;"
-                                    class="imgS relative grayscale-100 group-hover/projectBox:grayscale-0 group-hover/projectBox:w-full h-full duration-500 overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
-                                    <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
-                                    <div class="over absolute min-h-[101px] bottom-9 w-90p left-0 right-0 mx-auto">
-                                        <div
-                                            class="logo mb-5 opacity-0 duration-500 group-hover/projectBox:opacity-100">
-                                            <img src="[##cms.cms.cdn##]/@db.list2-Project.image"
-                                                alt="db.list-Project.title">
-                                        </div>
-                                        <div class="line w-80p flex duration-500 max-w-[302px]">
-                                            <span
-                                                class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span
-                                                class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span
-                                                class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
-                                            <span class="w-full h-1 bg-white  duration-500"></span>
-                                        </div>
-                                        <div
-                                            class="paras min-h-[90px] duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0">
-
+    
+    
+    
+    
+                            </div>
+    
+                        </section>
+                       
+                        <basis core="print" datamembername="list.star">
+                            <face filter="[db.list-Project.prp_3087729] is null">
+                                <a href="/@db.list-Project.link" title="@title"
+                                    class="projectBox shrink-0 w-[385px] hover:w-[515px] duration-500 relative group/projectBox flex flex-col ">
+    
+                                    <div style="background: url('[##cms.cms.cdn##]/@db.list-Project.00500X00900prp');background-size: 515px 100vh;"
+                                        class="imgS relative grayscale-100 group-hover/projectBox:grayscale-0 group-hover/projectBox:w-full h-full duration-500 overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
+                                        <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                                        <div class="over absolute min-h-[101px] bottom-9 w-90p left-0 right-0 mx-auto">
                                             <div
-                                                class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline"
-                                                    src="[##cms.cms.cdn##]/images/item1-1.svg" />
-                                                <p>
-                                                    @db.list-Project.title
-                                                </p>
+                                                class="logo mb-5 opacity-0 duration-500 group-hover/projectBox:opacity-100">
+                                                <img src="[##cms.cms.cdn##]/@db.list2-Project.image"
+                                                    alt="db.list-Project.title">
+                                            </div>
+                                            <div class="line w-80p flex duration-500 max-w-[302px]">
+                                                <span
+                                                    class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                                <span
+                                                    class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                                <span
+                                                    class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                                <span class="w-full h-1 bg-white  duration-500"></span>
                                             </div>
                                             <div
-                                                class="flex mt-1.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
-                                                <img class="relative w-3 h-2.5 inline"
-                                                    src="[##cms.cms.cdn##]/images/item1-1.svg" />
-                                                <p>
-                                                    Project Status: @db.list-Project.prp_3087729
-
-                                                </p>
+                                                class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0 projects_list">
+    
+                                                <div
+                                                    class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                                    <img class="relative w-3 h-2.5 inline"
+                                                        src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                                    <p>
+                                                        @db.list-Project.title
+                                                    </p>
+                                                </div>
+                                              
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-
-
-                            </a>
-
-                        </face>
-                    </basis>
+    
+    
+    
+                                </a>
+    
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="list.star">
+                            <face filter="[db.list-Project.prp_3087729] is not null">
+                                <a href="/@db.list-Project.link" title="@title"
+                                    class="projectBox shrink-0 w-[385px] hover:w-[515px] duration-500 relative group/projectBox flex flex-col ">
+    
+                                    <div style="background: url('[##cms.cms.cdn##]/@db.list-Project.00500X00900prp');background-size: 515px 100vh;"
+                                        class="imgS relative grayscale-100 group-hover/projectBox:grayscale-0 group-hover/projectBox:w-full h-full duration-500 overflow-hidden  after:w-full after:h-full after:bg-black/[0.2]">
+                                        <!-- <img src="[##cms.cms.cdn##]/images/Frame 1000005888.png" alt="@title" class="w-full h-full"> -->
+                                        <div class="over absolute min-h-[101px] bottom-9 w-90p left-0 right-0 mx-auto">
+                                            <div
+                                                class="logo mb-5 opacity-0 duration-500 group-hover/projectBox:opacity-100">
+                                                <img src="[##cms.cms.cdn##]/@db.list2-Project.image"
+                                                    alt="db.list-Project.title">
+                                            </div>
+                                            <div class="line w-80p flex duration-500 max-w-[302px]">
+                                                <span
+                                                    class="w-[3%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                                <span
+                                                    class="w-[27.1%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                                <span
+                                                    class="w-[16.5%] h-1 bg-white group-hover/projectBox:mr-1 duration-500"></span>
+                                                <span class="w-full h-1 bg-white  duration-500"></span>
+                                            </div>
+                                            <div
+                                                class="paras duration-500 opacity-0 -translate-y-[20px] group-hover/projectBox:opacity-100 group-hover/projectBox:translate-y-0 projects_list">
+    
+                                                <div
+                                                    class="flex mt-2.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                                    <img class="relative w-3 h-2.5 inline"
+                                                        src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                                    <p>
+                                                        @db.list-Project.title
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="flex mt-1.5 font-OctinStencilRg400 text-lg gap-x-2 text-white items-center">
+                                                    <img class="relative w-3 h-2.5 inline"
+                                                        src="[##cms.cms.cdn##]/images/item1-1.svg" />
+                                                    <p>
+                                                        Project Status: @db.list-Project.prp_3087729
+    
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+    
+    
+                                </a>
+    
+                            </face>
+                        </basis>
+                    </div>
 
                     <basis core="call" file="footer-2.inc" />
                 </div>

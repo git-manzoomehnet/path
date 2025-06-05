@@ -8,17 +8,55 @@
         <img src="[##cms.cms.cdn##]/[##cms.query.img##]"
              class="h-full absolute inset-0 opacity-0 duration-500 w-full object-cover hover-img" alt="@title">
     </div>
-    <div class="cover absolute pb-3.5 duration-500 info-box">
+    <div class="cover absolute pb-3.5 duration-500 info-box px-3.5">
         <!-- این بخش ثابت می‌ماند -->
         <basis core="print" datamembername="db.image-awards">
             <face filter="ord=10">
-                <img src="[##cms.cms.cdn##]/@largeIMG" alt="@title" class="w-[58%] max-w-[234.5px]">
+                <img src="[##cms.cms.cdn##]/@largeIMG" alt="@title" class="w-[58%] max-w-[140px]">
             </face>
         </basis>
-        <div class="font-Blinker300 font-light text-white text-base px-3.5">
+        <div class="font-Blinker300 font-light text-white text-base ">
             <!-- مشخصات جوایز -->
+      <basis core="print" datamembername="db.view-awards">
+
+                <face filter="prpID=7243">
+                    <div class="">
+                        <span class="inline">
+                            Award Name :
+                        </span>
+                        <p class="inline">
+                            @Answer
+                        </p>
+                    </div>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.view-awards">
+
+                <face filter="prpID=3087745">
+                    <div class="">
+                        <span class="inline">
+                            @Question :
+                        </span>
+                        <p class="inline">
+                            @Answer
+                        </p>
+                    </div>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.view-awards">
+
+                <face filter="prpID=3087746">
+                    <div class="">
+                        <span class="inline">
+                            @Question :
+                        </span>
+                        <p class="inline">
+                            @Answer
+                        </p>
+                    </div>
+                </face>
+            </basis>
         </div>
     </div>
 </a>
-
 

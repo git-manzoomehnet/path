@@ -160,21 +160,19 @@
 }
 
 .stackEffect .tabs_content .tab_wrap {
-        opacity: 0;
-  -webkit-mask-image: linear-gradient(to top, transparent 28%, black 60%);
-  -webkit-mask-size: 100% 200%;
-  -webkit-mask-position: 0% 100%;
+  opacity: 0;
+  -webkit-mask-image: linear-gradient(to top, black 40%, transparent 72%); /* تغییر اینجا */
+  -webkit-mask-size: 100% 300%;
+  -webkit-mask-position: 0% 0%; /* تغییر اینجا */
   animation-fill-mode: both;
-
     
 }
 .stackEffect .tabs_content.Newactive .tab_wrap {
-  opacity: 1!important;
-
-    animation-name: text-wipe;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
+    opacity: 1 !important;
+  animation-name: text-wipe;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
 }
 .stackEffect .tabs_content.activeDisplay .tab_wrap {
   display: block !important;
@@ -271,11 +269,17 @@
   background-position: center;
   background-size: cover;
 }
+.eventsShow  .slider_home .swiper-slide .slide-bgimg{
+position: relative;
+}
+
 
 .slider_home .swiper-slide .entity-img {
   display: none;
 }
-
+.eventsShow .slider_home .swiper-slide .entity-img{
+  display: block;
+}
 .slider_home .swiper-slide .content {
   position: absolute;
   top: 52%;

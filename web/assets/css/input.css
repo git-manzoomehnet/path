@@ -206,8 +206,7 @@
 @media (min-width: 1600px) {
   .eventsShow .lSide,
   .awardsShow .lSide,
-  .awardList .firsBox,
-  /* .projectList .section1, */
+  .projectList .section1,
   .contactUs .lSection,
   .contactUs .breadCrumb {
     padding-left: calc(((100vw - 1540px) / 2));
@@ -216,24 +215,31 @@
   .contactUs .mapS {
     padding-right: calc(((100vw - 1540px) / 2));
   }
-  .productShow .breadCrumb {
+  .productShow .breadCrumb ,
+      .awardList .firsBox .breadCrumb,
+
+  .projectList .section1 .absolute.items-end.left-7
+  {
     left: calc(((100vw - 1540px) / 2));
   }
 }
 @media (max-width: 1599px) {
   .eventsShow .lSide,
   .contactUs .breadCrumb,
-    /* .projectList .section1, */
+    .projectList .section1,
 
   .contactUs .lSection,
-  .awardList .firsBox,
   .awardsShow .lSide {
     padding-left: 2vw;
   }
   .contactUs .mapS {
     padding-right: 2vw;
   }
-  .productShow .breadCrumb {
+    .awardList .firsBox .breadCrumb,
+
+  .productShow .breadCrumb,
+    .projectList .section1 .absolute.items-end.left-7
+ {
     left: 2vw;
   }
 }
@@ -643,6 +649,8 @@ header {
 }
 .Pin-Wrapp {
   display: flex;
+  min-width: 100vw;
+  justify-content: space-between;
 }
 
 .productCat .catBox:nth-child(6n-1),
@@ -767,4 +775,32 @@ header {
     opacity: 1;
     -webkit-mask-position: 0%;
 }
+}
+
+.projects_list{
+  min-height: 90px;
+}
+.third-slide:after{
+  height:380px ;
+}
+
+
+
+.homePage .activeBg{
+    animation-name: zoomIn;
+    animation-duration: 5s;
+    /* animation-timing-function: linear; */
+    /* animation-iteration-count: 1; */
+    /* transform-origin: left; */
+        animation-fill-mode: forwards; /* این خط خیلی مهمه */
+
+}
+
+@keyframes zoomIn {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.2);
+  }
 }

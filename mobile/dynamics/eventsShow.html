@@ -83,17 +83,17 @@
       <div class="rSide">
 
         <!-- Awards Gallery -->
-        <div class="slider_home h-svh">
+        <div class="slider_home h0-svh">
 
           <basis core="print" datamembername="db.image-event">
             <layout>
-              <div class="swiper-container !h-[calc(100%-115px)] main-slider loading">
+              <div class="swiper-container !h-0[calc(100%-115px)] main-slider loading">
                 <div class="swiper-wrapper">
 
                   @child
 
                 </div>
-                <div class="prevMain !left-[5%] absolute top-[50%] cursor-pointer swiper-button-white">
+                <div class="prevMain z-10 !left-[5%] absolute top-[50%] cursor-pointer swiper-button-white">
                   <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="3.33239" height="12.4065"
                       transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 11.1484 2.76123)" fill="white" />
@@ -102,7 +102,7 @@
                   </svg>
 
                 </div>
-                <div class="nextMain !right-[5%] absolute top-[50%] cursor-pointer swiper-button-white">
+                <div class="nextMain z-10 !right-[5%] absolute top-[50%] cursor-pointer swiper-button-white">
                   <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.289062" y="2.76123" width="3.33239" height="12.4065"
                       transform="rotate(-45 0.289062 2.76123)" fill="white" />
@@ -117,7 +117,7 @@
 
             <face filter="ord=1000">
               <div class="swiper-slide cursor-pointer">
-                <figure class="slide-bgimg" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
+                <figure class="slide-bgimg" >
                   <img class="entity-img" src="[##cms.cms.cdn##]/@largeIMG" />
                 </figure>
                 <div class="content">
@@ -142,7 +142,7 @@
             </layout>
 
             <face filter="ord=1000">
-              <div class="swiper-slide">
+              <div class="swiper-slide  !h-[86px] !w-[131px]">
                 <figure class="slide-bgimg" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
                   <img class="entity-img" src="[##cms.cms.cdn##]/@largeIMG" />
                 </figure>

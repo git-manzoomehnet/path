@@ -53,3 +53,30 @@ scrollBtm.addEventListener("click" , function (params) {
 
 document.querySelector(".section2").scrollIntoView({ behavior: "smooth" });
 })
+
+
+
+  let member = document.querySelectorAll(".member")
+            member.forEach(element => {
+                gsap.from(element, {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'left 80%',
+                        end: 'left left',
+                        // markers: true,
+                        onEnter: () => {
+
+                        element.classList.add("activeMemebr")
+                         
+
+                        },
+                    },
+
+                    stagger: 0.1,
+                    delay: 0,
+                    duration: 1,
+
+
+
+                })
+            });

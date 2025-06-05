@@ -64,30 +64,35 @@ $(".containerHorizontal").imagesLoaded({
 
             // CUSTOM JS
 
-            let wipeScroll = document.querySelectorAll(".wipeScroll")
-            wipeScroll.forEach(element => {
-                gsap.from(element, {
-                    scrollTrigger: {
-                        trigger: element,
-                        start: 'left 80%',
-                        end: 'left left',
-                        containerAnimation: scrollTween,
-                        // markers: true,
-                        onEnter: () => {
-
-                            element.classList.add("activeScroll")
-
-                        },
-                    },
-
-                    stagger: 0.1,
-                    delay: 0,
-                    duration: 1,
+            let wipeScroll = document.querySelectorAll(".wipeScroll");
 
 
+          wipeScroll.forEach(element => {
+    gsap.from(element, {
+        scrollTrigger: {
+            trigger: element,
+            start: 'left 80%',
+            end: 'left left',
+            containerAnimation: scrollTween,
+            // markers: true,
+            onEnter: () => {
+                element.classList.add("activeScroll");
+            },
+        },
+        stagger: 0.1,
+        delay: 0,
+        duration: 1,
+    });
 
-                })
-            });
+    // بررسی اولیه برای اسکرول افقی
+    const rect = element.getBoundingClientRect();
+    const isInHorizontalView = rect.left < window.innerWidth && rect.right > 0;
+
+    if (isInHorizontalView) {
+        element.classList.add("activeScroll");
+    }
+});
+
             let member = document.querySelectorAll(".member")
             member.forEach(element => {
                 gsap.from(element, {
@@ -98,7 +103,7 @@ $(".containerHorizontal").imagesLoaded({
                         containerAnimation: scrollTween,
                         // markers: true,
                         onEnter: () => {
-
+                            
                         element.classList.add("activeMemebr")
                          
 

@@ -9,7 +9,8 @@ interleaveOffset = 0.5;
 
 
 mainSliderOptions = {
-    //  loop: true,
+  // loop: true,
+  loopAdditionalSlides: 10,
     speed: 1000,
     autoplay: {
         delay: 3000
@@ -40,18 +41,40 @@ mainSliderOptions = {
             }
             swiper.slides[swiper.activeIndex].querySelector('.caption').classList.add('show');
         },
+        // progress: function () {
+          
+        //     var i, innerOffset, innerTranslate, slideProgress, swiper;
+        //     swiper = this;
+
+        //     i = 0;
+            
+        //     while (i < swiper.slides.length) {
+        //         slideProgress = swiper.slides[i].progress;
+        //         innerOffset = swiper.width * interleaveOffset;
+        //         innerTranslate = slideProgress * innerOffset;
+        //         swiper.slides[i].querySelector('.slide-bgimg').style.transform = 'translate3d(' + innerTranslate + 'px, 0, 0)';
+        //         i++;
+        //     }
+            
+        // },
+        
         progress: function () {
-            var i, innerOffset, innerTranslate, slideProgress, swiper;
-            swiper = this;
-            i = 0;
-            while (i < swiper.slides.length) {
-                slideProgress = swiper.slides[i].progress;
-                innerOffset = swiper.width * interleaveOffset;
-                innerTranslate = slideProgress * innerOffset;
-                swiper.slides[i].querySelector('.slide-bgimg').style.transform = 'translate3d(' + innerTranslate + 'px, 0, 0)';
-                i++;
-            }
-        },
+          const swiper = this;
+          for (let i = 0; i < swiper.slides.length; i++) {
+              const slide = swiper.slides[i];
+      
+              // ❗ جلوگیری از اعمال افکت روی اسلایدهای کپی شده (loop duplicates)
+              if (slide.classList.contains('swiper-slide-duplicate')) continue;
+      
+              const slideProgress = slide.progress;
+              const innerOffset = swiper.width * interleaveOffset;
+              const innerTranslate = slideProgress * innerOffset;
+      
+              const bg = slide.querySelector('.slide-bgimg');
+              if (bg) bg.style.transform = `translate3d(${innerTranslate}px, 0, 0)`;
+          }
+      },
+      
         touchStart: function () {
             var i, swiper;
             swiper = this;

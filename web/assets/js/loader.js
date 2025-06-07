@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function (params) {
           
          let loaderContainer = document.querySelector(".loaderContainer")
         
-         setTimeout(() => {
+        //  setTimeout(() => {
             loaderContainer.classList.add("activeLoader")
-         }, 10000);
+        //  }, 10000);
         
         
         });

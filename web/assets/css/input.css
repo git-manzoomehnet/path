@@ -206,10 +206,17 @@
 @media (min-width: 1600px) {
   .eventsShow .lSide,
   .awardsShow .lSide,
+  .productList  .section1,
   .projectList .section1,
   .contactUs .lSection,
   .contactUs .breadCrumb {
     padding-left: calc(((100vw - 1540px) / 2));
+  }
+  .projectList .section1,
+  .productList  .section1
+  
+  {
+    min-width: 660px;
   }
 
   .contactUs .mapS {
@@ -218,7 +225,8 @@
   .productShow .breadCrumb ,
       .awardList .firsBox .breadCrumb,
 
-  .projectList .section1 .absolute.items-end.left-7
+  .projectList .section1 .absolute.items-end.left-7,
+  .productList  .section1 .absolute.items-end.left-7
   {
     left: calc(((100vw - 1540px) / 2));
   }
@@ -227,6 +235,7 @@
   .eventsShow .lSide,
   .contactUs .breadCrumb,
     .projectList .section1,
+    .productList  .section1,
 
   .contactUs .lSection,
   .awardsShow .lSide {
@@ -235,10 +244,18 @@
   .contactUs .mapS {
     padding-right: 2vw;
   }
+  .projectList .section1,
+  .productList  .section1
+  
+  
+  {
+    min-width: 490px;
+  }
     .awardList .firsBox .breadCrumb,
 
   .productShow .breadCrumb,
-    .projectList .section1 .absolute.items-end.left-7
+    .projectList .section1 .absolute.items-end.left-7,
+    .productList  .section1 .absolute.items-end.left-7
  {
     left: 2vw;
   }
@@ -294,8 +311,8 @@
 }
 
 .slider_home .swiper-container.loading {
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
 }
 
 .slider_home .swiper-slide {
@@ -390,8 +407,8 @@
 }
 
 .slider_home .swiper-container.loading {
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
 }
 
 .slider_home .swiper-slide {

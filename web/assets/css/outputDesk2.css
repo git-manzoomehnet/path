@@ -50,6 +50,7 @@
     --color-grayTxt: #c8c9cb;
     --color-grayTxt2: #929497;
     --color-grayTxt3: #6d6e71;
+    --color-grayLine: #d9d9d9;
     --color-overlay: #ffffff1a;
     --spacing-96p: 96%;
     --spacing-90p: 90%;
@@ -3162,6 +3163,9 @@
 .contactUs .mapSectoin .leaflet-zoom-animated {
   width: 100%;
   filter: invert(0.05) saturate(0);
+}
+.contactUs .mapSectoin .leaflet-zoom-animated.leaflet-marker-icon {
+  filter: unset !important;
 }
 .scrollBtm .line {
   animation: animTraitlinear infinite 3s;

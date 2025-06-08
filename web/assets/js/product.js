@@ -122,9 +122,20 @@ navSliderOptions = {
 navSlider = new Swiper(navSliderSelector, navSliderOptions);
 
 // matching sliders
-mainSlider.controller.control = navSlider;
 
-navSlider.controller.control = mainSlider;
+const mainSliderr = document.querySelector('.main-slider') 
+  ? new Swiper('.main-slider', mainSliderOptions) 
+  : null;
+
+const navSliderr = document.querySelector(navSliderSelector) 
+  ? new Swiper(navSliderSelector, navSliderOptions) 
+  : null;
+
+if (mainSliderr && navSliderr) {
+  mainSlider.controller.control = navSlider;
+  navSlider.controller.control = mainSlider;
+}
+
 
 let scrollBtm = document.querySelector(".scrollBtm")
 scrollBtm.addEventListener("click" , function (params) {

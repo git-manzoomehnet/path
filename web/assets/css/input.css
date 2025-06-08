@@ -210,7 +210,7 @@
   .projectList .section1,
   .contactUs .lSection,
   .contactUs .breadCrumb {
-    padding-left: calc(((100vw - 1540px) / 2));
+    padding-left: calc(((100vw - 1440px) / 2));
   }
   .projectList .section1,
   .productList  .section1
@@ -220,15 +220,17 @@
   }
 
   .contactUs .mapS {
-    padding-right: calc(((100vw - 1540px) / 2));
+    padding-right: calc(((100vw - 1440px) / 2));
   }
   .productShow .breadCrumb ,
       .awardList .firsBox .breadCrumb,
 
   .projectList .section1 .absolute.items-end.left-7,
-  .productList  .section1 .absolute.items-end.left-7
+  .productList  .section1 .absolute.items-end.left-7, 
+     .aboutUs .section1 .absolute.items-end
+
   {
-    left: calc(((100vw - 1540px) / 2));
+    left: calc(((100vw - 1440px) / 2));
   }
 }
 @media (max-width: 1599px) {
@@ -239,10 +241,10 @@
 
   .contactUs .lSection,
   .awardsShow .lSide {
-    padding-left: 2vw;
+    padding-left: 5vw;
   }
   .contactUs .mapS {
-    padding-right: 2vw;
+    padding-right: 5vw;
   }
   .projectList .section1,
   .productList  .section1
@@ -255,9 +257,10 @@
 
   .productShow .breadCrumb,
     .projectList .section1 .absolute.items-end.left-7,
-    .productList  .section1 .absolute.items-end.left-7
+    .productList  .section1 .absolute.items-end.left-7,
+    .aboutUs .section1 .absolute.items-end
  {
-    left: 2vw;
+    left: 5vw;
   }
 }
 .slider_home .swiper-container.nav-slider .swiper-slide {
@@ -361,7 +364,7 @@
   transform: translateY(0);
 }
 .w-90p {
-  max-width: 1400px;
+  max-width: 1440px;
 }
 .w-96p {
   max-width: 1540px;

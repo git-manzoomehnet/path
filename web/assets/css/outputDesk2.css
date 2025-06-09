@@ -2978,7 +2978,7 @@
   .contactUs .mapS {
     padding-right: calc(((100vw - 1440px) / 2));
   }
-  .productShow .breadCrumb , .awardList .firsBox .breadCrumb, .projectList .section1 .absolute.items-end.left-7, .productList .section1 .absolute.items-end.left-7, .aboutUs .section1 .absolute.items-end {
+  .productCat .firstBox .shrink-0.flex.items-end.relative , .productShow .breadCrumb , .awardList .firsBox .breadCrumb, .projectList .section1 .absolute.items-end.left-7, .productList .section1 .absolute.items-end.left-7, .aboutUs .section1 .absolute.items-end {
     left: calc(((100vw - 1440px) / 2));
   }
 }
@@ -2992,7 +2992,7 @@
   .projectList .section1, .productList .section1 {
     min-width: 490px;
   }
-  .awardList .firsBox .breadCrumb, .productShow .breadCrumb, .projectList .section1 .absolute.items-end.left-7, .productList .section1 .absolute.items-end.left-7, .aboutUs .section1 .absolute.items-end {
+  .awardList .firsBox .breadCrumb, .productShow .breadCrumb, .productCat .firstBox .shrink-0.flex.items-end.relative , .projectList .section1 .absolute.items-end.left-7, .productList .section1 .absolute.items-end.left-7, .aboutUs .section1 .absolute.items-end {
     left: 5vw;
   }
 }

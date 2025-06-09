@@ -5,7 +5,7 @@
     <member request="json-ld" type="scalar" name="fq" />
 </basis>
 <basis core="dbsource" name="db" source="media" lid="2" sourcemid="19" usedforid="[##cms.query.id##]">
-    <member name="image-product" type="list" format="4" />
+    <member name="image-product" type="list" format="4" perpage="100000"/>
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="2" mid="19" usedforid="[##cms.query.id##]">
     <member name="product" type="view" />
@@ -17,7 +17,7 @@
     <member type="list" name="related-project" size="500x900" propertyid="3087729" blgid="629" link="project.bc" />
 </basis>
 <basis core="dbsource" source="basiscore" name="db" lid="2" mid="19" usedforid="[##cms.query.id##]">
-    <member request="navigationcat" type="tree" name="nav" postsql="select * from [db.nav] where Parentcatid= Catid" />
+    <member request="navigationcat" type="tree" name="nav"  />
 </basis>
 
 <basis core="inlinesource" name="list">
@@ -59,10 +59,12 @@
                     class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
                     home
                 </a>
+ 
 
-                <basis core="print" datamembername="db.nav">
 
-                    <face>
+     <basis core="print" datamembername="db.nav">
+
+                    <face filter="ord=1 and Title<> 'root'">
                         <p
                             class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
                             .
@@ -74,8 +76,6 @@
 
                     </face>
                 </basis>
-
-
                 <basis core="print" datamembername="db.product">
 
                     <face filter="TypeID=150">
@@ -109,7 +109,7 @@
             <div class="absolute z-10 bottom-7 left-0 right-0">
 
 
-                <div class="title mb-10">
+                <div class="title mb-10 scrollTop">
                     <basis core="print" datamembername="db.product">
 
                         <face filter="TypeID=150">
@@ -117,7 +117,7 @@
                                 @Answer
                             </h1>
 
-                            <div class="lineeeeee w-[257px] flex gap-x-1 mx-auto">
+                            <div class="lineeeeee w-[257px] flex gap-x-1 mx-auto" dir="rtl">
                                 <span class="w-full h-1.5 bg-white"></span>
                                 <span class="w-[16%] h-1.5 bg-white"></span>
                                 <span class="w-[28%] h-1.5 bg-white"></span>
@@ -145,8 +145,8 @@
 
             </div>
         </section>
-        <section class="section2 mb-10 pt-14 w-90p mx-auto flex gap-x-11" >
-            <div class="flex wipeScroll flex-col items-start gap-6 " id="textContent">
+        <section class="section2 justify-between mb-10 pt-14 w-90p mx-auto flex gap-x-11" >
+            <div class="flex wipeScroll flex-col items-start gap-6 " id="textContent" style="max-width: 598px;">
                 <basis core="print" datamembername="db.product">
 
                     <face filter="TypeID=150">
@@ -170,8 +170,8 @@
                     <basis core="print" datamembername="db.product">
 
                         <face filter="TypeID not in (150,144,159)">
-                            <span class="text-grayTxt font-Blinker300">@Question:</span> 
-                            <span class="text-white font-Blinker400">@Answer</span><br />
+                            <span class="text-grayTxt font-Blinker300 capitalize">@Question:</span> 
+                            <span class="text-white font-Blinker400 capitalize">@Answer</span><br />
 
                         </face>
                     </basis>
@@ -255,8 +255,8 @@
                         </layout>
 
                         <face filter="ord=1000">
-                            <div class="swiper-slide">
-                                <figure class="slide-bgimg" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
+                            <div class="swiper-slide  flex items-center justify-center">
+                                <figure class="slide-bgimg  !w-[140px]" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
                                     <img class="entity-img" src="[##cms.cms.cdn##]/@largeIMG" />
                                 </figure>
                                 <div class="content">
@@ -299,7 +299,7 @@
                 </section>
             </layout>
 
-            <face filter="[db.list-Project.prp_3087729] is null">
+            <face filter="[db.list-Project.prp_3087729] is null and RowNumber<4">
 
                 <a href="/@db.list2-Project.link" title="@db.list2-Project.title"
                     class="projectBox relative group/projectBox flex flex-col ">
@@ -338,7 +338,7 @@
 
                 </a>
             </face>
-            <face filter="[db.list-Project.prp_3087729] is not null">
+            <face filter="[db.list-Project.prp_3087729] is not null and RowNumber<4">
 
                 <a href="/@db.list2-Project.link" title="@db.list2-Project.title"
                     class="projectBox relative group/projectBox flex flex-col ">
@@ -413,7 +413,7 @@
                 </section>
             </layout>
 
-            <face>
+            <face filter="RowNumber<4">
                 <a href="/@link" title="@title" class="productBox relative group/productBox flex flex-col ">
 
                     <div style="background: url('[##cms.cms.cdn##]/@00500X00900prp');background-size: cover;"

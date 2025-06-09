@@ -222,6 +222,7 @@
   .contactUs .mapS {
     padding-right: calc(((100vw - 1440px) / 2));
   }
+  .productCat .firstBox .shrink-0.flex.items-end.relative ,
   .productShow .breadCrumb ,
       .awardList .firsBox .breadCrumb,
 
@@ -256,6 +257,8 @@
     .awardList .firsBox .breadCrumb,
 
   .productShow .breadCrumb,
+  .productCat .firstBox .shrink-0.flex.items-end.relative ,
+
     .projectList .section1 .absolute.items-end.left-7,
     .productList  .section1 .absolute.items-end.left-7,
     .aboutUs .section1 .absolute.items-end
@@ -263,6 +266,8 @@
     left: 5vw;
   }
 }
+
+
 .slider_home .swiper-container.nav-slider .swiper-slide {
   cursor: pointer;
   opacity: 0.4;

@@ -4,7 +4,7 @@
 <basis core="dbsource" source="basiscore" name="json" lid="2" usedforid="[##cms.query.id##]">
     <member request="json-ld" type="scalar" name="fq" />
 </basis>
-<basis core="dbsource" name="db" source="media" lid="2" sourcemid="product" usedforid="[##cms.query.id##]"> <member name="image-product" type="list" format="4"/> </basis>
+<basis core="dbsource" name="db" source="media" lid="2" sourcemid="product" usedforid="[##cms.query.id##]"> <member name="image-product" type="list" format="4"  perpage="100000"/> </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="2" mid="20" usedforid="[##cms.query.id##]"> <member name="product" type="view"/> </basis>
 <basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="20" usedforid="[##cms.query.id##]"> <member type="list" name="related-product" size="500x900" blgid="18" /> </basis>
 <basis core="dbsource" source="basiscore" name="basisName" lid="2" mid="20" usedforid="[##cms.query.id##]"> <member type="list" name="related-project" link="project.bc" size="500x900" propertyid="3087729" blgid="1527" /> </basis>	
@@ -31,7 +31,7 @@
         <basis core="call" file="header-1.inc" />
 
         <section class="section1 relative h-svh w-svw overflow-hidden">
-            <div class="absolute right-0 w-96p mx-auto top-[115px] z-[2121025882] shrink-0 flex items-end  left-0">
+            <div class="absolute right-0 w-90p mx-auto top-[115px] z-[2121025882] shrink-0 flex items-end  left-0">
 
                 <a href="/"
                     class=" whitespace-nowrap inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
@@ -47,7 +47,7 @@
                         </a>
                 <basis core="print" datamembername="db.nav">
                    
-                    <face>
+                    <face filter="ord=1 and Title<> 'root'">
                         <p
                             class=" whitespace-nowrap mx-2 inline text-white top-[97px] left-[30px] font-Blinker300  text-sm tracking-[5.46px]">
                             .
@@ -131,7 +131,7 @@
             </div>
         </section>
         <section class="section2 justify-between pt-14 w-90p mx-auto flex gap-x-11">
-            <div class="flex flex-col items-start gap-6 wipeScroll" id="textContent">
+            <div class="flex flex-col items-start gap-6 wipeScroll" id="textContent" style="max-width: 598px;">
                 <basis core="print" datamembername="db.product">
 
                     <face filter="TypeID=150">
@@ -156,7 +156,7 @@
 
                         <face filter="TypeID not in (150,144,159)">
                             <span class="text-grayTxt font-Blinker300 capitalize ">@Question:</span> 
-                            <span class="text-white font-Blinker400">@Answer</span><br />
+                            <span class="text-white font-Blinker400 capitalize">@Answer</span><br />
 
                         </face>
                     </basis>
@@ -175,7 +175,7 @@
             </div>
 
 
-            <div class="w-[67.5%]" id="mainSlider">
+            <div class="w-[67.5%] h-fit" id="mainSlider">
 
                 <div class="slider_home">
                     <basis core="print" datamembername="db.image-product">
@@ -240,8 +240,8 @@
                         </layout>
 
                         <face filter="ord=1000">
-                            <div class="swiper-slide">
-                                <figure class="slide-bgimg" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
+                            <div class="swiper-slide  flex items-center justify-center">
+                                <figure class="slide-bgimg  !w-[140px]" style="background-image:url('[##cms.cms.cdn##]/@largeIMG')">
                                     <img class="entity-img" src="[##cms.cms.cdn##]/@largeIMG" />
                                 </figure>
                                 <div class="content">
@@ -318,47 +318,8 @@
             </face>
         </basis>
 
-
-    </main>
-
-<basis core="call" file="footer-1.inc" />
-
-    </div>
-
-
-
     
-<div class="galleryPop -translate-y-[100%] overflow-hidden duration-1000 fixed inset-0 z-[2121025885] flex items-center justify-center h-svh w-svw bg-main1/[0.85]">
-<div class="w-96p mx-auto h-[72vh] max-h-[648px] relative">
-  <div
-    class="closeSearchPop absolute top-0 right-0 z-10  self-end flex flex-col text-right mb-10 items-end cursor-pointer">
-    <svg width="49" height="3" viewBox="0 0 49 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="white" />
-      <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="white" />
-    </svg>
-
-    <span class="font-Blinker300 text-right  block mt-2 tracking-[5px] text-white text-xs">
-      CLOSE
-    </span>
-  </div>
-  <div class="swiper popGallery h-full">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-                    <basis core="print" datamembername="db.image-product">
-
-          
-        <face filter="ord=1000">
-            <div class="swiper-slide">
-              <div class="imgS h-full flex items-center justify-center">
-                <img class="h-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
-              </div>
-            </div>
-              
-          </face>
-      </basis>
-    
-<basis core="print" datamembername="basisName.related-project">
+        <basis core="print" datamembername="basisName.related-project">
             <layout>
             
                 <section class="section3 w-90p mx-auto mt-20">
@@ -385,7 +346,7 @@
                 </section>
             </layout>
         
-            <face filter="prp_3087729 is null and RowNumber<4">
+            <face filter="RowNumber<4 and prp_3087729 is null  ">
                 <a href="/@link" title="@title"
                             class="projectBox relative group/projectBox flex flex-col ">
         
@@ -417,7 +378,7 @@
         
                         </a>
             </face>
-            <face filter="prp_3087729 is not null and RowNumber<4">
+            <face filter="RowNumber<4 and prp_3087729 is not null  ">
                 <a href="/@link" title="@title"
                             class="projectBox relative group/projectBox flex flex-col ">
         
@@ -456,6 +417,45 @@
             </face>
         </basis>
 
+    </main>
+
+<basis core="call" file="footer-1.inc" />
+
+    </div>
+
+
+
+    
+<div class="galleryPop -translate-y-[100%] overflow-hidden duration-1000 fixed inset-0 z-[2121025885] flex items-center justify-center h-svh w-svw bg-main1/[0.85]">
+<div class="w-90p mx-auto h-[72vh] max-h-[648px] relative">
+  <div
+    class="closeSearchPop absolute top-0 right-0 z-10  self-end flex flex-col text-right mb-10 items-end cursor-pointer">
+    <svg width="49" height="3" viewBox="0 0 49 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="44" height="3" transform="matrix(1 0 0 -1 5 3)" fill="white" />
+      <rect width="3" height="3" transform="matrix(1 0 0 -1 0 3)" fill="white" />
+    </svg>
+
+    <span class="font-Blinker300 text-right  block mt-2 tracking-[5px] text-white text-xs">
+      CLOSE
+    </span>
+  </div>
+  <div class="swiper popGallery h-full">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+                    <basis core="print" datamembername="db.image-product">
+
+          
+        <face filter="ord=1000">
+            <div class="swiper-slide">
+              <div class="imgS h-full flex items-center justify-center">
+                <img class="h-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+              </div>
+            </div>
+              
+          </face>
+      </basis>
+
     </div>
 
   </div>
@@ -487,8 +487,7 @@
 
 <basis core="call" file="scripts2.inc" />
 
-    <!-- <script src="[##cms.cms.cdn##]/js/swiper.min.js"></script> -->
-    <script src="[##cms.cms.cdn##]/_js/swiper4.7.js"></script>
+    <script src="[##cms.cms.cdn##]/js/swiper.min.js"></script>
     <script src="[##cms.cms.cdn##]/js/product.js"></script>
 
     <script type="application/ld+json">
